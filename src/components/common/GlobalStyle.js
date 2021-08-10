@@ -7,7 +7,7 @@ const DefaultStyle = createGlobalStyle`
       margin: 0;
       box-sizing: border-box;
   }
-  html, body, #___gatsby {
+  html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
   }
   a, a:hover {

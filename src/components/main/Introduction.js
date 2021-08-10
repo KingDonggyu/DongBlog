@@ -3,19 +3,33 @@ import styled from "styled-components";
 
 import ProfileImage from "./ProfileImage";
 
-const Wrapper = styled.div``;
+const IntroductionWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
 
-const Title = styled.div``;
+const Title = styled.div`
+  color: white;
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 700;
+`;
 
-const SubTitle = styled.div``;
+const SubTitle = styled.div`
+  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 400;
+`;
 
 const Introduction = () => {
   return (
-    <Wrapper>
+    <IntroductionWrapper>
       <ProfileImage />
-      <Title></Title>
-      <SubTitle></SubTitle>
-    </Wrapper>
+      <Title>KIM DONGGYU</Title>
+      <SubTitle>배우고 정리하고 공유하기</SubTitle>
+    </IntroductionWrapper>
   );
 };
 
