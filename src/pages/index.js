@@ -2,10 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 import GlobalStyle from "../components/common/GlobalStyle";
+import Header from "../components/common/Header";
 import SideBar from "../components/main/SideBar";
+import PostList from "../components/main/PostList";
 
 const Container = styled.div`
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+`;
+
+const Content = styled.div`
+  padding-left: 350px;
 `;
 
 const IndexPage = () => {
@@ -13,6 +21,9 @@ const IndexPage = () => {
     <Container>
       <GlobalStyle />
       <SideBar />
+      <Content>
+        <PostList />
+      </Content>
     </Container>
   );
 };

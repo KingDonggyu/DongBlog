@@ -2,25 +2,28 @@ import React from "react";
 import styled from "styled-components";
 
 import Introduction from "./Introduction";
-// import CategoryList from "./CategoryList";
-// import TagList from "./TagList";
+import CategoryList from "./CategoryList";
+import TagList from "./TagList";
 
-const Background = styled.div`
+const CATEGORY_LIST = ["Web", "Language", "Mobile"];
+const TAG_LIST = ["All", "React", "JavaScript", "webOS", "Python", "DB"];
+
+const Wrapper = styled.div`
+  color: white;
   height: 100%;
-  width: 300px;
-  background-color: #606163;    
+  width: 350px;
+  background: linear-gradient(60deg, #29323c 0%, #606163 100%);
+  position: fixed;
+  left: 0;
 `;
-const SideBarWrapper = styled.div``;
 
 const SideBar = () => {
   return (
-    <Background>
-      <SideBarWrapper>
-        <Introduction />
-        {/* <CategoryList />
-        <TagList /> */}
-      </SideBarWrapper>
-    </Background>
+    <Wrapper>
+      <Introduction />
+      <CategoryList selectedcategory="Web" categoryList={CATEGORY_LIST} />
+      <TagList selectedTag="All" tagList={TAG_LIST} />
+    </Wrapper>
   );
 };
 
