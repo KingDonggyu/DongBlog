@@ -8,22 +8,38 @@ import TagList from "./TagList";
 const CATEGORY_LIST = ["Web", "Language", "Mobile"];
 const TAG_LIST = ["All", "React", "JavaScript", "webOS", "Python", "DB"];
 
-const Wrapper = styled.div`
-  color: white;
+const Background = styled.div`
   height: 100%;
-  width: 350px;
-  background: linear-gradient(60deg, #29323c 0%, #606163 100%);
+  width: 400px;
   position: fixed;
-  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+  height: 90%;
+  width: 350px;
+  padding: 30px 0;
+  background: #606163;
+  border-radius: 7px;
+  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px;
+  overflow-y: scroll;
 `;
 
 const SideBar = () => {
   return (
-    <Wrapper>
-      <Introduction />
-      <CategoryList selectedcategory="Web" categoryList={CATEGORY_LIST} />
-      <TagList selectedTag="All" tagList={TAG_LIST} />
-    </Wrapper>
+    <Background>
+      <Wrapper>
+        <Introduction />
+        <CategoryList selectedcategory="Web" categoryList={CATEGORY_LIST} />
+        <TagList selectedTag="All" tagList={TAG_LIST} />
+      </Wrapper>
+    </Background>
   );
 };
 

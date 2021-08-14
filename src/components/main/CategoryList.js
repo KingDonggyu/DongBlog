@@ -17,7 +17,7 @@ const TagItem = styled(Link)`
   font-weight: ${({ active }) => (active ? "800" : "400")};
   cursor: pointer;
   &:hover {
-    background-color: lightslategray;
+    background-color: gray;
   }
 `;
 
@@ -26,7 +26,7 @@ const CategoryList = ({ selectedcategory, categoryList }) => {
     <Wrapper>
       {categoryList.map((name) => (
         <TagItem
-          to={`/?tag=${name}`}
+          to={`/?category=${name}`}
           active={name === selectedcategory ? 1 : 0}
           key={name}
         >

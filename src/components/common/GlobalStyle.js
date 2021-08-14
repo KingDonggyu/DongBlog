@@ -9,6 +9,7 @@ const DefaultStyle = createGlobalStyle`
   }
   html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
+    background: #3c3c3c;
   }
   a, a:hover {
     color: inherit;

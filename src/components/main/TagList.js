@@ -4,21 +4,28 @@ import { Link } from "gatsby";
 
 const Wrapper = styled.div`
   width: 100%;
-  margin-top: 30px;
-  padding-left: 30px;
+  padding: 30px 30px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 `;
 
 const TagItem = styled(Link)`
-  margin-right: 20px;
-  padding: 5px 0;
-  font-size: 18px;
-  font-weight: ${({ active }) => (active ? '800' : '400')};
+  border: 1px white solid;
+  border-radius: 4px;
+  margin: 20px 20px 0 0;
+  padding: 3px 5px;
+  font-size: 14px;
   cursor: pointer;
-
-  &:last-of-type {
-    margin-right: 0;
+  ${({ active }) =>
+    active &&
+    `
+     background-color: white;
+    color: black; 
+  `};
+  &:hover {
+    background-color: white;
+    color: black;
   }
 `;
 
@@ -26,8 +33,12 @@ const TagList = ({ selectedTag, tagList }) => {
   return (
     <Wrapper>
       {tagList.map((name) => (
-        <TagItem to={`/?tag=${name}`} active={name === selectedTag ? 1 : 0} key={name}>
-          #{name}
+        <TagItem
+          to={`/?tag=${name}`}
+          active={name === selectedTag ? 1 : 0}
+          key={name}
+        >
+          # {name}
         </TagItem>
       ))}
     </Wrapper>

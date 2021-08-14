@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { AiFillGithub, AiOutlineInstagram } from "react-icons/ai";
 
 import ProfileImage from "./ProfileImage";
 
@@ -9,22 +10,47 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
+const HeaderWrapper = styled.div`
+  display: flex;
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 10px;
+  a {
+    &:hover {
+      color: gray;
+    }
+  }
+`;
+
 const Title = styled.div`
   margin-top: 20px;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
 `;
 
-const SubTitle = styled.div`
+const SubTitle = styled.p`
   margin-top: 10px;
-  font-size: 15px;
-  font-weight: 400;
+  font-size: 13px;
 `;
 
 const Introduction = () => {
   return (
     <Wrapper>
-      <ProfileImage />
+      <HeaderWrapper>
+        <ProfileImage />
+        <IconWrapper>
+          <a href="https://github.com/KingDonggyu" target="_blank">
+            <AiFillGithub size="40" />
+          </a>
+          <a href="https://www.instagram.com/dgyu20/" target="_blank">
+            <AiOutlineInstagram size="40" />
+          </a>
+        </IconWrapper>
+      </HeaderWrapper>
       <Title>KIM DONGGYU</Title>
       <SubTitle>배우고 정리하고 공유하기</SubTitle>
     </Wrapper>
