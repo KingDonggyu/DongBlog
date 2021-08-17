@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import queryString from "query-string";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -29,7 +30,15 @@ const TagItem = styled(Link)`
   }
 `;
 
-const TagList = ({ selectedTag, tagList }) => {
+const TagList = ({ search, posts }) => {
+  const parsed = queryString.parse(search);
+  const selectedTag = typeof parsed.tag !== "string" || !parsed.category ? "All" : parsed.tag;
+  const tagList = useMemo(() => posts.reduce(
+    (list, {node:{frontmatter:{tags}}}) => {
+      tags.forEach((tag) => { if (!list.includes(tag)) list.push(tag); });
+      return list;
+    }, ["All"]), []);
+
   return (
     <Wrapper>
       {tagList.map((name) => (

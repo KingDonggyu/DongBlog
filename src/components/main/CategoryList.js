@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import queryString from "query-string";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -14,14 +15,19 @@ const TagItem = styled(Link)`
   padding: 10px;
   padding-left: 30px;
   font-size: 18px;
-  font-weight: ${({ active }) => (active ? "800" : "400")};
   cursor: pointer;
+  ${({ active }) =>
+    active &&
+    `
+    font-weight: 800;
+     background-color: gray;
+  `};
   &:hover {
     background-color: gray;
   }
 `;
 
-const CategoryList = ({ selectedcategory, categoryList }) => {
+const CategoryList = ({ categoryList, selectedcategory }) => {
   return (
     <Wrapper>
       {categoryList.map((name) => (

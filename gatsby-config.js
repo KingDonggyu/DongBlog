@@ -7,31 +7,60 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `images`,
-    //     path: `${__dirname}/src/images`,
-    //   },
-    // },
+    `gatsby-plugin-image`, // Gatsby의 기본적인 이미지 처리 과정의 효율성을 이용해 더욱 높은 사용자 경험을 제공
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `contents`,
+        path: `${__dirname}/contents`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //     icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
-    //   },
-    // },
-    `gatsby-plugin-gatsby-cloud`,
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-transformer-remark`, // 마크다운 문법을 HTML 형태로 변환해주어 띄워줄 수 있도록 해주는 핵심 라이브러리
+      options: {
+        plugins: [
+          {
+            resolve: "gatsby-remark-smartypants", // 글 내에서 사용되는 여러 문장 부호들을 더 깔끔한 부호로 바꿔주는 기능을 제공
+            options: {
+              dashes: "oldschool",
+            },
+          },
+          {
+            resolve: "gatsby-remark-prismjs", // 문법 하이라이팅 역할을 담당하는 라이브러리 => 소스코드를 실제 IDE에서 보는 것처럼 변환해주는 기능을 제공
+            options: {
+              classPrefix: "language-",
+            },
+          },
+          {
+            resolve: "gatsby-remark-images", // 마크다운 문서 내에서의 이미지 사용을 최적화해주는 라이브러리
+            options: {
+              maxWidth: 768,
+              quality: 100,
+              withWebp: true,
+            },
+          },
+          {
+            resolve: "gatsby-remark-copy-linked-files", // 마크다운 내에서 사용되는 이미지를 특정 디렉토리로 복사해주는 라이브러리
+            options: {},
+          },
+          {
+            resolve: "gatsby-remark-external-links", // 마크다운 내에서 사용되는 링크 태그의 target, rel 등의 속성을 지정해주는 기능을 제공
+            options: {
+              target: "_blank",
+              rel: "nofollow",
+            },
+          },
+        ],
+      },
+    },
   ],
-}
+};

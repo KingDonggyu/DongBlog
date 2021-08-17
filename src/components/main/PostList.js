@@ -12,36 +12,22 @@ const POST_ITEM_DATA = {
     "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png",
 };
 
-// const Background = styled.div`
-//   height: 100%;
-//   /* position: fixed; */
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-// `;
-
 const Wrapper = styled.div`
-  /* width: 1030px; */
-  /* height: 90%; */
   display: flex;
   flex-direction: column;
   padding: 25px;
-  /* overflow-y: scroll; */
+  @media (max-width: 768px) {
+    padding: 5px;
+  }
 `;
 
-const PostList = () => {
+const PostList = ({ posts }) => {
   return (
-    // <Background>
-      <Wrapper>
-        <PostItem {...POST_ITEM_DATA} />
-        <PostItem {...POST_ITEM_DATA} />
-        <PostItem {...POST_ITEM_DATA} />
-        <PostItem {...POST_ITEM_DATA} />
-        <PostItem {...POST_ITEM_DATA} />
-        <PostItem {...POST_ITEM_DATA} />
-        <PostItem {...POST_ITEM_DATA} />
-      </Wrapper>
-    // </Background>
+    <Wrapper>
+      {posts.map(({ node: { id, frontmatter } }) => (
+        <PostItem {...frontmatter} key={id} />
+      ))}
+    </Wrapper>
   );
 };
 

@@ -37,11 +37,11 @@ const SubTitle = styled.p`
   font-size: 13px;
 `;
 
-const Introduction = () => {
+const Introduction = ({ profileImage }) => {
   return (
     <Wrapper>
       <HeaderWrapper>
-        <ProfileImage />
+        <ProfileImage profileImage={profileImage} />
         <IconWrapper>
           <a href="https://github.com/KingDonggyu" target="_blank">
             <AiFillGithub size="40" />

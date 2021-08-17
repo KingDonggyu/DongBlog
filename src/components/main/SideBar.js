@@ -15,6 +15,11 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) {
+    position: static;
+    width: 100%;
+    height: 280px;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -31,13 +36,13 @@ const Wrapper = styled.div`
   overflow-y: scroll;
 `;
 
-const SideBar = () => {
+const SideBar = ({ profileImage, search, posts }) => {
   return (
     <Background>
       <Wrapper>
-        <Introduction />
+        <Introduction profileImage={profileImage} />
         <CategoryList selectedcategory="Web" categoryList={CATEGORY_LIST} />
-        <TagList selectedTag="All" tagList={TAG_LIST} />
+        <TagList search={search} posts={posts} />
       </Wrapper>
     </Background>
   );

@@ -6,7 +6,6 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
 `
-
 const Title = styled.h1`
     margin-top: 20px;
     color: #606163;

@@ -5,6 +5,9 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 15px;
+  @media (max-width: 768px) {
+    font-size: 10px;
+  }
 `;
 
 const Category = styled.div`
