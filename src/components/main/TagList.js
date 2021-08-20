@@ -1,14 +1,13 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import queryString from "query-string";
 
 const Wrapper = styled.div`
   width: 100%;
   padding: 30px 30px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 `;
 
 const TagItem = styled(Link)`
@@ -30,24 +29,28 @@ const TagItem = styled(Link)`
   }
 `;
 
-const TagList = ({ search, posts }) => {
-  const parsed = queryString.parse(search);
-  const selectedTag = typeof parsed.tag !== "string" || !parsed.category ? "All" : parsed.tag;
-  const tagList = useMemo(() => posts.reduce(
-    (list, {node:{frontmatter:{tags}}}) => {
-      tags.forEach((tag) => { if (!list.includes(tag)) list.push(tag); });
-      return list;
-    }, ["All"]), []);
+const TagList = ({ posts, selectedTag }) => {
+  const tagList = useMemo(
+    () =>
+      posts.reduce(
+        ( list, { node: { frontmatter: { tags } } } ) => {
+          tags.forEach((tag) => {
+            if (!list.includes(tag)) list.push(tag);
+          });
+          return list;
+        }, []
+      ), []
+  );
 
   return (
     <Wrapper>
-      {tagList.map((name) => (
+      {tagList.map((tag) => (
         <TagItem
-          to={`/?tag=${name}`}
-          active={name === selectedTag ? 1 : 0}
-          key={name}
+          to={`/?tag=${tag}`}
+          active={tag === selectedTag ? 1 : 0}
+          key={tag}
         >
-          # {name}
+          # {tag}
         </TagItem>
       ))}
     </Wrapper>

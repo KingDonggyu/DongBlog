@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 15px;
+  font-size: 13px;
   @media (max-width: 768px) {
     font-size: 10px;
   }
@@ -13,10 +13,10 @@ const Wrapper = styled.div`
 const Category = styled.div`
   display: flex;
   align-items: center;
-  background-color: red;
   border-radius: 4px;
-  padding: 3px 8px;
+  padding: 3px 5px;
   font-weight: 700;
+  ${({color}) => `background-color: ${color};`}
 `;
 
 const TagList = styled.div`
@@ -32,17 +32,17 @@ const TagItem = styled.div`
   padding: 3px 5px;
 `;
 
-const PostItemHeader = ({ category, tags }) => {
+const PostItemHead = ({ category, categoryColor, tags }) => {
   return (
     <Wrapper>
-      <Category>{category}</Category>
+      <Category color={categoryColor}>{category}</Category>
       <TagList>
-        {tags.map((name) => (
-          <TagItem key={name}># {name}</TagItem>
+        {tags.map((tag) => (
+          <TagItem key={tag}># {tag}</TagItem>
         ))}
       </TagList>
     </Wrapper>
   );
 };
 
-export default PostItemHeader;
+export default PostItemHead;

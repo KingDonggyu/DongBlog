@@ -1,18 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { graphql } from "gatsby";
+import queryString from "query-string";
 
-import GlobalStyle from "../components/common/GlobalStyle";
-import Header from "../components/common/Header";
-import Footer from "../components/common/Footer";
+import Template from "../components/common/Template";
 import SideBar from "../components/main/SideBar";
 import PostList from "../components/main/PostList";
 
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-`;
 
 const Content = styled.div`
   padding-left: 400px;
@@ -24,20 +18,30 @@ const Content = styled.div`
 
 const IndexPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
+  const parsed = queryString.parse(location.search);
+  const selectedTag =
+    typeof parsed.tag !== "string" || !parsed.tag ? "All" : parsed.tag;
+  const selectedCategory =
+    typeof parsed.category !== "string" || !parsed.category
+      ? "All"
+      : parsed.category;
+
   return (
-    <Container>
-      <GlobalStyle />
+    <Template>
       <SideBar
-        profileImage={data.file.childImageSharp.fluid}
-        search={location.search}
         posts={posts}
+        selectedTag={selectedTag}
+        selectedCategory={selectedCategory}
+        profileImage={data.file.childImageSharp.fluid}
       />
       <Content>
-        {/* <Header /> */}
-        <PostList posts={posts} />
-        <Footer />
+        <PostList
+          posts={posts}
+          selectedTag={selectedTag}
+          selectedCategory={selectedCategory}
+        />
       </Content>
-    </Container>
+    </Template>
   );
 };
 
@@ -51,10 +55,14 @@ export const queryPostList = graphql`
       edges {
         node {
           id
+          fields {
+            slug
+          }
           frontmatter {
             title
             date(formatString: "YYYY.MM.DD.")
             category
+            categoryColor
             tags
             thumbnail {
               childImageSharp {

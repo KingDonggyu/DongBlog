@@ -2,6 +2,7 @@
 date: "2021-08-17"
 title: "Test2"
 category: "Mobile"
+categoryColor: "cornflowerblue"
 tags: ["React", "JavaScript"]
 thumbnail: "./test2.png"
 ---

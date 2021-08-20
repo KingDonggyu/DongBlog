@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useMemo } from "react";
 import styled from "styled-components";
+import useInfiniteScroll from "../../hooks/useInfiniteScroll";
 
 import PostItem from "./PostItem";
 
@@ -15,17 +16,24 @@ const POST_ITEM_DATA = {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 13px;
   padding: 25px;
   @media (max-width: 768px) {
     padding: 5px;
   }
 `;
 
-const PostList = ({ posts }) => {
+const PostList = ({ posts, selectedTag, selectedCategory }) => {
+  const { postList, containerRef } = useInfiniteScroll(
+    posts,
+    selectedTag,
+    selectedCategory
+  );
+
   return (
-    <Wrapper>
-      {posts.map(({ node: { id, frontmatter } }) => (
-        <PostItem {...frontmatter} key={id} />
+    <Wrapper ref={containerRef}>
+      {postList.map(({ node: { id, fields: { slug }, frontmatter } }) => (
+        <PostItem {...frontmatter} link={slug} key={id} />
       ))}
     </Wrapper>
   );

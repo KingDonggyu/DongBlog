@@ -5,9 +5,6 @@ import Introduction from "./Introduction";
 import CategoryList from "./CategoryList";
 import TagList from "./TagList";
 
-const CATEGORY_LIST = ["Web", "Language", "Mobile"];
-const TAG_LIST = ["All", "React", "JavaScript", "webOS", "Python", "DB"];
-
 const Background = styled.div`
   height: 100%;
   width: 400px;
@@ -36,13 +33,13 @@ const Wrapper = styled.div`
   overflow-y: scroll;
 `;
 
-const SideBar = ({ profileImage, search, posts }) => {
+const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
   return (
     <Background>
       <Wrapper>
         <Introduction profileImage={profileImage} />
-        <CategoryList selectedcategory="Web" categoryList={CATEGORY_LIST} />
-        <TagList search={search} posts={posts} />
+        <CategoryList posts={posts} selectedCategory={selectedCategory}/>
+        <TagList posts={posts} selectedTag={selectedTag} />
       </Wrapper>
     </Background>
   );

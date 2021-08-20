@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import queryString from "query-string";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -16,27 +15,34 @@ const TagItem = styled(Link)`
   padding-left: 30px;
   font-size: 18px;
   cursor: pointer;
+  &:hover { background-color: #737272; }
   ${({ active }) =>
     active &&
-    `
-    font-weight: 800;
-     background-color: gray;
-  `};
-  &:hover {
-    background-color: gray;
-  }
+    `font-weight: 800;
+     background-color: gray;`
+  };
 `;
 
-const CategoryList = ({ categoryList, selectedcategory }) => {
+const CategoryList = ({ posts, selectedCategory }) => {
+  const categoryList = useMemo(
+    () =>
+      posts.reduce(
+        ( list, { node: { frontmatter: { category } } } ) => {
+          if (!list.includes(category)) list.push(category);
+          return list;
+        }, ["All"]
+      ), []
+  );
+
   return (
     <Wrapper>
-      {categoryList.map((name) => (
+      {categoryList.map((category) => (
         <TagItem
-          to={`/?category=${name}`}
-          active={name === selectedcategory ? 1 : 0}
-          key={name}
+          to={category === "All" ? `/` : `/?category=${category}`}
+          active={category === selectedCategory ? 1 : 0}
+          key={category}
         >
-          &#9654;&nbsp;&nbsp;&nbsp;{name}
+          &#9654;&nbsp;&nbsp;&nbsp;{category}
         </TagItem>
       ))}
     </Wrapper>

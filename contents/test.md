@@ -2,6 +2,7 @@
 date: "2021-08-17"
 title: "Test"
 category: "Web"
+categoryColor: "indianred"
 tags: ["React", "DB"]
 thumbnail: "./test.png"
 ---
