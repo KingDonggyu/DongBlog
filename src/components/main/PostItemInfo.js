@@ -12,16 +12,16 @@ const Wrapper = styled.div`
   color: white;
 `;
 
-const Title = styled.h1`
-  @media (max-width: 768px) {
-    font-size: 20px;
+const Title = styled.h2`
+  @media (max-width: 1100px) {
+    font-size: 15px;
   }
 `;
 
 const Date = styled.div`
   color: darkgray;
   text-align: right;
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     font-size: 10px;
   }
 `;

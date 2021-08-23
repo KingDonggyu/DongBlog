@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
 `;
 
-const TagItem = styled(Link)`
+const CategoryItem = styled(Link)`
   padding: 10px;
   padding-left: 30px;
   font-size: 18px;
@@ -37,13 +37,13 @@ const CategoryList = ({ posts, selectedCategory }) => {
   return (
     <Wrapper>
       {categoryList.map((category) => (
-        <TagItem
+        <CategoryItem
           to={category === "All" ? `/` : `/?category=${category}`}
           active={category === selectedCategory ? 1 : 0}
           key={category}
         >
           &#9654;&nbsp;&nbsp;&nbsp;{category}
-        </TagItem>
+        </CategoryItem>
       ))}
     </Wrapper>
   );

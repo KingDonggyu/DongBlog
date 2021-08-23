@@ -10,6 +10,10 @@ const FooterWrapper = styled.div`
   font-size: 15px;
   text-align: center;
   line-height: 1.5;
+  @media (max-width: 1100px) {
+    
+    padding: 15px;
+  }
 `;
 
 const Footer = () => {

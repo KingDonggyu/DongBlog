@@ -5,32 +5,45 @@ import styled from "styled-components";
 import Template from "../components/common/Template";
 import PostHead from "../components/post/PostHead";
 import PostContent from "../components/post/PostContent";
+import CommentWidget from "../components/post/CommentWidget";
 
 const Container = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 `;
 
-const Wrapper = styled.div`
+const ContentWrapper = styled.div`
+  background-color: white;
   display: flex;
   flex-direction: column;
   width: 900px;
-  margin-top: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);  
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
 `;
 
-const PostTemplate = ({ data: { allMarkdownRemark: { edges } } }) => {
-  const { node: { html, frontmatter } } = edges[0];
+const PostTemplate = ({ data, location }) => {
+  const {
+    node: { html, frontmatter },
+  } = data.allMarkdownRemark.edges[0];
 
   return (
-    <Template>
+    <Template
+      title={frontmatter.title}
+      description={frontmatter.title}
+      url={location.href}
+      image={frontmatter.thumbnail.publicURL}
+    >
       <Container>
-        <Wrapper>
+        <ContentWrapper>
           <PostHead {...frontmatter} />
           <PostContent html={html} />
-        </Wrapper>
+          <CommentWidget />
+        </ContentWrapper>
       </Container>
     </Template>
   );
@@ -56,6 +69,7 @@ export const queryMarkdownDataBySlug = graphql`
                   ...GatsbyImageSharpFluid_withWebp
                 }
               }
+              publicURL
             }
           }
         }

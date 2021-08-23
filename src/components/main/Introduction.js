@@ -44,7 +44,7 @@ const Introduction = ({ profileImage }) => {
         <ProfileImage profileImage={profileImage} />
         <IconWrapper>
           <a href="https://github.com/KingDonggyu" target="_blank">
-            <AiFillGithub size="40" />
+            <AiFillGithub href="https://github.com/KingDonggyu" size="40" />
           </a>
           <a href="https://www.instagram.com/dgyu20/" target="_blank">
             <AiOutlineInstagram size="40" />

@@ -7,18 +7,20 @@ import Template from "../components/common/Template";
 import SideBar from "../components/main/SideBar";
 import PostList from "../components/main/PostList";
 
-
 const Content = styled.div`
   padding-left: 400px;
   padding-right: 25px;
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     padding: 0 !important;
   }
 `;
 
 const IndexPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
+  const { publicURL, childImageSharp } = data.file;
+  const { title, description, siteUrl } = data.site.siteMetadata;
   const parsed = queryString.parse(location.search);
+
   const selectedTag =
     typeof parsed.tag !== "string" || !parsed.tag ? "All" : parsed.tag;
   const selectedCategory =
@@ -27,12 +29,17 @@ const IndexPage = ({ data, location }) => {
       : parsed.category;
 
   return (
-    <Template>
+    <Template
+      title={title}
+      description={description}
+      url={siteUrl}
+      image={publicURL}
+    >
       <SideBar
         posts={posts}
         selectedTag={selectedTag}
         selectedCategory={selectedCategory}
-        profileImage={data.file.childImageSharp.fluid}
+        profileImage={childImageSharp.fluid}
       />
       <Content>
         <PostList
@@ -49,6 +56,13 @@ export default IndexPage;
 
 export const queryPostList = graphql`
   query queryPostList {
+    site {
+      siteMetadata {
+        title
+        description
+        siteUrl
+      }
+    }
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
     ) {
@@ -81,6 +95,7 @@ export const queryPostList = graphql`
       }
     }
     file(name: { eq: "profile-image" }) {
+      publicURL
       childImageSharp {
         fluid(maxWidth: 130, maxHeight: 130, fit: INSIDE, quality: 100) {
           ...GatsbyImageSharpFluid_withWebp

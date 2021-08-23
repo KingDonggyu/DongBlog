@@ -4,21 +4,23 @@ import styled from "styled-components";
 import PostItemHead from "../main/PostItemHead";
 
 const Wrapper = styled.div`
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 `;
 
-const Category = styled.span``;
-
-const Tag = styled.span``;
-
-const Date = styled.div``;
+const Date = styled.div`
+  color: lightgray;
+`;
 
 const PostHeadInfo = ({ date, category, categoryColor, tags }) => {
   return (
     <Wrapper>
-      <PostItemHead category={category} categoryColor={categoryColor} tags={tags} />
-      <Date>{date}</Date>
+      <PostItemHead
+        category={category}
+        categoryColor={categoryColor}
+        tags={tags}
+      />
+      <Date>Posted {date}</Date>
     </Wrapper>
   );
 };

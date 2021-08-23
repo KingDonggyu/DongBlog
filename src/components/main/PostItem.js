@@ -16,7 +16,7 @@ const Wrapper = styled(Link)`
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     background-color: #606163;
   }
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     flex: none;
     height: 130px;
   }
@@ -27,7 +27,7 @@ const ThumbnailImage = styled(Img)`
   height: 100%;
   margin-right: 30px;
   border-radius: 5px;
-  @media (max-width: 768px) {
+  @media (max-width: 1100px) {
     width: 70px;
     height: 60px;
     margin-right: 15px;

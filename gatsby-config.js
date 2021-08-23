@@ -1,13 +1,21 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Dong Blog`,
+    description: `KingDonggyu의 개발 블로그`,
+    author: `KingDonggyu`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`, // Gatsby의 기본적인 이미지 처리 과정의 효율성을 이용해 더욱 높은 사용자 경험을 제공
+    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-canonical-urls",
+      options: {
+        siteUrl: "<https://my-website.com/>",
+        stripQueryString: true,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
