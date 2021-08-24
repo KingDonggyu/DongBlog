@@ -67,6 +67,12 @@ module.exports = {
               rel: "nofollow",
             },
           },
+          {
+            resolve: "gatsby-plugin-robots-txt",
+            options: {
+              policy: [{ userAgent: "*", allow: "/" }],
+            },
+          },
         ],
       },
     },
