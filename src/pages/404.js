@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import GlobalStyle from "components/Common/GlobalStyle";
+import GlobalStyle from "components/common/GlobalStyle";
 
 const NotFoundPageWrapper = styled.div`
   display: flex;
