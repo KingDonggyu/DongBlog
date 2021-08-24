@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { graphql } from "gatsby";
 import queryString from "query-string";
 
-import Template from "../components/common/Template";
-import SideBar from "../components/main/SideBar";
-import PostList from "../components/main/PostList";
+import Template from "../components/Common/Template";
+import SideBar from "../components/Main/SideBar";
+import PostList from "../components/Main/PostList";
 
 const Content = styled.div`
   padding-left: 400px;
