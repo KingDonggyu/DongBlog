@@ -3,7 +3,7 @@ module.exports = {
     title: `Dong Blog`,
     description: `KingDonggyu의 개발 블로그`,
     author: `KingDonggyu`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://dongblog.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
