@@ -9,6 +9,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`, // Gatsby의 기본적인 이미지 처리 과정의 효율성을 이용해 더욱 높은 사용자 경험을 제공
     `gatsby-plugin-sitemap`,
+    "gatsby-plugin-styled-components",
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -43,8 +46,6 @@ module.exports = {
         path: `${__dirname}/static`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-transformer-remark`, // 마크다운 문법을 HTML 형태로 변환해주어 띄워줄 수 있도록 해주는 핵심 라이브러리
       options: {
