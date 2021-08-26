@@ -32,6 +32,7 @@ const IndexPage = ({ data, location }) => {
     <Template
       title={title}
       description={description}
+      author={author}
       url={siteUrl}
       image={publicURL}
     >
@@ -60,6 +61,7 @@ export const queryPostList = graphql`
       siteMetadata {
         title
         description
+        author
         siteUrl
       }
     }

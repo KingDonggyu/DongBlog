@@ -11,7 +11,7 @@ const Container = styled.main`
   height: 100%;
 `;
 
-const Template = ({ title, description, url, image, children }) => {
+const Template = ({ title, description, author, url, image, children }) => {
   return (
     <Container>
       <Helmet>
@@ -32,8 +32,8 @@ const Template = ({ title, description, url, image, children }) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        <meta name="twitter:site" content="@username" />
-        <meta name="twitter:creator" content="@username" />
+        <meta name="twitter:site" content={author} />
+        <meta name="twitter:creator" content={author} />
 
         <meta
           name="google-site-verification"

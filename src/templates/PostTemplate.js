@@ -37,6 +37,7 @@ const PostTemplate = ({ data, location }) => {
     <Template
       title={frontmatter.title}
       description={frontmatter.title}
+      author={frontmatter.author}
       url={location.href}
       image={frontmatter.thumbnail.publicURL}
     >
