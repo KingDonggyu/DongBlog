@@ -37,7 +37,7 @@ const Template = ({ title, description, url, image, children }) => {
 
         <meta
           name="google-site-verification"
-          content="웹 마스터 도구가 제공하는 Meta 태그"
+          content="f3Mya8LMc4Alx-vjefQkVS_N37dURfHeHWkzkc6unBk"
         />
 
         <html lang="ko" />
