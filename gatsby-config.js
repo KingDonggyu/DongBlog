@@ -83,6 +83,8 @@ module.exports = {
           },
           {
             resolve: "gatsby-plugin-robots-txt",
+            host: 'https://dongblog.netlify.app/',
+            sitemap: 'https://dongblog.netlify.app/sitemap/sitemap-index.xml',
             options: {
               policy: [{ userAgent: "*", allow: "/" }],
             },
