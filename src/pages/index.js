@@ -18,7 +18,7 @@ const Content = styled.div`
 const IndexPage = ({ data, location }) => {
   const posts = data.allMarkdownRemark.edges;
   const { publicURL, childImageSharp } = data.file;
-  const { title, description, siteUrl } = data.site.siteMetadata;
+  const { title, description, author, siteUrl } = data.site.siteMetadata;
   const parsed = queryString.parse(location.search);
 
   const selectedTag =
