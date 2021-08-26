@@ -1,18 +1,31 @@
 module.exports = {
   siteMetadata: {
-    title: `Dong Blog`,
+    title: `동 블로그`,
     description: `KingDonggyu의 개발 블로그`,
     author: `KingDonggyu`,
-    siteUrl: `https://dongblog.netlify.app/`,
+    siteUrl: `https://dong-blog.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`, // Gatsby의 기본적인 이미지 처리 과정의 효율성을 이용해 더욱 높은 사용자 경험을 제공
     `gatsby-plugin-sitemap`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "동 블로그 by KingDonggyu",
+        short_name: "동 블로그",
+        start_url: "/",
+        background_color: "#3c3c3c",
+        theme_color: "#3c3c3c",
+        display: "standalone",
+        icon: "src/images/icon.png",
+        crossOrigin: `use-credentials`,
+      },
+    },
+    {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: "<https://my-website.com/>",
+        siteUrl: "<https://dong-blog.com/>",
         stripQueryString: true,
       },
     },
