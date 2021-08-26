@@ -33,6 +33,14 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-robots-txt",
+      host: "https://dongblog.netlify.app/",
+      sitemap: "https://dongblog.netlify.app/sitemap/sitemap-index.xml",
+      options: {
+        policy: [{ userAgent: "*", allow: "/" }],
+      },
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `contents`,
@@ -79,14 +87,6 @@ module.exports = {
             options: {
               target: "_blank",
               rel: "nofollow",
-            },
-          },
-          {
-            resolve: "gatsby-plugin-robots-txt",
-            host: 'https://dongblog.netlify.app/',
-            sitemap: 'https://dongblog.netlify.app/sitemap/sitemap-index.xml',
-            options: {
-              policy: [{ userAgent: "*", allow: "/" }],
             },
           },
         ],
