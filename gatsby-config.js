@@ -3,7 +3,7 @@ module.exports = {
     title: `동 블로그`,
     description: `KingDonggyu의 개발 블로그`,
     author: `KingDonggyu`,
-    siteUrl: `https://dong-blog.com`,
+    siteUrl: `https://dongblog.netlify.app/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,7 +25,7 @@ module.exports = {
     {
       resolve: "gatsby-plugin-canonical-urls",
       options: {
-        siteUrl: "<https://dong-blog.com/>",
+        siteUrl: "https://dongblog.netlify.app/",
         stripQueryString: true,
       },
     },
