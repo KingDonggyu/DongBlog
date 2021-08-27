@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
 import GlobalStyle from "./GlobalStyle";
 import Footer from "./Footer";
+import Loading from "./Loading";
 
 const Container = styled.main`
   display: flex;
@@ -12,6 +13,12 @@ const Container = styled.main`
 `;
 
 const Template = ({ title, description, author, url, image, children }) => {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+  }, []);
+
   return (
     <Container>
       <Helmet>
@@ -47,7 +54,7 @@ const Template = ({ title, description, author, url, image, children }) => {
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />
-      {children}
+      {loading ? <Loading /> : children}
       <Footer />
     </Container>
   );
