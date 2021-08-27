@@ -39,6 +39,10 @@ const Template = ({ title, description, author, url, image, children }) => {
           name="google-site-verification"
           content="f3Mya8LMc4Alx-vjefQkVS_N37dURfHeHWkzkc6unBk"
         />
+        <meta
+          name="naver-site-verification"
+          content="74125e36a70f1d4271d8f0fa737eeb91ba7a4492"
+        />
 
         <html lang="ko" />
       </Helmet>
