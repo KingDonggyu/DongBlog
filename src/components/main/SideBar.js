@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
-import { FaAngleDoubleDown } from "react-icons/fa";
 
 import Introduction from "./Introduction";
 import CategoryList from "./CategoryList";
 import TagList from "./TagList";
+import ResponsiveArrow from "./ResponsiveArrow";
 
 const Background = styled.div`
   height: 100%;
@@ -37,33 +37,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const ResponsiveArrow = styled.div`
-  display: none;
-  position: relative;
-  text-align: center;
-  top: 20px;
-  margin-bottom: 30px;
-  animation-duration: 1s;
-  animation-name: slideDown;
-  animation-iteration-count: infinite;
-  @keyframes slideDown {
-    to {
-      top: 30px;
-    }
-  }
-  @media (max-width: 1100px) {
-    display: block;
-  }
-`;
-
 const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
+  const scrollBox = useRef(null);
+
   return (
     <Background>
-      <Wrapper>
+      <Wrapper ref={scrollBox}>
         <Introduction profileImage={profileImage} />
-        <ResponsiveArrow>
-          <FaAngleDoubleDown size="30" />
-        </ResponsiveArrow>
+        <ResponsiveArrow scrollBox={scrollBox} />
         <CategoryList posts={posts} selectedCategory={selectedCategory} />
         <TagList posts={posts} selectedTag={selectedTag} />
       </Wrapper>
