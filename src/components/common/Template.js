@@ -42,6 +42,11 @@ const Template = ({ title, description, author, url, image, children }) => {
         <meta name="twitter:site" content={author} />
         <meta name="twitter:creator" content={author} />
 
+        <meta name="NaverBot" content="All" />
+        <meta name="NaverBot" content="index,follow" />
+        <meta name="Yeti" content="All" />
+        <meta name="Yeti" content="index,follow" />
+
         <meta
           name="google-site-verification"
           content="f3Mya8LMc4Alx-vjefQkVS_N37dURfHeHWkzkc6unBk"
