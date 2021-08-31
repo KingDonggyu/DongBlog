@@ -54,7 +54,7 @@ DOM이란?
 - DOM은 tree 형태라서 특정 node를 찾거나 수정, 제거, 삽입할 수 있다.
 
 <div style='text-align: center'>
-    <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/7f024df4-240f-455d-ae26-2d51fe64c916/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210828%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210828T051528Z&X-Amz-Expires=86400&X-Amz-Signature=208146fbaa3c1e44733ec266a261c60b34167d3e0b8c4acd579bc6fce193d3c2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22" width="300">
+    <img src="https://blog.kakaocdn.net/dn/TlI8v/btqJlrNH1AP/DuqFSsbSFWKS9LAkdIch7K/img.png" width="300">
 </div>
 
 <br />
@@ -70,7 +70,7 @@ React에서 data가 변하여 웹 브라우저에 실제 DOM을 업데이트할 
 3. **바뀐 부분만 실제 DOM에 적용한다.**
 
 <div style='text-align: center'>
-    <img src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/bf0e248d-41ed-4970-a421-4402e6086aec/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20210828%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20210828T052214Z&X-Amz-Expires=86400&X-Amz-Signature=5cf72dcbd2cc34f0c08898baf2edc3bb041b0818f8dd2c880c1a06dbb5800d37&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22" width="500">
+    <img src="https://miro.medium.com/max/1133/1*7TbnSCNbeUf4CofnJ6_rlA.png" width="500">
 </div>
 
 <br />
