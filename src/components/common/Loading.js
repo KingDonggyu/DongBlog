@@ -33,7 +33,7 @@ const LoadingText = styled.h1`
 const Loading = () => {
   return (
     <Wrapper>
-      <LoadingLogo src={Logo} alt="Main Logo" />
+      {/* <LoadingLogo src={Logo} alt="Main Logo" /> */}
       <LoadingText>Loading..</LoadingText>
     </Wrapper>
   );
