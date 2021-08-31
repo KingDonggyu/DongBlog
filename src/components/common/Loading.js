@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import Logo from "../../../static/icon.png";
-
 const Wrapper = styled.div`
   height: 100%;
   display: flex;
@@ -11,30 +9,28 @@ const Wrapper = styled.div`
   align-items: center;
 `;
 
-const LoadingLogo = styled.img`
-  width: 150px;
-  height: 150px;
+const Spinner = styled.div`
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  animation-duration: 2s;
-  animation-name: rotation;
-  animation-iteration-count: infinite;
-  @keyframes rotation {
-    to {
-      transform: rotate(360deg);
-    }
-  }
+  border: 8px solid transparent;
+  border-top-color: white;
+  border-bottom-color: white;
+  animation: spinner .8s ease infinite;
+  @keyframes spinner {
+  from {transform: rotate(0deg); }
+  to {transform: rotate(360deg);}
+}
 `;
 
 const LoadingText = styled.h1`
   color: white;
-  margin-top: 30px;
 `;
 
 const Loading = () => {
   return (
     <Wrapper>
-      {/* <LoadingLogo src={Logo} alt="Main Logo" /> */}
-      <LoadingText>Loading..</LoadingText>
+      <Spinner />
     </Wrapper>
   );
 };
