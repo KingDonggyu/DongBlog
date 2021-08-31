@@ -59,8 +59,14 @@ const Template = ({ title, description, author, url, image, children }) => {
         <html lang="ko" />
       </Helmet>
       <GlobalStyle />
-      {loading ? <Loading /> : children}
-      <Footer />
+      {loading ? (
+        <Loading />
+      ) : (
+        <>
+          {children}
+          <Footer />
+        </>
+      )}
     </Container>
   );
 };
