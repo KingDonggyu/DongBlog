@@ -1,5 +1,5 @@
 ---
-date: "2021-08-28"
+date: "2021-08-29"
 title: "[React] 컴포넌트 (props, state)"
 category: "Web"
 categoryColor: "indianred"
