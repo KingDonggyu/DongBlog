@@ -58,6 +58,7 @@ const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 5px 15px;
     border-left: 2px solid #000000;
+    background-color: #ffffce;
     font-weight: 800;
   }
 
@@ -85,6 +86,7 @@ const MarkdownRenderer = styled.div`
     margin: 30px 0;
     padding: 15px;
     font-size: 15px;
+    tab-size: 2;
 
     ::-webkit-scrollbar-thumb {
       background: rgba(255, 255, 255, 0.5);
@@ -92,9 +94,10 @@ const MarkdownRenderer = styled.div`
     }
   }
 
-  code[class*="language-"],
-  pre[class*="language-"] {
+  code[class*="language-"] {
     tab-size: 2;
+    padding: 5px;
+    font-size: 15px;
   }
 
   // Markdown Responsive Design
