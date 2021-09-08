@@ -96,8 +96,8 @@ const MarkdownRenderer = styled.div`
 
   code[class*="language-"] {
     tab-size: 2;
-    padding: 5px;
-    font-size: 15px;
+    padding: 1px 3px;
+    font-size: 13px;
   }
 
   // Markdown Responsive Design
