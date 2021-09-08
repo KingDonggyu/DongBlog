@@ -4,7 +4,6 @@ const NUMBER_OF_ITEMS_PER_PAGE = 10;
 
 const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
   const containerRef = useRef(null);
-  const observer = useRef(null);
   const [count, setCount] = useState(1);
 
   const postListData = useMemo(
@@ -27,13 +26,14 @@ const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
     [selectedCategory, selectedTag]
   );
 
-  useEffect(() => {
-    observer.current = new IntersectionObserver((entries, observer) => {
-      if (!entries[0].isIntersecting) return; // 화면에 노출되었는지 확인
-      setCount((value) => value + 1);
-      observer.unobserve(entries[0].target); // 관측중인 객체만 관측 중지
-    });
-  }, []);
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      if (!entries[0].isIntersecting) return;
+
+      setCount(value => value + 1);
+      observer.disconnect();
+    },
+  );
 
   // 카테고리나 태그 선택이 변경된 경우 count 값 1로 변경
   useEffect(() => setCount(1), [selectedCategory, selectedTag]);
