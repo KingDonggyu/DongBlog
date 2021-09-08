@@ -12,7 +12,7 @@ const Background = styled.div`
   width: 100%;
   padding: 30px;
   @media (max-width: 1100px) {
-    padding: 30px 12px;
+    padding: 30px 12px 10px 12px;
   }
 `;
 
