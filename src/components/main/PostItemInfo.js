@@ -15,6 +15,7 @@ const Wrapper = styled.div`
 const Title = styled.h2`
   @media (max-width: 1100px) {
     font-size: 15px;
+    margin: 7px 0 15px 0;
   }
 `;
 

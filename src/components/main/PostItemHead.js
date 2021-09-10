@@ -17,6 +17,7 @@ const Category = styled(Link)`
   border-radius: 4px;
   padding: 3px 5px;
   font-weight: 700;
+  height: 20px;
   ${({ color }) => `background-color: ${color};`}
   &:hover {
     color: black;
@@ -25,6 +26,8 @@ const Category = styled(Link)`
 
 const TagList = styled.div`
   display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 `;
 
 const TagItem = styled(Link)`
@@ -32,8 +35,9 @@ const TagItem = styled(Link)`
   align-items: center;
   border: 1px solid;
   border-radius: 4px;
-  margin-left: 10px;
+  margin: 0 0 10px 10px;
   padding: 3px 5px;
+  height: 20px;
   &:hover {
     color: black;
   }

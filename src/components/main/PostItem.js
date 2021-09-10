@@ -10,7 +10,7 @@ const Wrapper = styled(Link)`
   padding: 20px;
   height: 160px;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   border-bottom: 1px solid #606163;
   &:hover {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -18,7 +18,7 @@ const Wrapper = styled(Link)`
   }
   @media (max-width: 1100px) {
     flex: none;
-    height: 130px;
+    height: auto;
   }
 `;
 
