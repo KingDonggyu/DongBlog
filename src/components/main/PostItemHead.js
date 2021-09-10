@@ -17,10 +17,13 @@ const Category = styled(Link)`
   border-radius: 4px;
   padding: 3px 5px;
   font-weight: 700;
-  height: 20px;
+  height: max-content;
   ${({ color }) => `background-color: ${color};`}
   &:hover {
     color: black;
+  }
+  @media (max-width: 768px) {
+    height: 20px;
   }
 `;
 
@@ -37,9 +40,11 @@ const TagItem = styled(Link)`
   border-radius: 4px;
   margin: 0 0 10px 10px;
   padding: 3px 5px;
-  height: 20px;
   &:hover {
     color: black;
+  }
+  @media (max-width: 768px) {
+    height: 20px;
   }
 `;
 
