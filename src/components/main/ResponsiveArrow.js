@@ -7,13 +7,13 @@ const Wrapper = styled.div`
   position: relative;
   text-align: center;
   margin: 14px 0;
-  top: 15px;
+  top: 5px;
   animation-duration: 1s;
   animation-name: slideDown;
   animation-iteration-count: infinite;
   @keyframes slideDown {
     to {
-      top: 25px;
+      top: 15px;
     }
   }
   @media (max-width: 1100px) {
