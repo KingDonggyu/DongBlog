@@ -57,7 +57,7 @@ const MarkdownRenderer = styled.div`
   blockquote {
     margin: 30px 0;
     padding: 5px 15px;
-    border-left: 2px solid #000000;
+    border-left: 4px solid gray;
     background-color: #ffffce;
     font-weight: 800;
   }
@@ -98,6 +98,7 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
     padding: 1px 3px;
     font-size: 13px;
+    color: white;
   }
 
   // Markdown Responsive Design
