@@ -57,8 +57,8 @@ const Template = ({ title, description, author, url, image, children }) => {
         />
 
         <html lang="ko" />
-        <link rel="alternate" hrefLang="x-default" href="https://dongblog.netlify.app/" />
-        <link rel="alternate" hrefLang="ko" href="https://dongblog.netlify.app/" />
+        <link rel="alternate" hreflang="x-default" href="https://dongblog.netlify.app/" />
+        <link rel="alternate" hreflang="ko" href="https://dongblog.netlify.app/" />
       </Helmet>
       <GlobalStyle />
       {loading ? (
