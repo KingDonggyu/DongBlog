@@ -18,15 +18,15 @@ const MarkdownRenderer = styled.div`
 
   // Apply Padding Attribute to All Elements
   p {
-    padding: 3px 0;
+    padding: 10px 0;
   }
 
   // Adjust Heading Element Style
   h1,
   h2,
   h3 {
-    font-weight: 800;
-    margin-bottom: 30px;
+    font-weight: 700;
+    margin-bottom: 10px;
   }
 
   * + h1,
@@ -89,7 +89,7 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
 
     ::-webkit-scrollbar-thumb {
-      background: rgba(255, 255, 255, 0.5);
+      background: #313131;
       border-radius: 3px;
     }
   }
@@ -98,7 +98,6 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
     padding: 1px 3px;
     font-size: 13px;
-    color: white;
   }
 
   // Markdown Responsive Design
@@ -118,10 +117,6 @@ const MarkdownRenderer = styled.div`
 
     h3 {
       font-size: 17px;
-    }
-
-    img {
-      width: 100%;
     }
 
     hr {
