@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 13px;
+  font-size: 11px;
   @media (max-width: 768px) {
     font-size: 10px;
   }

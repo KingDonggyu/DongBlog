@@ -13,9 +13,9 @@ const Wrapper = styled.div`
 const TagItem = styled(Link)`
   border: 1px white solid;
   border-radius: 4px;
-  margin: 20px 20px 0 0;
+  margin: 10px 10px 0 0;
   padding: 3px 5px;
-  font-size: 14px;
+  font-size: 11px;
   cursor: pointer;
   ${({ active }) =>
     active &&

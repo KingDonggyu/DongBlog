@@ -13,7 +13,7 @@ const Wrapper = styled.div`
 const CategoryItem = styled(Link)`
   padding: 10px;
   padding-left: 30px;
-  font-size: 18px;
+  font-size: 14px;
   cursor: pointer;
   &:hover { background-color: #737272; }
   ${({ active }) =>
