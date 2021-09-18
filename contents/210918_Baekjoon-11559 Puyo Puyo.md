@@ -68,7 +68,7 @@ RRYGG.
 
 BFS
 
-시뮬레이션
+Simulation
 
 # 💻 Language
 
