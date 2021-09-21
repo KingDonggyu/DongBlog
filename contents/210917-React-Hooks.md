@@ -306,7 +306,7 @@ useMemo 파트에서의 Average 컴포넌트에서 onChange와 onInsert라는 �
 ```jsx
 // Average.js
 
-import React, { useState, useMemo, **useCallback** } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 
 const getAverage = (numbers) => {
   console.log("평균값 계산 중..");
@@ -319,11 +319,11 @@ const Average = () => {
   const [list, setList] = useState([]);
   const [number, setNumber] = useState("");
 
-  **const onChange = useCallback(e => {
+  const onChange = useCallback(e => {
     setNumber(e.target.value);
   }, []); // 컴포넌트가 처음 렌더링될 때만 함수 생성**
 
-  **const onInsert = useCallback(e => {
+  const onInsert = useCallback(e => {
     const nextList = list.concat(parseInt(number));
     setList(nextList);
     setNumber("");
