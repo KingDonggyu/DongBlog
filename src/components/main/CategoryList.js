@@ -28,21 +28,23 @@ const CategoryList = ({ posts, selectedCategory }) => {
     () =>
       posts.reduce(
         ( list, { node: { frontmatter: { category } } } ) => {
-          if (!list.includes(category)) list.push(category);
+          if (list[category] === undefined) list[category] = 1;
+          else list[category]++;
+          list['All']++;
           return list;
-        }, ["All"]
+        }, { All: 0 }
       ), []
   );
 
   return (
     <Wrapper>
-      {categoryList.map((category) => (
+      {Object.entries(categoryList).map(([name, count]) => (
         <CategoryItem
-          to={category === "All" ? `/` : `/?category=${category}`}
-          active={category === selectedCategory ? 1 : 0}
-          key={category}
+          to={name === "All" ? `/` : `/?category=${name}`}
+          active={name === selectedCategory ? 1 : 0}
+          key={name}
         >
-          &#9654;&nbsp;&nbsp;&nbsp;{category}
+          &#9654;&nbsp;&nbsp;&nbsp;{name}&nbsp;&nbsp;({count})
         </CategoryItem>
       ))}
     </Wrapper>
