@@ -2,4 +2,4 @@
 
 ### Developed with GatsbyJS
 
-**Blog Website**: https://dongblog.netlify.app/
+https://dongblog.netlify.app/
