@@ -1,3 +1,5 @@
-# KingDonggyu's Engineering Blog (developed with GatsbyJS) 
+# KingDonggyu's Engineering Blog
 
-### Blog Website: https://dongblog.netlify.app/
+### Developed with GatsbyJS
+
+**Blog Website**: https://dongblog.netlify.app/
