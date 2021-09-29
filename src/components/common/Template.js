@@ -39,8 +39,8 @@ const Template = ({ title, description, author, url, image, children }) => {
         <meta name="twitter:title" content={title} />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={image} />
-        <meta name="twitter:site" content={author} />
-        <meta name="twitter:creator" content={author} />
+        <meta name="twitter:site" content="@KingDonggyu" />
+        <meta name="twitter:creator" content="@KingDonggyu" />
 
         <meta name="NaverBot" content="All" />
         <meta name="NaverBot" content="index,follow" />
@@ -56,9 +56,11 @@ const Template = ({ title, description, author, url, image, children }) => {
           content="74125e36a70f1d4271d8f0fa737eeb91ba7a4492"
         />
 
+        <link rel="canonical" href={url} />
+        <link rel="alternate" hreflang="x-default" href={url} />
+        <link rel="alternate" hreflang="ko" href={url} />
+
         <html lang="ko" />
-        <link rel="alternate" hreflang="x-default" href="https://dongblog.netlify.app/" />
-        <link rel="alternate" hreflang="ko" href="https://dongblog.netlify.app/" />
       </Helmet>
       <GlobalStyle />
       {loading ? (
