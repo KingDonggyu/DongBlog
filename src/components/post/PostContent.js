@@ -29,10 +29,13 @@ const MarkdownRenderer = styled.div`
     margin-bottom: 10px;
   }
 
-  * + h1,
+  * + h1 {
+    margin-top: 80px;
+  }
+
   * + h2,
   * + h3 {
-    margin-top: 80px;
+    margin-top: 60px;
   }
 
   hr + h1,
