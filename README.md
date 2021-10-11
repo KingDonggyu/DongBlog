@@ -1,3 +1,3 @@
-# KingDonggyu's Engineering Blog (powered by Gatsby)
+## KingDonggyu's Engineering Blog (powered by Gatsby)
 
 https://dongblog.netlify.app/
