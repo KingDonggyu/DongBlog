@@ -31,7 +31,7 @@ const Wrapper = styled.div`
   background: #606163;
   border-radius: 7px;
   box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px;
-  overflow-y: scroll;
+  overflow-y: auto;
   @media (max-width: 1100px) {
     width: 90%;
   }
