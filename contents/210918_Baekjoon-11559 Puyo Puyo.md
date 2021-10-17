@@ -4,7 +4,7 @@ title: "[Baekjoon] 11559번: Puyo Puyo"
 category: "Algorithm"
 categoryColor: "#6196cc"
 tags: ["Baekjoon", "Python", "BFS", "Simulation"]
-thumbnail: "./images/Baekjoon.jpeg"
+thumbnail: "./images/Baekjoon.png"
 ---
 
 # 문제
