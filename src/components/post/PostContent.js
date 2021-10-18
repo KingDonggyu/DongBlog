@@ -35,7 +35,7 @@ const MarkdownRenderer = styled.div`
 
   * + h2,
   * + h3 {
-    margin-top: 60px;
+    margin-top: 30px;
   }
 
   hr + h1,
@@ -75,7 +75,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Horizontal Rule style
   hr {
     border: 1px solid #000000;
-    margin: 50px 0;
+    margin: 10px 0 50px 0;
     border-color: gray;
   }
 
@@ -87,7 +87,7 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Code Style
   pre[class*="language-"] {
-    margin: 30px 0;
+    margin: 10px 0;
     padding: 15px;
     font-size: 15px;
     tab-size: 2;

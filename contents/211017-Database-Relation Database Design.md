@@ -173,5 +173,5 @@ thumbnail: "./images/DB.png"
 ## ER과 Relational Model 간의 대응
 
 <div style="text-align: center">
-       <img src="./images/inContent/CorrespondenceERtoRelational.png">
+  <img src="./images/inContent/CorrespondenceERtoRelational.png">
 </div>
