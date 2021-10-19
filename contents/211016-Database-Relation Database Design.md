@@ -1,5 +1,5 @@
 ---
-date: "2021-10-17"
+date: "2021-10-16"
 title: "[Database] Relation Database Design"
 category: "Data Science"
 categoryColor: "mediumseagreen"
