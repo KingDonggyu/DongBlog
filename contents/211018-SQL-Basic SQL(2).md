@@ -1,5 +1,5 @@
 ---
-date: "2021-10-17"
+date: "2021-10-18"
 title: "[SQL] Basic SQL (2) - INSERT, DELETE, UPDATE"
 category: "Data Science"
 categoryColor: "mediumseagreen"
