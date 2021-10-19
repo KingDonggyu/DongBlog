@@ -3,29 +3,26 @@ date: "2021-10-19"
 title: "[SQL] Complex Queries"
 category: "Data Science"
 categoryColor: "mediumseagreen"
-tags: ["DB", "SQL"]
+tags: ["DB", "SQL", "Oracle"]
 thumbnail: "./images/SQL.png"
 ---
 
-# 더 복잡한 SQL 검색 쿼리
-
-<hr />
-
 > 여러 기능을 통해 사용자는 데이터베이스에서 더 복잡하고 흥미로운 검색을 수행할 수 있다.
 
-- Nested queries (중첩 질의)
+- **Nested queries** (중첩 질의)
 
-- Joined tables (Natural Join)
+- **JOIN** 
 
-- FROM clause의 외부 Join
+- **Grouping**
 
-- Views (Derived Tables), Assertions, Triggers
+- **VIEW**
 
-- Aggregate functions (집계 함수)
+- **Assertion & Trigger**
 
-- Grouping
 
-## NULL & Three-Valued Logic
+# NULL & Three-Valued Logic
+
+<hr />
 
 > SQL 은 three-valued logic을 사용한다.
 
@@ -48,8 +45,11 @@ thumbnail: "./images/SQL.png"
   ```
 
 <br />
+<br />
 
-## Nested Queries (중첩 질의)
+# Nested Queries (중첩 질의)
+
+<hr />
 
 > 외부 쿼리라고 하는 다른 쿼리의 WHERE clause 내에서 (중첩) 하위 쿼리 또는 내부 쿼리라고 하는 완전한 select-from-where 블록이 있을 수 있다.
 
@@ -129,8 +129,11 @@ WHERE (Pno, Hours) IN (
   - **correlated nested query (상호 연관된 중첩 질의)** : 외부 쿼리의 각 튜플에 대해 한 번씩 평가된다.
 
 <br />
+<br />
 
-## SQL의 (NOT) EXISTS 함수
+# SQL의 (NOT) EXISTS 함수
+
+<hr />
 
 > **correlated nested query**의 결과가 ‘not empty’ 또는 ‘empty’ 인지 확인한다.
 
@@ -185,8 +188,11 @@ WHERE NOT EXISTS (
 ```
 
 <br />
+<br />
 
-## SQL에서의 Explicit Sets
+# SQL에서의 Explicit Sets
+
+<hr />
 
 WHERE clause에서 **explicit set of values** (명시적 값 집합)을 사용할 수 있다.
 
@@ -197,8 +203,11 @@ WHERE Pno IN (1, 2, 3);
 ```
 
 <br />
+<br />
 
-## Join
+# Join
+
+<hr />
 
 > Join이란 여러 테이이블에 흩어져 있는 정보 중 사용자가 필요한 정보만 가져와서 가상의 테이블처럼 만들어 결과를 보여주는 것으로 2개의 테이블을 조합하여 하나의 열로 표현하는 것이다.
 
@@ -288,8 +297,11 @@ WHERE Plocation = 'Stafford';
 ```
 
 <br />
+<br />
 
-## Grouping
+# Grouping
+
+<hr />
 
 ### Aggregate Functions in SQL
 
@@ -350,8 +362,11 @@ HAVING COUNT(*) > 2;
 ```
 
 <br />
+<br />
 
 # WITH Clause
+
+<hr />
 
 > **특정** 쿼리에서만 사용되는 (임시) 테이블을 정의할 수 있다.
 
@@ -372,8 +387,11 @@ GROUP BY e.Dno;
 ```
 
 <br />
+<br />
 
-## CASE Clause
+# CASE Clause
+
+<hr />
 
 > "특정 조건"에 따라 값이 다를 수 있는 경우 사용한다. 값이 예상되는 SQL 쿼리의 모든 부분에서 사용할 수 있다.
 
@@ -388,8 +406,11 @@ CASE WHEN Dno = 5 THEN Salary + 2000
 ```
 
 <br />
+<br />
 
-## Recursive Queries in SQL
+# Recursive Queries in SQL
+
+<hr />
 
 > 동일한 유형의 튜플 간의 관계를 추적하는 데 사용할 수 있다. (ex. employee vs supervisor)
 

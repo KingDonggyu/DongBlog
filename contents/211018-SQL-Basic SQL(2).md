@@ -3,7 +3,7 @@ date: "2021-10-18"
 title: "[SQL] Basic SQL (2) - INSERT, DELETE, UPDATE"
 category: "Data Science"
 categoryColor: "mediumseagreen"
-tags: ["DB", "SQL"]
+tags: ["DB", "SQL", "Oracle"]
 thumbnail: "./images/SQL.png"
 ---
 

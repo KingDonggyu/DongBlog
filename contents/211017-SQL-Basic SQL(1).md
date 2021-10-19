@@ -3,7 +3,7 @@ date: "2021-10-17"
 title: "[SQL] Basic SQL (1) - CREATE, SELECT"
 category: "Data Science"
 categoryColor: "mediumseagreen"
-tags: ["DB", "SQL"]
+tags: ["DB", "SQL", "Oracle"]
 thumbnail: "./images/SQL.png"
 ---
 
