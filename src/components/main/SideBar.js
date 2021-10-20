@@ -27,7 +27,7 @@ const Wrapper = styled.div`
   color: white;
   height: 90%;
   width: 350px;
-  padding: 30px 0;
+  padding: 30px 0 0 0;
   background: #606163;
   border-radius: 7px;
   box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px;
