@@ -43,7 +43,7 @@ ER 다이어그램에서 **Entity Type**은 **사각형**으로 표현한다.
 
 - **Composite (합성) Attribute**
 
-      **Attribute**는 여러 Attribue로 구성될 수 있다.
+  **Attribute**는 여러 Attribue로 구성될 수 있다.
 
   <div style="text-align: center">
       <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FblZNcq%2FbtqC3PnZXRq%2FjKcMetCrjgkSV4pkuCKPB0%2Fimg.png">
