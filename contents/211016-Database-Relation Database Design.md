@@ -2,7 +2,7 @@
 date: "2021-10-16"
 title: "[Database] Relation Database Design"
 category: "Data Science"
-categoryColor: "mediumseagreen"
+categoryColor: "seagreen"
 tags: ["DB"]
 thumbnail: "./images/DB.png"
 ---

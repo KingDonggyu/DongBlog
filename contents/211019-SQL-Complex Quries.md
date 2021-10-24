@@ -2,9 +2,9 @@
 date: "2021-10-19"
 title: "[SQL] Complex Queries"
 category: "Data Science"
-categoryColor: "mediumseagreen"
+categoryColor: "seagreen"
 tags: ["DB", "SQL", "Oracle"]
-thumbnail: "./images/SQL.png"
+thumbnail: "./images/SQL.jpeg"
 ---
 
 > 여러 기능을 통해 사용자는 데이터베이스에서 더 복잡하고 흥미로운 검색을 수행할 수 있다.

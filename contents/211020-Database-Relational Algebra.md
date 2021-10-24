@@ -2,7 +2,7 @@
 date: "2021-10-20"
 title: "[Database] Relational Algebra"
 category: "Data Science"
-categoryColor: "mediumseagreen"
+categoryColor: "seagreen"
 tags: ["DB"]
 thumbnail: "./images/DB.png"
 ---

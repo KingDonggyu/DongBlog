@@ -2,7 +2,7 @@
 date: "2021-10-15"
 title: "[Database] ER Model"
 category: "Data Science"
-categoryColor: "mediumseagreen"
+categoryColor: "seagreen"
 tags: ["DB"]
 thumbnail: "./images/DB.png"
 ---

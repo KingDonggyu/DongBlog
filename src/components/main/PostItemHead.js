@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size: 11px;
+  font-size: 13px;
   @media (max-width: 768px) {
     font-size: 10px;
   }
@@ -16,7 +16,6 @@ const Category = styled(Link)`
   align-items: center;
   border-radius: 4px;
   padding: 3px 5px;
-  font-weight: 700;
   height: max-content;
   ${({ color }) => `background-color: ${color};`}
   &:hover {

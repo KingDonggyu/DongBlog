@@ -2,9 +2,9 @@
 date: "2021-10-18"
 title: "[SQL] Basic SQL (2) - INSERT, DELETE, UPDATE"
 category: "Data Science"
-categoryColor: "mediumseagreen"
+categoryColor: "seagreen"
 tags: ["DB", "SQL", "Oracle"]
-thumbnail: "./images/SQL.png"
+thumbnail: "./images/SQL.jpeg"
 ---
 
 # INSERT, DELETE, AND UPDATE STATEMENTS IN SQL

@@ -2,9 +2,9 @@
 date: "2021-10-17"
 title: "[SQL] Basic SQL (1) - CREATE, SELECT"
 category: "Data Science"
-categoryColor: "mediumseagreen"
+categoryColor: "seagreen"
 tags: ["DB", "SQL", "Oracle"]
-thumbnail: "./images/SQL.png"
+thumbnail: "./images/SQL.jpeg"
 ---
 
 # SQL 데이터 정의 및 데이터 유형
