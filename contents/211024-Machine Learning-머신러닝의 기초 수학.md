@@ -3,7 +3,7 @@ date: "2021-10-24"
 title: "[Machine Learning] 머신러닝의 기초 수학"
 category: "Data Science"
 categoryColor: "seagreen"
-tags: ["ML"]
+tags: ["AI", "ML"]
 thumbnail: "./images/ML.png"
 ---
 
@@ -213,3 +213,12 @@ thumbnail: "./images/ML.png"
   ```
 
   (라인 3~6을 한 번 반복하는 일을 한 세대라 부름)
+
+<br />
+<br />
+
+**Source:**
+
+📖 기계학습, 오일석, 2017
+
+📖 케라스 창시자에게 배우는..., 2018 (번역)

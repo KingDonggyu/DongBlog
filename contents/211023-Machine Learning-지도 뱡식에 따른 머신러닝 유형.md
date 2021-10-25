@@ -3,7 +3,7 @@ date: "2021-10-23"
 title: "[Machine Learning] 지도 방식에 따른 머신러닝 유형"
 category: "Data Science"
 categoryColor: "seagreen"
-tags: ["ML"]
+tags: ["AI", "ML"]
 thumbnail: "./images/ML.png"
 ---
 
@@ -48,3 +48,14 @@ thumbnail: "./images/ML.png"
 > 일부는 𝕏와 𝕐를 모두 가지지만 나머지는 𝕏만 가진 상황으로, 목표값이 표시된 데이터와 표시되지 않은 데이터를 모두 훈련에 사용하는 것을 말한다.
 
 **𝕏의 수집은 쉽지만, 𝕐는 수작업이 필요한 경우 유용하다.**
+
+<br />
+<br />
+
+**Source:**
+
+📖 핸즈온머신러닝, 2/E, 2020 (번역)
+
+📖 기계학습, 오일석, 2017
+
+📖 모두의 딥러닝, 2/E, 2020
