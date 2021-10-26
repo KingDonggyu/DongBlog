@@ -1,5 +1,5 @@
 ---
-date: "2021-10-25"
+date: "2021-10-24"
 title: "[Machine Learning] Regression (회귀)"
 category: "Data Science"
 categoryColor: "seagreen"

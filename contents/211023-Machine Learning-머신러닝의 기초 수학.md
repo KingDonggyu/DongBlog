@@ -1,5 +1,5 @@
 ---
-date: "2021-10-24"
+date: "2021-10-23"
 title: "[Machine Learning] 머신러닝의 기초 수학"
 category: "Data Science"
 categoryColor: "seagreen"

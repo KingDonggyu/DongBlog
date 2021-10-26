@@ -1,5 +1,5 @@
 ---
-date: "2021-10-25"
+date: "2021-10-24"
 title: "[Machine Learning] Decision Tree"
 category: "Data Science"
 categoryColor: "seagreen"
@@ -7,6 +7,14 @@ tags: ["AI", "ML"]
 thumbnail: "./images/ML.png"
 ---
 > Decision Tree (결정 트리)는 트리와 같은 결정 모델을 사용하는 결정 지원 도구이다. 조건부 제어 문을 포함하는 알고리즘을 표시한다.
+
+- 훈련방식에 따라 나누면 **지도학습**의 한 종류라 할 수 있다.
+
+- **Non-parametirc method**이다.
+
+- classification 문제와 regression 문제 모두에 자유롭게 적용 가능하다.
+
+<br />
 
 **Decision tree learning**
 
@@ -90,6 +98,8 @@ thumbnail: "./images/ML.png"
   - 결정 트리는 모델 파라미터가 없는 것이 아니라(보통 많다) **훈련되기 전에 파라미터 수가 결정되지 않는다.**
 
   - **훈련되기 전에 파라미터 수가 결정되지 않는다** => **Nonparametric case**
+
+  - **파라미터를 통해 모델 정확도를 조절할 수 없다.**
 
     모델 구조가 데이터에 맞춰져서 고정되지 않고 자유롭다.
 
