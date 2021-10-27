@@ -1,6 +1,6 @@
 ---
 date: "2021-10-27"
-title: "[Machine Learning] Clustering"
+title: "[Machine Learning] 비지도학습 - Clustering"
 category: "Data Science"
 categoryColor: "seagreen"
 tags: ["AI", "ML"]

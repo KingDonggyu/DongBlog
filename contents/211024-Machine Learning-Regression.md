@@ -1,6 +1,6 @@
 ---
 date: "2021-10-24"
-title: "[Machine Learning] Regression (회귀)"
+title: "[Machine Learning] Regression"
 category: "Data Science"
 categoryColor: "seagreen"
 tags: ["AI", "ML"]
