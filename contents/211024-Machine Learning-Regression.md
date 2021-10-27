@@ -108,7 +108,9 @@ thumbnail: "./images/ML.png"
 
 <br />
 
-## 오차수정 (잘못 그은 선 바로잡기)
+# 오차수정 (잘못 그은 선 바로잡기)
+
+<hr />
 
 - 일단 선을 그리고 ➡️ 조금씩 수정해 나가기
 
@@ -124,23 +126,76 @@ thumbnail: "./images/ML.png"
 
 > 적절한 기울기를 찾았을 때 오차가 최소화된다.
 
-### **학습률(learning rate)**
+## **학습률(learning rate)**
 
-> 선을 어느 만큼 이동시킬지를 신중히 결정해야 하는데, 이때 이동 거리를 정해주는 것
+> 선을 어느 만큼 이동시킬지를 신중히 결정해야 하는데, 이때 이동 거리를 정해주는 것을 학습률(learning rate)이라 한다.
+
+<div style="text-align: center">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FlPCKi%2FbtqE9KemmiM%2FFnnzdLjFMtfU1s5r5vdrc1%2Fimg.jpg" width="350">
+</div>
 
 - 학습률을 크게 설정하면 최적의 값을 제대로 찾지 못한다.
+
+<br />
+
+<div style="text-align: center">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJRSVw%2FbtqFa7TIFhh%2Fxs8LZb6AtHKmE1TNdjUCI1%2Fimg.jpg" width="350">
+</div>
 
 - 그렇다고 학습률을 작게 설정하면 최적의 값으로 수렴할 때까지 시간이 오래 걸린다.
 
 - 모델을 학습시킬 때는 효율적으로 파라미터를 조정하면서도 결국 최적의 값을 찾아 수렴할 수 있을 수준으로 최적의 학습률을 찾는 게 중요하다.
 
-### **경사하강법**
+## **경사하강법(Gradient Descent)**
 
-> 오차의 변화에 따라 이차 함수 그래프를 만들고 적절한 학습률을 설정해 미분 값이 0인 지점을 구하는 것
+> 오차의 변화에 따라 이차 함수 그래프를 만들고 적절한 학습률을 설정해 미분 값이 0인 지점을 구하는 것을 경사하강법(Gradient Descent)이라 한다.
 
-- 파라미터를 임의로 정한 다음에 조금씩 변화시켜가며 손실을 점점 줄여가는 방법으로 최적의 파라미터를 찾아간다.
+<div style="text-align: center">
+  <img src="https://thebook.io/img/080228/076_2.jpg" width="350">
+</div>
 
-- 미분을 사용한다.
+1. 임의의 점 a1에서 미분하여 기울기를 구한다.
+
+2. 구해진 기울기의 반대 방향(기울기가 +면 음의 방향, -면 양의 방향)으로 얼마간 이동시킨 a2에서 미분하여 기울기 구한다.
+
+3. 미분 값이 0이 될 때 까지 왔다갔다하며 반복한다.
+
+**➡️ 파라미터를 임의로 정한 다음에 조금씩 변화시켜가며 손실을 점점 줄여가는 방법으로 최적의 파라미터를 찾아간다.**
+
+<br />
+
+### 평균 제곱 오차(Mean Squared Error, MSE)
+
+**평균 제곱 오차(MSE)는 "비용함수"라고도 한다.**
+
+<br />
+
+<div style="text-align: center">
+  <img src="https://media.vlpt.us/images/yuns_u/post/818c1992-3a20-4453-8649-c8960dfb9648/image.png" width="350">
+</div>
+
+**오차를 제곱**하면 위 이미지와 같이 해당 거리의 길이가 한 변인 정사각형의 넓이가 된다.
+
+- 이 때, **왜 제곱을 하는 것일까?**
+
+  - 거리를 제곱함으로서 **항상 양수인 거리값**을 얻을 수 있다.
+
+  - 두 개의 회귀를 비교했을 때 그 차이가 커지기 때문에 **더 쉽게 비교**할 수 있다.
+
+<br />
+
+<div style="text-align: center">
+  <img src="https://blog.kakaocdn.net/dn/qJowI/btqBBUCMNDv/L7bfq2lu0hfsZzCSDx0E5k/img.png" width="350">
+</div>
+
+<br />
+
+
+수식에 대해 간단히 설명하면 **거리를 제곱한 값을 모두 더한 후 평균을 낸 것**이다.
+
+- 이 평균 제곱 오차가 바로 위의 **경사하강법**에서 봤던 **오차-x 그래프**를 나타낸 것이다.
+
+- 이는 y
 
 <br />
 
@@ -214,7 +269,7 @@ thumbnail: "./images/ML.png"
 
 어떤 메일을 받았을 때 그것이 스팸일 확률이 0.5 이상이면 스팸으로 분류하고, 확률이 0.5보다 작은 경우 일반 메일로 분류하는 것이다. 이렇게 **데이터가 2개의 범주 중 하나에 속하도록 결정하는 것**을 **이진 분류(binary classification)** 라고 한다.
 
-- **ex)** "공부한 시간이 적으면 시험에 통과 못하고, 공부한 시간이 많으면 시험에 통과한다" 
+- **ex)** "공부한 시간이 적으면 시험에 통과 못하고, 공부한 시간이 많으면 시험에 통과한다"
 
     <div style="text-align: center">
     <img src="https://hleecaster.com/wp-content/uploads/2019/12/logreg02.png" width="700">

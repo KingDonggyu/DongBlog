@@ -167,11 +167,9 @@ polynomial_svm_clf.fit(X, y)
 
 <br />
 
-# SVM with kernel
+# SVM을 이용한 Regression
 
 <hr />
-
-## SVM을 이용한 Regression
 
 > SVM은 Classification 뿐 아니라 Regression에도 이용될 수 있다. Regression에서는 도로 경계안에 최대한 많은 데이터들을 담아 데이터를 대표하려고 하면 된다.
 
@@ -179,11 +177,15 @@ polynomial_svm_clf.fit(X, y)
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fb6m7io%2FbtqVe8DM4WI%2FF4BRiML81390rKJQdKaeH0%2Fimg.png">
 </div>
 
+ε-insensitive
+
 <br />
 
-- **일정한 Margin Violation 아래에서 가능한 많은 데이터가 도로안에 들어가도록 학습한다.**
+- **일정한 Margin Violation 아래에서 가능한 많은 데이터가 마진 내부에 들어가도록 학습한다.**
 
-- 이때 도로의 폭인 **Margin은 위와 같이 하이퍼파라미터로 조절 가능하다.**
+  → 즉, **SVC(Support Vector Machine Classifier)의 목표와 반대로 하는 것이다.**
+
+- 이때 도로의 폭인 **Margin은 아래와 같이 하이퍼파라미터로 조절 가능하다.**
 
 - 아래는 **sklearn의 LinearSVR을 이용한 선형 SVM Regression을 적용**하는 코드이다.
 
@@ -208,6 +210,10 @@ polynomial_svm_clf.fit(X, y)
 <br />
 <br />
 
+# SVM with kernel
+
+<hr />
+
 ## Kernel Trick
 
 > 공간 변환은 ML의 핵심 연산 작업이다. 원래 특징 공간을 목적 달성에 더 유리한 새로운 공간으로 변환한다.
@@ -218,7 +224,11 @@ polynomial_svm_clf.fit(X, y)
 
 - ex) **원래 특징 공간 𝓛**을 **새로운 특징 공간 𝓗**로 변환하여 <u>선형에 가까운 데이터 분포</u>를 만든다.
 
-- **𝓗**는 매우 높은 차원이라 **실제 변환은 불가능**
+<div style="text-align:center">
+  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXMdiMVtCE3Mn2kNGfFLexuspm8aAjiGXqfA&usqp=CAU">
+</div>
+
+- **𝓗**는 매우 높은 차원이라 **실제 변환은 불가능하다.**
 
   **→ 커널 트릭을 사용하여 실제 변환하지 않고도 마치 변환을 하고 계산한 듯한, 변환 효과를 거둔다.**
 

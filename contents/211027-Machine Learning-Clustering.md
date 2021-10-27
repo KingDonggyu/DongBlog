@@ -15,6 +15,8 @@ thumbnail: "./images/ML.png"
 
 **Clustering은 결국 각각의 데이터를 하나의 Cluster에 할당하는 작업이다.**
 
+<br />
+
 <div style="text-align: center">
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FQNvpE%2FbtqV36RfCZ9%2FqWEQYYSentNT24mUbKzyN0%2Fimg.png">
 </div>
@@ -37,7 +39,7 @@ thumbnail: "./images/ML.png"
 
 위에 보이는 데이터셋은 레이블이 없고, 육안으로 볼때 샘플 덩어리 5개가 잘 구분되어있는 것을 확인할 수 있다.
 
-> Clustering 알고리즘인 k-means 알고리즘은 몇번의 반복으로 이런 종류의 데이터셋을 효율적으로 Cluster로 묶을 수 있다.
+> K-means Clustering에서 K는 클러스터의 갯수를 뜻하며, means는 한 클러스터 안의 데이터 중심, 즉 centroid를 뜻한다. 따라서 K-means Clustering은 K개의 Centroid를 기반으로 K개의 클러스터를 만들어주는 것을 의미한다. Clustering 알고리즘인 K-means 알고리즘은 몇번의 반복을 통해 데이터셋을 효율적으로 Cluster로 묶을 수 있다.
 
 ## **sklearn 코드**
 
@@ -73,7 +75,7 @@ y_pred = kmeans.fit_predict(X)
 
 - 다음 코드에서는 알고리즘이 찾은 다섯 개의 **센트로이드**를 나열한다.
 
-  **센트로이드는 하나의 클러스터 내 데이터들의 중심이 되는 점이다.**
+  **센트로이드(Centroid)는 하나의 클러스터 내 데이터들의 중심이 되는 점이다.**
 
   ```python
   kmeans.cluster_centers_
@@ -126,9 +128,9 @@ y_pred = kmeans.fit_predict(X)
 
 **1. 센트로이드을 무작위로 배치하여 시작한다.**
 
-**2. 그런 다음 인스턴스에 레이블을 지정하고 센트로이드을 업데이트한다.**
+**2. 그런 다음 모든 데이터를 순회하며 각 데이터마다 가장 가까운 Centroid가 속해있는 클러스터로 인스턴스에 레이블을 지정하고 센트로이드를 클러스터의 중심으로 업데이트한다.**
 
-**3. 센트로이드이 이동하면**
+**3. 센트로이드가 이동하면**
 
 • Go back to Step 2
 
@@ -199,11 +201,21 @@ kmeans.score(X)  # -211.62337889822362
 
 - **Memory**는 모든 세트를 저장해야 한다.
 
+- 중심위치와 모든 데이터 사이의 거리를 계산해야 하기 때문에 데이터의 갯수가 많아지면 계산량도 늘어단다.
+
 ➔ 클러스터가 커지면 이러한 문제가 더욱 중요해진다.
 
 <br />
 
-**Solution: training 중 mini-batch 사용**
+### **Solution: training 중 mini-batch 사용**
+
+데이터의 수가 너무 많을 때는 미니배치(Mini-batch) K-Means 군집화 방법을 사용하면 계산량을 줄일 수 있다.
+
+> 미니배치(mini-batch) K-Means 군집화는 데이터를 미니배치 크기만큼 무작위로 분리하여 K-Means 군집화를 한다. 모든 데이터를 한꺼번에 썼을 때와 결과가 다를 수는 있지만 큰 차이가 없다.
+
+**미니배치(Mini-batch)** 는 SGD(Stochastic Gradient Descent : 확률적 경사 하강법)와 배치(Batch: 데이터를 실시간으로 처리하는게 아니라, 일괄적으로 모아서 처리하는 작업)를 섞은 것으로 **전체 데이터를 N등분하여 각각의 학습 데이터를 배치 방식으로 학습시킨다.**
+
+<br />
 
 ```python
 from sklearn.cluster import MiniBatchKMeans
@@ -211,6 +223,8 @@ from sklearn.cluster import MiniBatchKMeans
 minibatch_kmeans = MiniBatchKMeans(n_clusters=5, random_state=42)
 minibatch_kmeans.fit(X)
 ```
+
+<br />
 
 **mini-batch K-Means 알고리즘은 속도는 빠르나 이너셔는 조금 더 나쁘다**. 특히 클러스터의 개수가 증가할 때 그렇다.
 
@@ -230,6 +244,8 @@ minibatch_kmeans.fit(X)
 
 **클러스터의 개수는 K-Means 알고리즘의 성능을 결정짓는 매우 중요한 요소이다.**
 
+<br />
+
 <div style="text-align: center">
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2Fu5uyZ%2FbtqWsIvbaH6%2FZFz8NQMSM5NdQz5IXjmlAk%2Fimg.png">
 </div>
@@ -246,7 +262,7 @@ minibatch_kmeans.fit(X)
 
 - **k = 4** 까지는 빠르게 이너셔가 감소하는걸 확인할 수 있다.
 
-  이를 **Elbow**라 칭하는데, 보통 이 지점을 넘어서면 **이너셔가 줄어드는 속도가 매우 줄어들기 때문**에 **4** 를 넘어선 클러스터의 개수는 크게 도움이 되지 않는다.
+  - 이를 **Elbow**라 칭하는데, 보통 이 지점을 넘어서면 **이너셔가 줄어드는 속도가 매우 줄어들기 때문**에 **4** 를 넘어선 클러스터의 개수는 크게 도움이 되지 않는다.
 
 - 따라서 보통 **Elbow를 최적의 클러스터 개수로 고르게 된다.**
 
@@ -264,13 +280,15 @@ K-Means 알고리즘는 몇 가지 단점이 있다.
 
 아래 그림은 **크기, 밀집도, 방향이 다른 세 개의 타원형 클러스터를 가진 데이터에 대해 K-Means**를 적용한 결과이다.
 
+<br />
+
 <div style="text-align: center">
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FNL9k4%2FbtqV2aNY5lD%2FNBkKgZqy9KltOtUKQbCrbk%2Fimg.png">
 </div>
 
 - 둘 다 좋은 솔루션은 아니다. 즉 **데이터의 형태에 따라 K-Means가 아닌 다른 알고리즘들도 고려해야할 시점이 온 것이다.**
 
-- 이 경우 잘 작동하는 것은 **가우시안 혼합 모델(Gaussian Mixture Model)** 이다. (이에 대해서는 다음 포스트에서 다루도록 하겠다.)
+- 이 경우 잘 작동하는 것은 **가우시안 혼합 모델(Gaussian Mixture Model)** 이다. (이에 대해서는 좀 있다가 다루도록 하겠다.)
 
 <br />
 <br />
@@ -400,7 +418,7 @@ log_reg.score(X_test, y_test)  # 0.8333333333333334
 
 <hr />
 
-> 가우시안 혼합 모델(Gaussian mixture model, 이하 GMM)은 샘플이 파라미터가 알려지지 않은 여러 개의 혼합된 가우시안 분포(정규 분포)에서 생성되었다고 가정하여 군집화를 수행하는 방식이다.
+> 가우시안 혼합 모델(Gaussian mixture model, 이하 GMM)은 샘플이 파라미터가 알려지지 않은 여러 개의 혼합된 가우시안 분포(정규 분포)에서 생성되었다고 가정하여 군집화를 수행하는 방식이다. 데이터가 어떤 모델(분포) 출신인지 유추할 수 있는 모델을 생성하는 것이다.
 
 **하나의 가우시안 분포에서 생성된 모든 샘플은 하나의 클러스터를 형성하며, 일반적으로 이 클러스터는 타원형이다.**
 
@@ -531,9 +549,11 @@ anomalies = X[densities < density_threshold]
 
 ### PCA
 
-**보통 샘플의 재구성 오차(reconstruction error)와 이상치의 재구성 오차를 비교**하면 일반적으로 후자가 훨씬 크다.
+**고차원 데이터에서 주로 사용하는 방법론으로서 차원을 축소하고 복원을 하는 과정을 통해 이상치를 검출할 수 있다.**
 
-매우 효과적인 이상치 탐지 기법이다.
+- **보통 샘플의 재구성 오차(reconstruction error)와 이상치의 재구성 오차를 비교**하면 일반적으로 후자가 훨씬 크다.
+
+- 매우 효과적인 이상치 탐지 기법이다.
 
 ### Isolation Forest
 

@@ -1,6 +1,6 @@
 ---
 date: "2021-10-26"
-title: "[Machine Learning] PCA"
+title: "[Machine Learning] Dimensionality Reduction"
 category: "Data Science"
 categoryColor: "seagreen"
 tags: ["AI", "ML"]
@@ -85,11 +85,17 @@ dataset은 모든 차원에 대해 균일하게 퍼져있지 않다. **많은 fe
 
 **즉, 스위스 롤을 펴게 되면 평면이기 때문에 3차원에서 휘어지고 뒤틀려있는 스위스 롤은 2D 매니폴드로 보는 것이다.**
 
+**➡️ 고차원 데이터라 할지라도, 실질적으로 해당 데이터를 나타내주는 저차원 공간인 manifold가 존재한다는 것을 의미한다.**
+
+(정확히는 한 고차원 데이터를 간추려서 보다 저차원 공간으로 나타낼수 있다는 뜻이다.)
+
 > 많은 차원 축소 알고리즘은 이러한 꼬여있는 매니폴드를 풀어헤친 형태를 모델링하는 식으로 작동하는데, 이를 매니폴드 학습(manifold learning)이라고 한다.
 
 매니폴드 학습이 많이 활용되는 가장 큰 이유는 **Classification이나 Regression같은 작업 시 저차원 매니폴드 형태로 데이터를 표현하면 훨씬 더 간단해질거라고 가정하기 때문이다.**
 
 그러나 다음 그림을 보면 매번 간단해지는 것은 아니라는 걸 알 수 있다. (더 많은 경계가 필요하다.)
+
+<br />
 
 <div style="text-align: center">
   <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FcZnIkr%2FbtqV2VB61Vp%2F7aOYmfpnzgasAIHYYCf2k1%2Fimg.png">
@@ -173,8 +179,6 @@ X_reduced = pca.fit_transform(X_train)
 
 그 후 `n_components` 를 설정하여 PCA를 다시 실행하는 인자로 보존할 분산의 비율을 넣어주면 된다.
 
-
-
 > 축소할 차원 수는 임의로 정하기 보다는 2) 보존되는 분산의 비율을 차원 수에 대한 함수로 그리는 것이 좋다.
 
 **그래프에는 보존되는 분산의 비율이 빠르게 성장하다 멈추는 변곡점이 있는데, 이걸로 축소할 차원 수를 결정할 수 있다.**
@@ -219,7 +223,7 @@ X_recovered = pca.inverse_transform(X_reduced)
 
 ## Locally Linear Embedding (LLE)
 
-> 지역 선형 임베딩이라 부르는 LLE(locally linear embedding)는 강력한 non-linear dimensionally reduction(NLDR) 기술로 투영이 아닌 매니폴드 학습이다.
+> 지역 선형 임베딩이라 부르는 LLE(locally linear embedding)는 강력한 non-linear dimensionally reduction(NLDR) 기술로 투영이 아닌 매니폴드 학습이다. Unsupervised Learning에 해당하며, 서로 인접한 데이터들을 보존(neighborhood-preserving)하면서 고차원인 데이터셋을 저차원으로 축소하는 방법이다.
 
 - **LLE는 각 data가 가장 가까운 이웃에 얼마나 선형적으로 연관되어 있는지 측정한다.**
 
@@ -247,9 +251,13 @@ X_recovered = pca.inverse_transform(X_reduced)
 
 ### Kernel PCA
 
-**커널 트릭을 사용하여 고차원 기능 공간에서 선형으로 변환한다.**
+> 비선형 함수인 커널함수를 이용하여 비선형 데이터를 고차원 공간으로 매핑하는 기술이다.
 
 (**커널 SVM**에서와 같이)
+
+<div style="text-align: center">
+  <img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbraJ6v%2FbtqBWrObF4T%2FBDor8UjannRk5VVKuO1ef0%2Fimg.png" width="600">
+</div>
 
 - **Kernel PCA는 기존의 샘플데이터 뿐만 아니라 새로운 샘플데이터가 와도 모두 메모리에 저장하고 있어야 새로운 데이터에 대한 PC 계산이 가능해지므로 메모리 기반 방식이다.**
 
@@ -257,7 +265,7 @@ X_recovered = pca.inverse_transform(X_reduced)
 
 - (그러나 SVM의 경우, support vector만 필요한 경우도 있기 때문에 Kernel PCA보다 메모리 측면에서 효과적이다.)
 
-- **PCA에 커널 트릭을 적용**하고자 할 경우, 아래의 전처리/가정이 있을 때보다 효율적으로 커널 트릭을 계산하고 적용할 수 있다. 
+- **PCA에 커널 트릭을 적용**하고자 할 경우, 아래의 전처리/가정이 있을 때보다 효율적으로 커널 트릭을 계산하고 적용할 수 있다.
 
   - 전처리: 원 데이터를 원점 중심으로 옮기는 전처리를 먼저 진행함.
 
@@ -269,6 +277,8 @@ from sklearn.decomposition import KernelPCA
 rbf_pca = KernelPCA(n_components = 2, kernel="rbf", gamma=0.04)
 X_reduced = rbf_pca.fit_transform(X)
 ```
+
+<br />
 
 ### t-Distributed Stochastic Neighbor Embedding (t-SNE)
 

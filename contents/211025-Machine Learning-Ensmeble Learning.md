@@ -73,7 +73,7 @@ thumbnail: "./images/ML.png"
 
 - **분류기와 같은 모든 예측기가 학습을 마치면, 앙상블은 이들의 예측을 모아 새로운 data에 대한 예측을 만든다.**
 
-- 이때 최종 예측을 하는 **수집함수**는 **Classification(분류)**일 땐, **Hard Voting Classifier처럼 가장 많은 예측 결과를 따르고**, **Regression에 대해선 평균을 계산한다.**
+- 이때 최종 예측을 하는 **수집함수**는 **Classification(분류)** 일 땐, **Hard Voting Classifier처럼 가장 많은 예측 결과를 따르고**, **Regression에 대해선 평균을 계산한다.**
 
 - 원본 데이터 전체이 아닌, subset을 학습한 개별 분류기는 **크게 편향이 되어있지만(Underfit),** 수집 함수를 통과하면 편향과 분산이 모두 감소한다.
 
@@ -149,6 +149,18 @@ thumbnail: "./images/ML.png"
 
 > Random Forests(랜덤 포레스트)는 Bagging 혹은 Pasting을 적용한 Decision Tree의 앙상블이다.
 
+- 예를 들어 Feature가 30개라고 할 때, 30개의 Feature를 기반으로 하나의 결정 트리를 만든다면 트리의 가지가 많아질 것이고, 이는 **Overfitting의 결과를 야기할 수 있다.**
+
+- 하지만 30개의 Feature 중 **랜덤으로 5개의 Feature만 선택해서 하나의 결정 트리를 만들고**, 또 30개 중 랜덤으로 5개의 Feature를 선택해서 또 다른 결정 트리를 만들고 ... **이렇게 계속 반복하여 여러 개의 결정 트리를 만들 수 있다.** 
+
+- **결정 트리 하나마다 예측 값을 내놓을 것이고, 여러 결정 트리들이 내린 예측 값들 중 가장 많이 나온 값을 최종 예측값으로 정한다.** 
+
+- 이렇게 **의견을 통합하거나 여러 가지 결과를 합치는 방식인 앙상블(Ensemble)을 이용하기 위해, 하나의 거대한 (깊이가 깊은) 결정 트리를 만드는 것이 아니라 여러 개의 작은 결정 트리를 만드는 것이다.** 
+
+- 여러 개의 작은 결정 트리가 예측한 값들 중 **가장 많은 값(분류일 경우)-<u>Hard Voting</u> 혹은 평균값(회귀일 경우)-<u>Soft Voting</u>을 최종 예측 값으로 정한다.**
+
+<br />
+
 ```python
 from sklearn.ensemble import RandomForestClassifier
 
@@ -161,7 +173,7 @@ y_pred_rf = rnd_clf.predict(X_test)
 
 - Random Forest 알고리즘은 트리의 노드를 분할할 때, 전체 feature 중 최선의 feature를 찾는 대신 **무작위로 선택한 feature 후보들 중 최적의 feature를 찾음으로써 무작위성을 더 주입한다.**
 
-- 이러한 무작위성은 트리를 더욱 다양하게 만들고, 이러한 **다양성은 편향을 감소시키지만(More Underfitting)** , **분산을 낮추어(Less Overfitting)** 더 훌륭한 모델을 만들어냅니다.
+- 이러한 무작위성은 트리를 더욱 다양하게 만들고, 이러한 **다양성은 편향을 감소시키지만(More Underfitting)** , **분산을 낮추어(Less Overfitting)** 더 훌륭한 모델을 만들어낸다.
 
 <br />
 
@@ -209,7 +221,7 @@ y_pred_rf = rnd_clf.predict(X_test)
 
 > Gradient Boosting도 이전까지의 오차를 보정한 예측기가 순차적으로 앙상블에 추가된다. 다만 AdaBoost처럼 데이터의 가중치를 갱신하는 대신 이전 예측기가 만든 잔여 오차(residual error)를 새로운 예측기에 학습시킨다.
 
-- 간단한 회귀 문제를 풀어보겠다. 이때 사용되는 모델을 **Gradient tree boosting 혹은 GBRT**라고 합니다. 우선 **DecisionTreeRegressor**에 Training set을 학습시키겠다.
+- 간단한 회귀 문제를 풀어보겠다. 이때 사용되는 모델을 **Gradient tree boosting 혹은 GBRT**라고 한다. 우선 **DecisionTreeRegressor**에 Training set을 학습시키겠다.
 
   ```python
   from sklearn.tree import DecisionTreeRegressor
