@@ -4,7 +4,7 @@ title: "[Deep Learning] Perceptron"
 category: "Data Science"
 categoryColor: "seagreen"
 tags: ["AI", "DL"]
-thumbnail: "./images/DL.png"
+thumbnail: "./images/DL.jpeg"
 ---
 
 어떻게 컴퓨터로 인간의 지능을 구현해 낼 수 있을까?

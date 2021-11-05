@@ -25,6 +25,8 @@ const Template = ({ title, description, author, url, image, children }) => {
         <title>{title}</title>
 
         <meta name="description" content={description} />
+        <meta name="url" content={url} />
+        <meta name="image" content={image} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
 

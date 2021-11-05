@@ -95,12 +95,19 @@ const MarkdownRenderer = styled.div`
       background: #313131;
       border-radius: 3px;
     }
+    code[class*="language-"] {
+      background: #272822;
+      color: white;
+    }
   }
 
   code[class*="language-"] {
+    background: #dde3ff;
+    color: black;
     tab-size: 2;
     padding: 1px 3px;
     font-size: 13px;
+    font-weight: bold;
   }
 
   img {

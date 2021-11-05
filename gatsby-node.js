@@ -18,10 +18,9 @@ exports.onCreateWebpackConfig = ({ getConfig, actions }) => {
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
-
   if (node.internal.type === `MarkdownRemark`) {
-    const slug = createFilePath({ node, getNode });
-    createNodeField({ node, name: "slug", value: slug });
+    const value = createFilePath({ node, getNode });
+    createNodeField({ name: "slug", node, value });
   }
 };
 
@@ -54,7 +53,8 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/PostTemplate.js"
   );
 
-  const generatePostPage = ({  // slug 데이터를 통해 페이지를 생성해주는 함수
+  const generatePostPage = ({
+    // slug 데이터를 통해 페이지를 생성해주는 함수
     node: {
       fields: { slug },
     },

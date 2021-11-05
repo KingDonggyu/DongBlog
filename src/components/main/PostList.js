@@ -7,7 +7,6 @@ import PostItem from "./PostItem";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 13px;
   padding: 25px;
   @media (max-width: 768px) {
     padding: 5px;
