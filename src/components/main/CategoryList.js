@@ -23,7 +23,7 @@ const CategoryItem = styled(Link)`
   };
 `;
 
-const CategoryList = ({ posts, selectedCategory }) => {
+const CategoryList = ({ posts, selectedCategory, selectedTag }) => {
   const categoryList = useMemo(
     () =>
       posts.reduce(
@@ -41,7 +41,7 @@ const CategoryList = ({ posts, selectedCategory }) => {
       {Object.entries(categoryList).map(([name, count]) => (
         <CategoryItem
           to={name === "All" ? `/` : `/?category=${name}`}
-          active={name === selectedCategory ? 1 : 0}
+          active={name === selectedCategory && selectedTag === "All" ? 1 : 0}
           key={name}
         >
           &#9654;&nbsp;&nbsp;&nbsp;{name}&nbsp;&nbsp;({count})

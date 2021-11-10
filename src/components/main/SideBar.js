@@ -45,7 +45,7 @@ const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
       <Wrapper ref={scrollBox}>
         <Introduction profileImage={profileImage} />
         <ResponsiveArrow scrollBox={scrollBox} />
-        <CategoryList posts={posts} selectedCategory={selectedCategory} />
+        <CategoryList posts={posts} selectedCategory={selectedCategory} selectedTag={selectedTag} />
         <TagList posts={posts} selectedTag={selectedTag} />
       </Wrapper>
     </Background>
