@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 
 const Wrapper = styled.div`
   width: 100%;
-  margin-top: 50px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
