@@ -1,19 +1,20 @@
 import React, { createRef, useEffect } from "react";
+import ReactDisqusComments from "react-disqus-comments";
 import styled from "styled-components";
 
-const UtterancesWrapper = styled.div`
-  border: 2px dashed;
+const Wrapper = styled.div`
   margin: 10px;
+  padding: 10px;
   @media (max-width: 768px) {
     padding: 0 20px;
   }
 `;
-const src = "https://utteranc.es/client.js";
-const repo = "KingDonggyu/DongBlog"; // 자신 계정의 레포지토리로 설정
 
-const CommentWidget = () => {
+const UtterancesComment = () => {
   const element = createRef(null);
-
+  const src = "https://utteranc.es/client.js";
+  const repo = "KingDonggyu/DongBlog"; // 자신 계정의 레포지토리로 설정
+  
   useEffect(() => {
     if (element.current === null) return;
 
@@ -35,7 +36,20 @@ const CommentWidget = () => {
     element.current.appendChild(utterances);
   }, []);
 
-  return <UtterancesWrapper ref={element} />;
+  return <Wrapper ref={element} />;
+}
+
+const DisqusComment = ({ url, id, title }) => {
+  return (
+    <Wrapper>
+      <ReactDisqusComments
+        shortname="dong-blog"
+        identifier={id}
+        title={title}
+        url={url}
+      />
+    </Wrapper>
+  );
 };
 
-export default CommentWidget;
+export default DisqusComment;

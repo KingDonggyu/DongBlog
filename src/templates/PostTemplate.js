@@ -30,7 +30,7 @@ const ContentWrapper = styled.div`
 
 const PostTemplate = ({ data, location }) => {
   const {
-    node: { html, frontmatter },
+    node: { id, html, frontmatter },
   } = data.allMarkdownRemark.edges[0];
 
   return (
@@ -45,7 +45,7 @@ const PostTemplate = ({ data, location }) => {
         <ContentWrapper>
           <PostHead {...frontmatter} />
           <PostContent html={html} />
-          <CommentWidget />
+          <CommentWidget url={location.href} id={id} tile={frontmatter.title} />
         </ContentWrapper>
       </Container>
     </Template>
@@ -59,6 +59,7 @@ export const queryMarkdownDataBySlug = graphql`
     allMarkdownRemark(filter: { fields: { slug: { eq: $slug } } }) {
       edges {
         node {
+          id
           html
           frontmatter {
             title
