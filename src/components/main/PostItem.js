@@ -11,11 +11,7 @@ const Wrapper = styled(Link)`
   height: 160px;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #606163;
-  &:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    background-color: #606163;
-  }
+  border-bottom: 1px dashed #606163;
   @media (max-width: 1100px) {
     flex: none;
     height: auto;
@@ -27,10 +23,12 @@ const ThumbnailImage = styled(Img)`
   height: 100%;
   margin-right: 30px;
   border-radius: 5px;
+  border: 1px solid;
   @media (max-width: 1100px) {
-    width: 70px;
-    height: 60px;
-    margin-right: 15px;
+    margin-right: 20px;
+  }
+  @media (max-width: 768px) {
+    display: none;
   }
 `;
 

@@ -7,10 +7,9 @@ import PostHeadInfo from "./PostHeadInfo";
 
 const Background = styled.div`
   position: relative;
-  color: white;
-  background-color: #606163;
   width: 100%;
   padding: 30px;
+  border-bottom: 1px inset;
   @media (max-width: 1100px) {
     padding: 30px 12px 10px 12px;
   }
@@ -25,6 +24,7 @@ const Wrapper = styled.div`
   @media (max-width: 1100px) {
     h1 {
       font-size: 20px;
+      font-weight: 400;
     }
   }
 `;
@@ -33,7 +33,7 @@ const BackBtn = styled.span`
   margin: 20px;
   cursor: pointer;
   &:hover {
-    color: gray;
+    color: #4c4c4c;
   }
 `;
 
@@ -42,6 +42,7 @@ const Thumbnail = styled(Img)`
   height: 150px;
   border-radius: 5px;
   margin-bottom: 30px;
+  border: 1px solid;
   @media (max-width: 1100px) {
     width: 100px;
     height: 100px;

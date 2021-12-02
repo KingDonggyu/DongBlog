@@ -24,12 +24,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color: white;
-  height: 93%;
+  height: 95%;
   width: 350px;
   padding: 30px 0 0 0;
-  background: #606163;
+  background: white;
   border-radius: 7px;
+  border: 1px;
   box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px;
   overflow-y: auto;
   @media (max-width: 1100px) {

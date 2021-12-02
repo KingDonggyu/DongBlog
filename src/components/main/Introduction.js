@@ -27,9 +27,8 @@ const IconWrapper = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: 20px;
-  font-size: 20px;
-  font-weight: 700;
+  margin-top: 10px;
+  font-size: 17px;
 `;
 
 const SubTitle = styled.p`

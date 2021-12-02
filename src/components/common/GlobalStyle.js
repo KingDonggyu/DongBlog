@@ -9,7 +9,6 @@ const DefaultStyle = createGlobalStyle`
   }
   html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
-    background: #3c3c3c;
     font-family: "Noto Sans KR";
   }
   a, a:hover {

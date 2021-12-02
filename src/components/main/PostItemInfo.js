@@ -9,10 +9,11 @@ const Wrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   height: 100%;
-  color: white;
 `;
 
-const Title = styled.h2`
+const Title = styled.h1`
+  font-size: 1.5em;
+  font-weight: 400;
   @media (max-width: 1100px) {
     font-size: 15px;
     margin: 7px 0 15px 0;

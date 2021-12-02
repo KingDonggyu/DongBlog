@@ -11,15 +11,34 @@ const Wrapper = styled.div`
 `;
 
 const CategoryItem = styled(Link)`
+  width: fit-content;
   padding: 10px;
   padding-left: 30px;
   font-size: 14px;
+  text-transform: uppercase;
   cursor: pointer;
-  &:hover { background-color: #737272; }
+  &:after {
+    content: "";
+    display: block;
+    border-bottom: 2px solid black;
+    width: 0;
+  }
+  &:after {
+    left: 0;
+  }
+  &:hover:after {
+    width: 100%;
+  }
+  &:after {
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
   ${({ active }) =>
     active &&
-    `font-weight: 800;
-     background-color: gray;`
+    `font-weight: 700;
+    &:after {
+      width: 100%;
+    }`
   };
 `;
 
@@ -44,7 +63,8 @@ const CategoryList = ({ posts, selectedCategory, selectedTag }) => {
           active={name === selectedCategory && selectedTag === "All" ? 1 : 0}
           key={name}
         >
-          &#9654;&nbsp;&nbsp;&nbsp;{name}&nbsp;&nbsp;({count})
+          •&nbsp;&nbsp;&nbsp;{name}&nbsp;&nbsp;
+          <span style={{fontSize: '10px'}}>{count}</span>
         </CategoryItem>
       ))}
     </Wrapper>

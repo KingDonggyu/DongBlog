@@ -6,13 +6,14 @@ import PostItemHead from "../main/PostItemHead";
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 0 30px;
   @media (max-width: 1100px) {
     flex-direction: column;
   }
 `;
 
 const Date = styled.div`
-  color: lightgray;
+  color: darkgray;
   @media (max-width: 1100px) {
     text-align: end;
     margin-top: 15px;

@@ -11,21 +11,21 @@ const Wrapper = styled.div`
 `;
 
 const TagItem = styled(Link)`
-  border: 1px white solid;
+  border: 1px solid;
   border-radius: 4px;
   margin: 10px 10px 0 0;
   padding: 3px 5px;
-  font-size: 11px;
+  font-size: 10px;
+  font-weight: 300;
   cursor: pointer;
   ${({ active }) =>
     active &&
-    `
-     background-color: white;
-    color: black; 
-  `};
+    `background: black;
+    color: white;
+    font-weight: 500; `};
   &:hover {
-    background-color: white;
-    color: black;
+    background: black;
+    color: white;
   }
 `;
 

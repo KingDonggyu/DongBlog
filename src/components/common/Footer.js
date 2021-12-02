@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-  color: white;
   display: grid;
   place-items: center;
   margin-top: auto;
@@ -19,8 +18,8 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      Thank You for Visiting My Blog, Have a Good Day 😆
-      <br />© 2021 Developer KimDonggyu.
+      © 2021 Developer KimDonggyu.
+      <br />E-mail. dgkim69166916@gmail.com
     </FooterWrapper>
   );
 };
