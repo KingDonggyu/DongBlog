@@ -18,8 +18,6 @@ module.exports = {
         name: "동 블로그 by KingDonggyu",
         short_name: "동 블로그",
         start_url: "/",
-        background_color: "#3c3c3c",
-        theme_color: "#3c3c3c",
         display: "standalone",
         icon: "static/icon.png",
         crossOrigin: `use-credentials`,
