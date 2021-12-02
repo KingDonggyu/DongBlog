@@ -13,9 +13,9 @@ const Spinner = styled.div`
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 8px solid transparent;
-  border-top-color: white;
-  border-bottom-color: white;
+  border: 3px solid transparent;
+  border-top-color: black;
+  border-bottom-color: black;
   animation: spinner .8s ease infinite;
   @keyframes spinner {
   from {transform: rotate(0deg); }

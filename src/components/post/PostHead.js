@@ -21,10 +21,12 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin: 30px 30px 60px 30px;
+  h1 {
+    font-weight: 400;
+  }
   @media (max-width: 1100px) {
     h1 {
       font-size: 20px;
-      font-weight: 400;
     }
   }
 `;
