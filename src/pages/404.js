@@ -10,12 +10,10 @@ const NotFoundPageWrapper = styled.div`
   justify-content: center;
   align-items: center;
   height: 100vh;
-  color: white;
 `;
 
 const NotFoundText = styled.div`
   font-size: 150px;
-  font-weight: 800;
   @media (max-width: 768px) {
     font-size: 100px;
   }
@@ -35,7 +33,7 @@ const GoToMainButton = styled(Link)`
   font-size: 20px;
   text-decoration: underline;
   &:hover {
-    color: lightgray;
+    color: gray;
     text-decoration: underline;
   }
 `;
@@ -45,10 +43,8 @@ const NotFoundPage = () => {
     <NotFoundPageWrapper>
       <GlobalStyle />
       <NotFoundText>404</NotFoundText>
-      <NotFoundDescription>
-        죄송합니다. 찾을 수 없는 페이지입니다.
-      </NotFoundDescription>
-      <GoToMainButton to="/"> ➔ 메인으로</GoToMainButton>
+      <NotFoundDescription>찾을 수 없는 페이지입니다.</NotFoundDescription>
+      <GoToMainButton to="/"> ➔ 블로그 메인으로</GoToMainButton>
     </NotFoundPageWrapper>
   );
 };
