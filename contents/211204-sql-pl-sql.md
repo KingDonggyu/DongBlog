@@ -540,7 +540,7 @@ FROM EMPLOYEE;
 
 <br />
 
-## 2. Database Programming Language Approach (ex. PL/SQL)
+## 3. Database Programming Language Approach (ex. PL/SQL)
 
 **Advantages**
 

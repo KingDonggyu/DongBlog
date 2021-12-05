@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `동 블로그`,
-    description: `KingDonggyu의 개발 블로그 - Web, Algorithm, Data Science`,
+    description: `KingDonggyu의 기술 블로그 - Language, Web, Algorithm, Data Science`,
     author: `KingDonggyu`,
     siteUrl: `https://dongblog.netlify.app/`,
   },
@@ -33,9 +33,9 @@ module.exports = {
     },
     {
       resolve: "gatsby-plugin-robots-txt",
-      host: "https://dongblog.netlify.app/",
-      sitemap: "https://dongblog.netlify.app/sitemap/sitemap-index.xml",
       options: {
+        host: "https://dongblog.netlify.app/",
+        sitemap: "https://dongblog.netlify.app/sitemap/sitemap-index.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
