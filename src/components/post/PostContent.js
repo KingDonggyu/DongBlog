@@ -64,6 +64,13 @@ const MarkdownRenderer = styled.div`
     font-weight: 700;
   }
 
+  blockquote > blockquote {
+    margin: 0;
+    padding: 5px 15px;
+    background-color: #dde3ff;
+    font-weight: 400;
+  }
+
   // Adjust List Element Style
   ol,
   ul {

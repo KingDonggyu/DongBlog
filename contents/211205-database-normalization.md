@@ -274,7 +274,7 @@ R의 FD X ➡️ Z는 X ➡️ Y, Y ➡️ Z의 두 FD에서 파생될 수 있�
 
 <br />
 
-- {Student, Course}: **TEACH의 후보 키(수퍼키)**이다.
+- {Student, Course}: **TEACH의 후보 키(수퍼키)** 이다.
 
   - Instructor: **non-prime** 속성.
 
