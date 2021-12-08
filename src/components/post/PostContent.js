@@ -114,7 +114,7 @@ const MarkdownRenderer = styled.div`
     tab-size: 2;
     padding: 1px 3px;
     font-size: 13px;
-    /* font-weight: bold; */
+    font-family: "Noto Sans KR";
   }
 
   img {
