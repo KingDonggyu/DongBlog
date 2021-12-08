@@ -229,7 +229,15 @@ R의 FD X ➡️ Z는 X ➡️ Y, Y ➡️ Z의 두 FD에서 파생될 수 있�
 
 <hr />
 
-> FD X ➡️ A가 R에 있을 때마다 X가 R의 수퍼키인 경우, 관계 R은 BCNF에 있다.
+> FD X ➡️ A가 R에 있을 때마다 X가 R의 SuperKey이며, A가 R의 Prime Attribute인 경우 BCNF를 충족한다.
+
+**X ➡️ A 일 때, (a)에만 해당되는 경우 3NF, 둘다 해당되는 경우 BCNF라 할 수 있다.**
+
+(a) X is a superkey of R
+
+(b) A is a prime attribute of R
+
+<br />
 
 각 normal form은 이전 형식보다 엄격하게 강하다.
 
@@ -348,9 +356,15 @@ D3) **R1(Instructor, Course)** and **R2(Instructor, Student)**
   <img src="https://user-images.githubusercontent.com/33220404/144738726-d7d25224-3b76-4d55-9eb3-478370e27e2c.png" width="350px">
 </div>
 
-5. (i) 또는 (ii)가 **BCNF에 없으면 분해 과정을 반복**한다. 그렇지 않으면 알고리즘을 종료한다.
+5. (1) 또는 (2)가 **BCNF에 없으면 분해 과정을 반복**한다. 그렇지 않으면 알고리즘을 종료한다.
 
 <br />
+
+ex) In `TEACH`(=R), FD2(`Instructor`(=X) ➡️ `Course`(=A)) violated BCNF
+
+- (`TEACH` - `Course`) and (`Instructor` ∪ `Course`)
+
+- BCNF relations: (`Instructor`, `Student`) and (`Instructor` and `Course`)
 
 # The Hierarchy of Normal Forms
 
