@@ -229,15 +229,7 @@ R의 FD X ➡️ Z는 X ➡️ Y, Y ➡️ Z의 두 FD에서 파생될 수 있�
 
 <hr />
 
-> FD X ➡️ A가 R에 있을 때마다 X가 R의 SuperKey이며, A가 R의 Prime Attribute인 경우 BCNF를 충족한다.
-
-**X ➡️ A 일 때, (a)에만 해당되는 경우 3NF, 둘다 해당되는 경우 BCNF라 할 수 있다.**
-
-(a) X is a superkey of R
-
-(b) A is a prime attribute of R
-
-<br />
+> FD X ➡️ Y에서 Y가 X의 부분 집합이거나, X는 관계의 SuperKey일 때 BCNF를 만족한다.
 
 각 normal form은 이전 형식보다 엄격하게 강하다.
 
