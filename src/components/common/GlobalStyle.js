@@ -16,6 +16,9 @@ const DefaultStyle = createGlobalStyle`
     text-decoration: none;
     cursor: pointer;
   }
+  #disqus_thread > iframe[sandbox^="allow-forms"]{
+    display: none !important;
+  }
 `;
 
 const GlobalStyle = () => {
