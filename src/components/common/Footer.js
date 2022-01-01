@@ -18,8 +18,8 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      © 2021 Developer KimDonggyu.
-      <br />E-mail. dgkim69166916@gmail.com
+      © 2022 Developer KimDonggyu.
+      <br />E-mail: dgkim69166916@gmail.com
     </FooterWrapper>
   );
 };
