@@ -20,12 +20,10 @@ const TagItem = styled(Link)`
   cursor: pointer;
   ${({ active }) =>
     active &&
-    `background: black;
-    color: white;
+    `box-shadow: 0 0 3px #606163;
     font-weight: 500; `};
   &:hover {
-    background: black;
-    color: white;
+    box-shadow: 0 0 3px #606163;
   }
 `;
 
