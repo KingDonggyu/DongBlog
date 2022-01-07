@@ -12,9 +12,10 @@ const MarkdownRenderer = styled.div`
   word-break: break-all;
 
   // Markdown Style
-  line-height: 1.8;
+  line-height: 1.5;
   font-size: 16px;
   font-weight: 400;
+  color: rgb(55, 53, 47);
 
   // Apply Padding Attribute to All Elements
   p {
@@ -60,14 +61,14 @@ const MarkdownRenderer = styled.div`
   blockquote {
     margin: 30px 0;
     padding: 5px 15px;
-    background-color: #dde3ff;
+    background-color: aliceblue;
     font-weight: 700;
   }
 
   blockquote > blockquote {
     margin: 0;
     padding: 5px 15px;
-    background-color: #dde3ff;
+    background-color: aliceblue;
     font-weight: 400;
   }
 
@@ -97,7 +98,6 @@ const MarkdownRenderer = styled.div`
     padding: 15px;
     font-size: 15px;
     tab-size: 2;
-
     ::-webkit-scrollbar-thumb {
       background: #313131;
       border-radius: 3px;
@@ -109,12 +109,13 @@ const MarkdownRenderer = styled.div`
   }
 
   code[class*="language-"] {
-    background: #dde3ff;
-    color: black;
+    background: #272822;
+    color: white;
     tab-size: 2;
-    padding: 1px 3px;
-    font-size: 13px;
-    font-family: "Noto Sans KR";
+    padding: 0.2em 0.4em;
+    font-size: 85%;
+    font-family: Menlo, Consolas, Courier, monospace;
+    text-shadow: none !important;
   }
 
   img {

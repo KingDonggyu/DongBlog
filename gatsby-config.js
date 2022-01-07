@@ -8,7 +8,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`, // Gatsby의 기본적인 이미지 처리 과정의 효율성을 이용해 더욱 높은 사용자 경험을 제공
-    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-advanced-sitemap`,
     "gatsby-plugin-styled-components",
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
