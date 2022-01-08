@@ -31,7 +31,7 @@ const MarkdownRenderer = styled.div`
   }
 
   * + h1 {
-    margin-top: 80px;
+    margin-top: 50px;
   }
 
   * + h2,
@@ -82,7 +82,7 @@ const MarkdownRenderer = styled.div`
   // Adjust Horizontal Rule style
   hr {
     border: 1px solid #000000;
-    margin: 10px 0 50px 0;
+    margin: 10px 0 25px 0;
     border-color: gray;
   }
 
