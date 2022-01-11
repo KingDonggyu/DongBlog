@@ -19,7 +19,10 @@ const ContentWrapper = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 70%;
+  padding: 50px;
+  border: 1px solid;
+  border-radius: 5px;
   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
   margin-top: 40px;
   @media (max-width: 1100px) {
