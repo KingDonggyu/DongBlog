@@ -19,8 +19,8 @@ const ContentWrapper = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 900px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 80%;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); */
   margin-top: 40px;
   @media (max-width: 1100px) {
     width: 100%;
