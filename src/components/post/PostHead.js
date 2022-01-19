@@ -20,7 +20,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  margin: 30px 30px 60px 30px;
+  margin: 30px 30px 10px 30px;
   h1 {
     font-weight: 400;
   }
@@ -68,16 +68,16 @@ const PostHead = ({
       <BackBtn onClick={goBackPage}>
         <FaArrowCircleLeft size="40" />
       </BackBtn>
-      <Wrapper>
-        <Thumbnail fluid={fluid} alt="thumbnail" />
-        <h1>{title}</h1>
-      </Wrapper>
       <PostHeadInfo
         date={date}
         category={category}
         categoryColor={categoryColor}
         tags={tags}
       />
+      <Wrapper>
+        <Thumbnail fluid={fluid} alt="thumbnail" />
+        <h1>{title}</h1>
+      </Wrapper>
     </Background>
   );
 };
