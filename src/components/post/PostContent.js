@@ -24,10 +24,13 @@ const MarkdownRenderer = styled.div`
 
   // Adjust Heading Element Style
   h1,
-  h2,
-  h3 {
+  h2 {
     font-weight: 700;
     margin-bottom: 20px;
+  }
+
+  h3 {
+    margin-bottom: 5px;
   }
 
   * + h1 {

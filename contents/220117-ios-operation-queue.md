@@ -37,7 +37,7 @@ iOS 환경 **동시성 프로그래밍** 지원 종류로 **Grand Central Dispat
 
 # OperationQueue의 주요 Methods/Properties
 
-### 특정 Operation Queues 가져오기
+## 특정 Operation Queues 가져오기
 
 - `current` : 현재 작업을 시작한 **Operatino Queue**를 반환한다.
 
@@ -51,7 +51,7 @@ class var current: OperationQueue? { get }
 class var main: OperationQueue { get }
 ```
 
-### Queue에서 Operation 관리
+## Queue에서 Operation 관리
 
 - `addOperation(_:)` : 연산 객체(Operation Object)를 대기열(Queue)에 추가한다.
 
@@ -83,7 +83,7 @@ func cancelAllOperations()
 func waitUntilAllOperationsAreFinished()
 ```
 
-### Operation 실행 관리
+## Operation 실행 관리
 
 - `maxConcurrentOperationCount` : 동시에 실행할 수 있는 연산(Operation)의 최대 수.
 
@@ -97,7 +97,7 @@ var maxConcurrentOperationCount: Int { get set }
  var qualityOfService: QualityOfService { get set }
 ```
 
-### Operation 중단
+## Operation 중단
 
 - `isSuspended` : 대기열(Queue)의 연산(Operation) 여부를 나타내기 위한 부울 값이다.
 
@@ -107,7 +107,7 @@ var maxConcurrentOperationCount: Int { get set }
 var isSuspended: Bool { get set }
 ```
 
-### Queue의 구성
+## Queue의 구성
 
 - `name` : Operation Queue의 이름
 
