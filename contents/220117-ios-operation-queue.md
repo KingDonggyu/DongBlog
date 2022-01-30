@@ -1,6 +1,6 @@
 ---
 date: "2022-01-17"
-title: "[iOS] Operation Queue - 동시성/비동기 프로그래밍"
+title: "[iOS] Operation Queue"
 category: "Mobile"
 categoryColor: "dimgray"
 tags: ["iOS"]
