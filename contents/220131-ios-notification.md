@@ -268,3 +268,14 @@ func requestFreiend() {
 Notification 의 일반적인 목적은 다른 객체에 이벤트를 알리면 적절하게 응답 할 수 있지만, notification 을 받는 객체는 이벤트가 발생한 후에만 반응 할 수 있다.
 
 이처럼 **NotificationCenter**는 잘 활용하면 좋은 기술이지만, 여러 코드가 분산되므로 잘못하게 되면 굉장히 헷갈릴 수 있다고 한다..😂
+
+<br />
+<br />
+
+## ※ Source
+
+🍎 Apple 공식 문서: https://developer.apple.com/documentation/foundation/notification
+
+🍎 Apple 공식 문서: https://developer.apple.com/documentation/foundation/notificationcenter
+
+🍎 Apple 공식 문서: https://developer.apple.com/documentation/foundation/notificationqueue
