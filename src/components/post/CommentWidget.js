@@ -5,6 +5,7 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   margin: 10px;
   padding: 10px;
+  border: 1px dashed;
   @media (max-width: 768px) {
     padding: 0 20px;
   }
@@ -52,4 +53,4 @@ const DisqusComment = ({ url, id, title }) => {
   );
 };
 
-export default DisqusComment;
+export default UtterancesComment;
