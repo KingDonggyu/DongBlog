@@ -35,7 +35,7 @@ module.exports = {
       resolve: "gatsby-plugin-robots-txt",
       options: {
         host: "https://dongblog.netlify.app/",
-        sitemap: "https://dongblog.netlify.app/sitemap.xml",
+        sitemap: "https://dongblog.netlify.app/sitemap-pages.xml",
         policy: [{ userAgent: "*", allow: "/" }],
       },
     },
