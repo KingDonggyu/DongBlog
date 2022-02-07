@@ -19,7 +19,7 @@ const ContentWrapper = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 1030px;
   padding: 0 50px 50px 50px;
   /* border: 1px solid;
   border-radius: 5px; */

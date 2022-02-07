@@ -14,8 +14,8 @@ const MarkdownRenderer = styled.div`
   // Markdown Style
   line-height: 1.5;
   font-size: 16px;
-  font-weight: 400;
-  color: rgb(55, 53, 47);
+  color: #000000;
+  font-family: 'Nanum Gothic';
 
   // Apply Padding Attribute to All Elements
   p {
@@ -115,12 +115,14 @@ const MarkdownRenderer = styled.div`
     code[class*="language-"] {
       background: #272822;
       color: white;
+      border: none;
     }
   }
 
   code[class*="language-"] {
-    background: #272822;
-    color: white;
+    border: 1px solid #dddddd;
+    background-color: #fcfcfc;
+    color: #666;
     tab-size: 2;
     padding: 0.2em 0.4em;
     font-size: 85%;
