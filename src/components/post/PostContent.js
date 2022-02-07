@@ -12,7 +12,7 @@ const MarkdownRenderer = styled.div`
   word-break: break-all;
 
   // Markdown Style
-  line-height: 1.5;
+  line-height: 1.9;
   font-size: 16px;
   color: #000000;
   font-family: 'Nanum Gothic';
@@ -113,6 +113,7 @@ const MarkdownRenderer = styled.div`
       border-radius: 3px;
     }
     code[class*="language-"] {
+      padding: 0;
       background: #272822;
       color: white;
       border: none;
