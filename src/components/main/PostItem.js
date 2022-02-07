@@ -24,6 +24,9 @@ const ThumbnailImage = styled(Img)`
   margin-right: 30px;
   border-radius: 5px;
   border: 1px solid;
+  & img {
+    /* padding: 1px; */
+  }
   @media (max-width: 1100px) {
     margin-right: 20px;
   }

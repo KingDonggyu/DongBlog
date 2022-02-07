@@ -4,7 +4,7 @@ title: "[iOS] Notification"
 category: "Mobile"
 categoryColor: "dimgray"
 tags: ["iOS"]
-thumbnail: "./images/iOS.jpeg"
+thumbnail: "./images/iOS.png"
 ---
 
 <div style="text-align: center">

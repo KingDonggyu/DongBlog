@@ -4,7 +4,7 @@ title: "[iOS] Operation Queue"
 category: "Mobile"
 categoryColor: "dimgray"
 tags: ["iOS"]
-thumbnail: "./images/iOS.jpeg"
+thumbnail: "./images/iOS.png"
 ---
 
 iOS 환경 **동시성 프로그래밍** 지원 종류로 **Grand Central Dispatch (GCD)**, **Operation Queue**, **Thread**가 있다.

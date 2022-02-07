@@ -4,7 +4,7 @@ title: "[iOS] View Life Cycle"
 category: "Mobile"
 categoryColor: "dimgray"
 tags: ["iOS"]
-thumbnail: "./images/iOS.jpeg"
+thumbnail: "./images/iOS.png"
 ---
 
 **앱은 하나 이상의 뷰로 구성이 되어 있으며, 각각의 뷰들은 라이프 사이클을 가지고 있다.**

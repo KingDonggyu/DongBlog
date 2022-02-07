@@ -4,7 +4,7 @@ title: "[iOS] URLSession"
 category: "Mobile"
 categoryColor: "dimgray"
 tags: ["iOS"]
-thumbnail: "./images/iOS.jpeg"
+thumbnail: "./images/iOS.png"
 ---
 
 # URLSession

@@ -4,7 +4,7 @@ title: "[iOS] Singleton"
 category: "Mobile"
 categoryColor: "dimgray"
 tags: ["iOS"]
-thumbnail: "./images/iOS.jpeg"
+thumbnail: "./images/iOS.png"
 ---
 
 싱글턴은 **'특정 클래스의 인스턴스가 오직 하나임을 보장하는 객체'** 를 의미한다.
