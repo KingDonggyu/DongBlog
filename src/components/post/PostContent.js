@@ -68,9 +68,11 @@ const MarkdownRenderer = styled.div`
   // Adjust Quotation Element Style
   blockquote {
     margin: 30px 0;
-    padding: 5px 15px;
-    background-color: aliceblue;
-    font-weight: 700;
+    padding: 21px 25px 20px 25px;
+    border: 1px solid #dddddd;
+    background-color: #fcfcfc;
+    color: #666;
+    font-weight: 500;
   }
 
   blockquote > blockquote {
