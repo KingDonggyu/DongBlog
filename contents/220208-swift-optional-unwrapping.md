@@ -9,7 +9,7 @@ thumbnail: "./images/Swift.png"
 
 ## Optional Unwraaping
 
-지난 포스트에서 설명했듯이, 스위프트에서는 `nil`이라는 **'값 없음'** 을 사용하려면 **Optional(옵셔널)**이라는 것을 사용해야 한다.
+지난 포스트에서 설명했듯이, 스위프트에서는 `nil`이라는 **'값 없음'** 을 사용하려면 **Optional(옵셔널)** 이라는 것을 사용해야 한다.
 
 그리고 Optional로 선언된 자료형은 **일반 자료형이 아닌** `Optional`로 한번 포장된 **Optional 자료형**이다.
 
@@ -109,6 +109,8 @@ if let nonOptionalNum = optionalNum {
     print(optionalNum)  // nil
 }
 ```
+
+표현식이 `nil`인지 아닌지 판별하여, `nil`이 아닌 경우 옵셔널 타입을 **Unwapping한 값**을 지정한 상수에 대입한다. 
 
 <br />
 
