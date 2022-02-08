@@ -90,6 +90,7 @@ var name: String?
 ```swift
 var name: String?
 var name2: String
+name2 = "Kim"
 
 print(type(of: name))
 print(type(of: name2))
