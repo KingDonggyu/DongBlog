@@ -114,8 +114,8 @@ const MarkdownRenderer = styled.div`
     }
     code[class*="language-"] {
       padding: 0;
-      background: #272822;
-      color: white;
+      background: #f5f2f0;
+      color: black;
       border: none;
     }
   }
