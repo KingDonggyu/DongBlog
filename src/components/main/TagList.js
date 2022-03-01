@@ -3,11 +3,14 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 const Wrapper = styled.div`
-  width: 100%;
-  padding: 30px 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  border-radius: 15px;
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+  padding: 30px 20px;
+  margin: 0px 10px 10px 10px;
+  background: white;
 `;
 
 const TagItem = styled(Link)`
@@ -21,7 +24,7 @@ const TagItem = styled(Link)`
   ${({ active }) =>
     active &&
     `box-shadow: 0 0 3px #606163;
-    font-weight: 500; `};
+    `};
   &:hover {
     box-shadow: 0 0 3px #606163;
   }

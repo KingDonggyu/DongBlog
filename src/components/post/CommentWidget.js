@@ -5,7 +5,8 @@ import styled from "styled-components";
 const Wrapper = styled.div`
   margin: 10px;
   padding: 10px;
-  border: 1px dashed;
+  border-top: 1px solid #d2d2d7;
+  /* border: 1px dashed; */
   @media (max-width: 768px) {
     padding: 0 20px;
   }

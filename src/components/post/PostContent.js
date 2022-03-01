@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const MarkdownRenderer = styled.div`
   // Renderer Style
-  background-color: white;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   width: 100%;

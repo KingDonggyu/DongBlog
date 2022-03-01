@@ -8,6 +8,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  border-radius: 15px;
+  box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);;
+  padding: 30px 0;
+  margin: 0 10px 30px 10px;
+  background: white;
 `;
 
 const HeaderWrapper = styled.div`

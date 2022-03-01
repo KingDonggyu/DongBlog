@@ -13,6 +13,7 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-right: 1px solid #d2d2d7;
   @media (max-width: 1100px) {
     position: static;
     width: 100%;
@@ -26,16 +27,19 @@ const Wrapper = styled.div`
   justify-content: space-between;
   height: 95%;
   width: 350px;
-  padding: 30px 0 0 0;
-  background: white;
-  border-radius: 7px;
-  border: 1px;
-  box-shadow: rgb(0 0 0 / 40%) 0px 2px 4px;
+  padding: 0px 0 0 0;
+  /* background: white; */
+  /* border-radius: 15px;
+  box-shadow: rgb(0 0 0 / 50%) 0px 2px 4px; */
   overflow-y: auto;
   @media (max-width: 1100px) {
     width: 90%;
   }
 `;
+
+const Label = styled.h3`
+  margin: 10px 0px 10px 20px;
+`
 
 const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
   const scrollBox = useRef(null);
@@ -43,9 +47,12 @@ const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
   return (
     <Background>
       <Wrapper ref={scrollBox}>
+        <Label>Profile</Label>
         <Introduction profileImage={profileImage} />
-        <ResponsiveArrow scrollBox={scrollBox} />
+        {/* <ResponsiveArrow scrollBox={scrollBox} /> */}
+        <Label>Category</Label>
         <CategoryList posts={posts} selectedCategory={selectedCategory} selectedTag={selectedTag} />
+        <Label>Tag</Label>
         <TagList posts={posts} selectedTag={selectedTag} />
       </Wrapper>
     </Background>

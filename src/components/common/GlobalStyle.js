@@ -10,6 +10,7 @@ const DefaultStyle = createGlobalStyle`
   html, body, #___gatsby, #gatsby-focus-wrapper {
     height: 100%;
     font-family: "Noto Sans KR";
+    background: #f5f5f7;
   }
   a, a:hover {
     color: inherit;

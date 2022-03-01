@@ -9,7 +9,7 @@ const Background = styled.div`
   position: relative;
   width: 100%;
   padding: 30px;
-  border-bottom: 1px inset;
+  border-bottom: 1px solid #d2d2d7;
   @media (max-width: 1100px) {
     padding: 30px 12px 10px 12px;
   }
