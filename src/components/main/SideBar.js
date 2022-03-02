@@ -25,12 +25,9 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 95%;
-  width: 350px;
-  padding: 0px 0 0 0;
-  /* background: white; */
-  /* border-radius: 15px;
-  box-shadow: rgb(0 0 0 / 50%) 0px 2px 4px; */
+  height: 100%;
+  width: 100%;
+  padding: 20px;
   overflow-y: auto;
   @media (max-width: 1100px) {
     width: 90%;
