@@ -21,6 +21,7 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: flex-start;
   margin: 30px 30px 10px 30px;
+  padding-bottom: 40px;
   h1 {
     font-weight: 400;
   }
@@ -45,6 +46,7 @@ const Thumbnail = styled(Img)`
   border-radius: 5px;
   margin-bottom: 30px;
   border: 1px solid;
+  display: none;
   @media (max-width: 1100px) {
     width: 100px;
     height: 100px;
