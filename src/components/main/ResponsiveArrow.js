@@ -5,7 +5,6 @@ import { FaAngleDoubleDown } from "react-icons/fa";
 const Wrapper = styled.div`
   display: none;
   position: relative;
-  text-align: center;
   margin: 14px 0;
   top: 5px;
   animation-duration: 1s;

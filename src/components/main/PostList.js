@@ -8,9 +8,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 25px;
-  @media (max-width: 768px) {
-    padding: 5px;
-  }
 `;
 
 const PostList = ({ posts, selectedTag, selectedCategory }) => {

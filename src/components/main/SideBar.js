@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Introduction from "./Introduction";
 import CategoryList from "./CategoryList";
 import TagList from "./TagList";
-import ResponsiveArrow from "./ResponsiveArrow";
+// import ResponsiveArrow from "./ResponsiveArrow";
 
 const Background = styled.div`
   height: 100%;
@@ -17,7 +17,8 @@ const Background = styled.div`
   @media (max-width: 1100px) {
     position: static;
     width: 100%;
-    height: 330px;
+    height: 480px;
+    border-bottom: 1px solid #d2d2d7;
   }
 `;
 
@@ -44,9 +45,9 @@ const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
   return (
     <Background>
       <Wrapper ref={scrollBox}>
+        {/* <ResponsiveArrow scrollBox={scrollBox} /> */}
         <Label>Profile</Label>
         <Introduction profileImage={profileImage} />
-        {/* <ResponsiveArrow scrollBox={scrollBox} /> */}
         <Label>Category</Label>
         <CategoryList posts={posts} selectedCategory={selectedCategory} selectedTag={selectedTag} />
         <Label>Tag</Label>
