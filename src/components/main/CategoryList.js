@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   justify-content: flex-start;
   border-radius: 15px;
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
-  padding: 30px 0;
+  padding: 20px 0;
   margin: 0px 10px 30px 10px;
   background: white;
 `;
