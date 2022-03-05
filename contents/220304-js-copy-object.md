@@ -1,6 +1,6 @@
 ---
 date: "2022-03-04"
-title: "[JS] 객체의 복사"
+title: "[JavaScript] 객체의 복사"
 category: "Language"
 categoryColor: "darkorchid"
 tags: ["JS"]
