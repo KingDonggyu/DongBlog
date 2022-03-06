@@ -89,6 +89,43 @@ console.log(secondCar);
 
 <br />
 
+## 중첩 객체 복사
+
+지금까진 객체의 모든 프로퍼티가 **원시값**인 경우만 가정했다.
+
+**그런데 프로퍼티는 다른 객체에 대한 참조 값일 수도 있다!**
+
+```js
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = Object.assign({}, user);
+
+alert( user.sizes === clone.sizes ); // true, 같은 객체이다.
+
+user.sizes.width++;      
+alert(clone.sizes.width); // 51
+```
+
+`user`와 `clone`는 `sizes`를 공유한다.
+
+이 경우는 어떻게 할까..?
+
+❗️ **이 문제를 해결하려면 `user[key]`의 각 값을 검사하면서, 그 값이 객체인 경우 객체의 구조도 복사해주는 반복문을 사용해야한다.**
+
+이러한 방식을 **깊은 복사(deep cloning)** 이라 한다.
+
+<br />
+
+깊은 복사 시 사용되는 표준 알고리즘인 **Structured cloning algorithm**을 사용하면 위 사례를 비롯한 다양한 상황에서 객체를 복제할 수 있다.
+
+자바스크립트 라이브러리 **lodash**의 메서드인 `_.cloneDeep(obj)`을 사용하면 **이 알고리즘을 직접 구현하지 않고도 깊은 복사를 처리할 수 있다!**
+
 # 배열의 복사
 
 ```js
@@ -149,9 +186,11 @@ console.log(newVeggie);
 <br />
 <br />
 
-당연하지만 중요한 개념! 첫 JS 포스팅이므로 가볍게 시작해본다 😁
+JS에 대해 공부하면 할수록 객체 및 배열 복사에 대해 중요한 개념이 계속 나온다..
 
-어서 리액트도 다시 깊게 공부하고 싶다..
+그래서 이 포스트에 내용을 몇번이나 더 추가한지 모르겠다.
+
+그만큼 중요한 개념인 거겠지?
 
 <br />
 <br />
