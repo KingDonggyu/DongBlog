@@ -1,6 +1,6 @@
 ---
 date: "2022-03-04"
-title: "[JavaScript] 객체의 복사"
+title: "[JavaScript] 객체의 복사 / 배열의 복사"
 category: "Language"
 categoryColor: "darkorchid"
 tags: ["JS"]
@@ -11,7 +11,7 @@ thumbnail: "./images/JavaScript.png"
 
 우선 자바스크립트 지식부터 탄탄히 쌓자!
 
-<br />
+# 객체의 복사
 
 💡 **원시 자료형과는 달리 객체를 복사할 때는 참조 방식이 쓰인다.**
 
@@ -87,6 +87,66 @@ console.log(secondCar);
 
 **첫 번째 인수**에 **복사본에 해당하는 객체**를 넣고, **두 번째 인수**에 **원본에 해당하는 객체**를 넣는다.
 
+<br />
+
+# 배열의 복사
+
+```js
+const veggie = ["tomato", "cucumber", "beans"];
+const newVeggie = veggie;
+```
+
+위에서 `veggie` 배열의 복사본을 생성한 것처럼 보이지만, 아래 코드를 추가해 보자.
+
+```js
+veggie.push("peas");
+console.log(veggie);
+// ["tomato", "cucumber", "beans", "peas"]
+console.log(newVeggie);
+// ["tomato", "cucumber", "beans", "peas"]
+```
+
+기존 배열을 수정하자 새 배열도 변경되었다. 왜..?
+
+💡 **실제로 복사본을 만든 것이 아니라, 새 배열은 단순히 이전 배열을 참조하기 때문이다!**
+
+<br />
+
+배열 또한 객체와 같이 방법이 다~ 있다.
+
+먼저 ES5 및 이전 버전에서 일반적으로 배열의 복사본을 만드는 방법이다.
+
+```js
+const veggie = ["tomato", "cucumber", "beans"];
+const newVeggie = [].concat(veggie);
+
+veggie.push("peas");
+console.log(veggie);
+// ["tomato", "cucumber", "beans", "peas"]
+console.log(newVeggie);
+// ["tomato", "cucumber", "beans"]
+```
+
+**빈 배열을 새로 생성하고, `concat()`으로 기존 배열의 값을 새 배열에 이어 붙인다.**
+
+<br />
+
+**스프레드 문법**을 사용하면 동일한 결과를 얻을 수 있다.
+
+```js
+const veggie = ["tomato", "cucumber", "beans"];
+const newVeggie = [...veggie];
+
+veggie.push("peas");
+console.log(veggie);
+// ["tomato", "cucumber", "beans", "peas"]
+console.log(newVeggie);
+// ["tomato", "cucumber", "beans"]
+```
+
+**우선 배열을 할당하고, 그 내부에 스프레드 연산자를 통해 기존 배열의 모든 원소를 넣었다.**
+
+<br />
 <br />
 
 당연하지만 중요한 개념! 첫 JS 포스팅이므로 가볍게 시작해본다 😁
