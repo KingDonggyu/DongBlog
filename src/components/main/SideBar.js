@@ -18,7 +18,6 @@ const Background = styled.div`
     position: static;
     width: 100%;
     height: 480px;
-    border-bottom: 1px solid #d2d2d7;
   }
 `;
 
@@ -32,6 +31,8 @@ const Wrapper = styled.div`
   overflow-y: auto;
   @media (max-width: 1100px) {
     width: 90%;
+    border: 5px solid lightgray;
+    border-radius: 40px;
   }
 `;
 
