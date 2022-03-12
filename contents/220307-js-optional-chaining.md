@@ -161,7 +161,6 @@ alert( user2?.[key] ); // undefined
 ```
 
 <br />
-<br />
 
 ## ※ Source
 

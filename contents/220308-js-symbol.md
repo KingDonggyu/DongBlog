@@ -259,7 +259,6 @@ https://tc39.es/ecma262/#sec-well-known-symbols 여기서 살펴보면 된다 �
 하지만 이번 학습을 해보면서 심볼을 알맞게 잘 적용하면 더 좋은 코드를 작성할 수 있을거라 확신한다 😁
 
 <br />
-<br />
 
 ## ※ Source
 
