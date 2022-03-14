@@ -1,6 +1,6 @@
 ---
 date: "2022-03-14"
-title: "[JavaScript] map과 set"
+title: "[JavaScript] Map과 Set"
 category: "Language"
 categoryColor: "darkorchid"
 tags: ["JS"]
@@ -17,7 +17,7 @@ thumbnail: "./images/JavaScript.png"
 
 <br />
 
-# map
+# Map
 
 **맵(Map)은 키가 있는 데이터를 저장한다는 점에서 객체와 유사하다.**
 
@@ -261,7 +261,7 @@ alconsole.logert(obj.orange); // 2
 
 <br />
 
-# set
+# Set
 
 **셋(Set)은 중복을 허용하지 않는 값을 모아놓은 특별한 컬렉션이다.**
 

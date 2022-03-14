@@ -37,7 +37,7 @@ const PostItemInfo = ({ title, date, category, categoryColor, tags }) => {
         tags={tags}
       />
       <Title>{title}</Title>
-      <Date>Posted {date}</Date>
+      <Date>Posted {date.substring(0, 11)}</Date>
     </Wrapper>
   );
 };

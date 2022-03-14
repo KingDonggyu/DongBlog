@@ -76,7 +76,7 @@ export const queryPostList = graphql`
           }
           frontmatter {
             title
-            date(formatString: "YYYY.MM.DD.")
+            date(formatString: "YYYY.MM.DD.hh.mm")
             category
             categoryColor
             tags
