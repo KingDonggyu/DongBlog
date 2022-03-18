@@ -2,7 +2,7 @@
 date: "2022-03-11"
 title: "[JavaScript] 객체의 형 변환"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---

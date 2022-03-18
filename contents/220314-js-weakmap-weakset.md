@@ -2,7 +2,7 @@
 date: "2022-03-14T18:00"
 title: "[JavaScript] WeakMap과 WeakSet"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---

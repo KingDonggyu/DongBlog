@@ -2,7 +2,7 @@
 date: "2022-02-09"
 title: "[Swift] Implicitly Unwrapped Optional"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["Swift"]
 thumbnail: "./images/Swift.png"
 ---

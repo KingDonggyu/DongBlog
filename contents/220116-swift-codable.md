@@ -2,7 +2,7 @@
 date: "2022-01-16"
 title: "[Swift] Codable"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["Swift"]
 thumbnail: "./images/Swift.png"
 ---

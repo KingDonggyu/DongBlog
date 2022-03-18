@@ -2,7 +2,7 @@
 date: "2021-12-03"
 title: "[Java] JDBC"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["Java", "JDBC", "SQL"]
 thumbnail: "./images/Java.jpeg"
 ---

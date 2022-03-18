@@ -2,7 +2,7 @@
 date: "2022-03-07"
 title: "[JavaScript] Optional Chaining"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---

@@ -2,7 +2,7 @@
 date: "2022-03-12"
 title: "[JavaScript] 원시값의 메서드"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---

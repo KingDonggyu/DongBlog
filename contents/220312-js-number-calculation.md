@@ -2,7 +2,7 @@
 date: "2022-03-12"
 title: "[JavaScript] 숫자형의 부정확한 계산"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---

@@ -2,7 +2,7 @@
 date: "2022-03-06"
 title: "[JavaScript] Garbage Collection"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---

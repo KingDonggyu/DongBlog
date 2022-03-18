@@ -2,7 +2,7 @@
 date: "2022-03-06"
 title: "[JavaScript] 함수 선언문 vs 함수 표현식"
 category: "Language"
-categoryColor: "darkorchid"
+categoryColor: "#25e5bd"
 tags: ["JS"]
 thumbnail: "./images/JavaScript.png"
 ---
