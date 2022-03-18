@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import styled from "styled-components";
 import { Helmet } from "react-helmet";
 
@@ -15,7 +15,7 @@ const Container = styled.main`
 const Template = ({ title, description, author, url, image, children }) => {
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setLoading(false);
   }, []);
 
