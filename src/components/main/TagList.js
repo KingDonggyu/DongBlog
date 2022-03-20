@@ -19,7 +19,7 @@ const TagItem = styled(Link)`
   margin: 10px 10px 0 0;
   padding: 3px 5px;
   font-size: 10px;
-  font-weight: 400;
+  font-weight: 300;
   color: #868e96;
   cursor: pointer;
   ${({ active }) =>
