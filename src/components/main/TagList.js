@@ -19,14 +19,16 @@ const TagItem = styled(Link)`
   margin: 10px 10px 0 0;
   padding: 3px 5px;
   font-size: 10px;
-  font-weight: 300;
+  font-weight: 400;
+  color: #868e96;
   cursor: pointer;
   ${({ active }) =>
-    active &&
-    `box-shadow: 0 0 3px #606163;
-    `};
+    active && `
+    color: black;
+    `
+    };
   &:hover {
-    box-shadow: 0 0 3px #606163;
+    color: black;
   }
 `;
 

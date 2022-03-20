@@ -53,9 +53,10 @@ const TagItem = styled(Link)`
   margin: 0 0 10px 10px;
   padding: 3px 5px;
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
+  color: #868e96;
   &:hover {
-    box-shadow: 0 0 3px #606163;
+    color: black;
   }
   @media (max-width: 768px) {
     height: 20px;
