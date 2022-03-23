@@ -1,5 +1,5 @@
 ---
-date: "2022-03-20"
+date: "2022-03-20T15:00"
 title: "[JavaScript] Closure"
 category: "Language"
 categoryColor: "#25e5bd"
