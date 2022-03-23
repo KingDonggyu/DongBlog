@@ -1,3 +1,3 @@
-## 개인 기술 블로그 (Powerd By Gatsby JS)
+## 개인 기술 블로그
 
 https://dongblog.netlify.app/
