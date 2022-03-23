@@ -36,6 +36,8 @@ function App() {
 
 만약 component를 렌더링할 때마다 JSX 코드를 작성하는 것이 아니라 위 코드처럼 매번 React.createElement 함수를 사용해야 한다면 매우 불편할 것이다.
 
+<br />
+
 ## JSX 문법
 
 **1. 감싸인 요소**
