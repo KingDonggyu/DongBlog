@@ -24,9 +24,11 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   }
 };
 
+// Transform Markdown File to page
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
 
+  // Get All Markdown File
   const queryAllMarkdownData = await graphql(`
     {
       allMarkdownRemark(
@@ -43,18 +45,20 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     }
   `);
 
+  // Hadle Errors
   if (queryAllMarkdownData.errors) {
     reporter.panicOnBuild(`Error while running query`);
     return;
   }
 
+  // Import Template Files
   const PostTemplateComponent = path.resolve(
     __dirname,
     "src/templates/PostTemplate.js"
   );
-
+  
+  // Create Pages Through Markdown Files
   const generatePostPage = ({
-    // slug 데이터를 통해 페이지를 생성해주는 함수
     node: {
       fields: { slug },
     },
