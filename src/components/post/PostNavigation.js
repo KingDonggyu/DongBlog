@@ -15,6 +15,13 @@ const Wrapper = styled.div`
   justify-content: space-between;
   margin: 30px 0;
   color: #495057;
+
+  @media (max-width: 1100px) {
+    flex-direction: column;
+    align-items
+    margin: 0;
+    height: 300px;
+  }
 `;
 
 const ItemWrapper = styled(Link)`
@@ -40,6 +47,11 @@ const ItemWrapper = styled(Link)`
     `
     display: none;
     `};
+
+  @media (max-width: 1100px) {
+    width: 90%;
+    margin: 20px 0;
+  }
 `;
 
 const ItemLabel = styled.p`
