@@ -5,6 +5,7 @@ import styled from "styled-components";
 import Template from "../components/common/Template";
 import PostHead from "../components/post/PostHead";
 import PostContent from "../components/post/PostContent";
+import PostNavigation from "../components/post/PostNavigation";
 import CommentWidget from "../components/post/CommentWidget";
 
 const Container = styled.div`
@@ -30,10 +31,12 @@ const ContentWrapper = styled.div`
   }
 `;
 
-const PostTemplate = ({ data, location }) => {
+const PostTemplate = ({ data, pageContext, location }) => {
   const {
     node: { id, html, frontmatter },
   } = data.allMarkdownRemark.edges[0];
+
+  const { previous, next } = pageContext;
 
   return (
     <Template
@@ -47,6 +50,7 @@ const PostTemplate = ({ data, location }) => {
         <ContentWrapper>
           <PostHead {...frontmatter} />
           <PostContent html={html} />
+          <PostNavigation previous={next} next={previous} />
           <CommentWidget url={location.href} id={id} tile={frontmatter.title} />
         </ContentWrapper>
       </Container>

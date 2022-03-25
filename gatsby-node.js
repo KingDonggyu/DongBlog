@@ -27,15 +27,17 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 // Transform Markdown File to page
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
-
   // Get All Markdown File
   const queryAllMarkdownData = await graphql(`
     {
       allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date, frontmatter___title] }
+        sort: { order: DESC, fields: [frontmatter___date] }
       ) {
         edges {
           node {
+            frontmatter {
+              title
+            }
             fields {
               slug
             }
@@ -57,20 +59,24 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     "src/templates/PostTemplate.js"
   );
   
-  // Create Pages Through Markdown Files
-  const generatePostPage = ({
-    node: {
-      fields: { slug },
-    },
-  }) => {
+  // Create Pages Through Markdown Files 
+  const posts = queryAllMarkdownData.data.allMarkdownRemark.edges
+
+  posts.forEach((edge, index) => {
+    const slug = edge.node.fields.slug;
+    const next = index == posts.length - 1 ? null : posts[index + 1].node;
+    const previous = index == 0 ? null : posts[index - 1].node;
+
     const pageOtions = {
       path: slug,
       component: PostTemplateComponent,
-      context: { slug },
+      context: { 
+        slug, 
+        next,
+        previous,
+      },
     };
-
+    
     createPage(pageOtions);
-  };
-
-  queryAllMarkdownData.data.allMarkdownRemark.edges.forEach(generatePostPage);
+  });
 };
