@@ -99,8 +99,8 @@ print(type(of: name2))
 위의 두 타입 값의 자료형을 출력해보면 
 
 ```
-String
 Optional<String>
+String
 ```
 
 다르다!!!
