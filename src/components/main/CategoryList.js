@@ -47,20 +47,23 @@ const CategoryItem = styled(Link)`
 
 const CategoryList = ({ posts, selectedCategory, selectedTag }) => {
   const categoryList = useMemo(
-    () =>
-      posts.reduce(
-        ( list, { node: { frontmatter: { category } } } ) => {
-          if (list[category] === undefined) list[category] = 1;
-          else list[category]++;
-          list['All']++;
-          return list;
-        }, { All: 0 }
-      ), []
+    () => posts.reduce(
+      ( list, { node: { frontmatter: { category } } } ) => {
+        if (list[category] === undefined) list[category] = 1;
+        else list[category]++;
+        list['All']++;
+        return list;
+      }, { All: 0 }
+    ), []
   );
+
+  const sortedCategoryList = Object.fromEntries(
+    Object.entries(categoryList)
+    .sort( ( [, a], [, b] ) => b - a ) )
 
   return (
     <Wrapper>
-      {Object.entries(categoryList).map(([name, count]) => (
+      {Object.entries(sortedCategoryList).map(([name, count]) => (
         <CategoryItem
           to={name === "All" ? `/` : `/?category=${name}`}
           active={name === selectedCategory && selectedTag === "All" ? 1 : 0}

@@ -34,16 +34,17 @@ const TagItem = styled(Link)`
 
 const TagList = ({ posts, selectedTag }) => {
   const tagList = useMemo(
-    () =>
-      posts.reduce(
-        ( list, { node: { frontmatter: { tags } } } ) => {
-          tags.forEach((tag) => {
-            if (!list.includes(tag)) list.push(tag);
-          });
-          return list;
-        }, []
-      ), []
+    () => posts.reduce(
+      ( list, { node: { frontmatter: { tags } } } ) => {
+        tags.forEach((tag) => {
+          if (!list.includes(tag)) list.push(tag);
+        });
+        return list;
+      }, []
+    ), []
   );
+
+  tagList.sort();
 
   return (
     <Wrapper>
