@@ -7,7 +7,7 @@ const FooterWrapper = styled.footer`
   margin-top: auto;
   padding-bottom: 30px;
   font-size: 15px;
-  text-align: center;
+  /* text-align: center; */
   line-height: 1.5;
   color: #727272;
   @media (max-width: 1100px) {
@@ -19,8 +19,7 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      © 2022 Developer KimDonggyu.
-      <br />E-mail: dgkim69166916@gmail.com
+      Copyright © 2022 Kim DongGyu. All rights reserved.
     </FooterWrapper>
   );
 };
