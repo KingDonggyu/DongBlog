@@ -80,17 +80,6 @@ export const queryPostList = graphql`
             category
             categoryColor
             tags
-            thumbnail {
-              childImageSharp {
-                fluid(
-                  maxWidth: 150
-                  maxHeight: 150
-                  fit: INSIDE
-                  quality: 100
-                ) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
             }
           }
         }

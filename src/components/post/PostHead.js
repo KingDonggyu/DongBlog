@@ -34,25 +34,11 @@ const Wrapper = styled.div`
 `;
 
 const HomeBtn = styled(Link)`
-  margin: 20px;
+  margin: 30px;
   color: #495057;
   cursor: pointer;
   &:hover {
     color: black;
-  }
-`;
-
-const Thumbnail = styled(Img)`
-  width: 150px;
-  height: 150px;
-  border-radius: 5px;
-  margin-bottom: 30px;
-  border: 1px solid;
-  display: none;
-  @media (max-width: 1100px) {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 15px;
   }
 `;
 
@@ -62,9 +48,6 @@ const PostHead = ({
   category,
   categoryColor,
   tags,
-  thumbnail: {
-    childImageSharp: { fluid },
-  },
 }) => {
   return (
     <Background>
@@ -78,7 +61,6 @@ const PostHead = ({
         tags={tags}
       />
       <Wrapper>
-        <Thumbnail fluid={fluid} alt="thumbnail" />
         <h1>{title}</h1>
       </Wrapper>
     </Background>
