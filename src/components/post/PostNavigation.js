@@ -67,6 +67,8 @@ const TextWrapper = styled.div`
 
 const ItemLabel = styled.p`
   font-size: 0.8em;
+
+  ${({ isNext }) => (isNext && `text-align: end;`)}
 `;
 
 const ItemTitle = styled.h3`
@@ -91,7 +93,7 @@ const NavItem = ({ isNext, node }) => {
     <ItemWrapper to={slug} active={isActive} isNext={isNext}>
       {!isNext && <IoIosArrowBack size="40" />}
       <TextWrapper isNext={isNext}>
-        <ItemLabel>{label}</ItemLabel>
+        <ItemLabel isNext={isNext}>{label}</ItemLabel>
         <ItemTitle>{title}</ItemTitle>
       </TextWrapper>
       {isNext && <IoIosArrowForward size="40" />}
