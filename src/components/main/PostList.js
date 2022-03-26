@@ -7,7 +7,7 @@ import PostItem from "./PostItem";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 25px;
+  padding: 25px 25px 0 25px;
 `;
 
 const PostList = ({ posts, selectedTag, selectedCategory }) => {
