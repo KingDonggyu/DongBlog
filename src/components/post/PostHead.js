@@ -33,7 +33,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const BackBtn = styled(Link)`
+const HomeBtn = styled(Link)`
   margin: 20px;
   color: #495057;
   cursor: pointer;
@@ -68,9 +68,9 @@ const PostHead = ({
 }) => {
   return (
     <Background>
-      <BackBtn to={"/"}>
-        <AiFillHome size="40" />
-      </BackBtn>
+      <HomeBtn to={"/"}>
+        <AiFillHome size="30" />
+      </HomeBtn>
       <PostHeadInfo
         date={date}
         category={category}
