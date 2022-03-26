@@ -2,7 +2,7 @@
 date: "2021-11-05"
 title: "[React] 외부 API 연동하기 - 비동기 처리"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React", "JS", "axios"]
 thumbnail: "./images/React.png"
 ---

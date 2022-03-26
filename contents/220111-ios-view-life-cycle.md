@@ -2,7 +2,7 @@
 date: "2022-01-11"
 title: "[iOS] View Life Cycle"
 category: "Mobile"
-categoryColor: "dimgray"
+categoryColor: "lightpink"
 tags: ["iOS"]
 thumbnail: "./images/iOS.png"
 ---

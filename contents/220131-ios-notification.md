@@ -2,7 +2,7 @@
 date: "2022-01-31"
 title: "[iOS] Notification"
 category: "Mobile"
-categoryColor: "dimgray"
+categoryColor: "lightpink"
 tags: ["iOS"]
 thumbnail: "./images/iOS.png"
 ---

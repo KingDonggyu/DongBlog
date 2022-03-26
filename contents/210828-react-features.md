@@ -2,7 +2,7 @@
 date: "2021-08-28"
 title: "[React] React의 특징"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

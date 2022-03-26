@@ -2,7 +2,7 @@
 date: "2021-09-14"
 title: "[React] 컴포넌트의 라이프사이클 메서드"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

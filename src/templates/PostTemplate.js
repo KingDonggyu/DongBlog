@@ -44,7 +44,6 @@ const PostTemplate = ({ data, pageContext, location }) => {
       description={frontmatter.title}
       author={frontmatter.author}
       url={location.href}
-      image={frontmatter.thumbnail.publicURL}
     >
       <Container>
         <ContentWrapper>
@@ -73,14 +72,6 @@ export const queryMarkdownDataBySlug = graphql`
             category
             categoryColor
             tags
-            thumbnail {
-              childImageSharp {
-                fluid(fit: INSIDE, quality: 100) {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
-              }
-              publicURL
-            }
           }
         }
       }

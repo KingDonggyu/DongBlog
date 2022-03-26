@@ -2,7 +2,7 @@
 date: "2021-09-17"
 title: "[React] Hooks"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

@@ -2,7 +2,7 @@
 date: "2021-09-12"
 title: "[React] 컴포넌트 반복"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

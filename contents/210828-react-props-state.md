@@ -2,7 +2,7 @@
 date: "2021-08-29"
 title: "[React] 컴포넌트 (props, state)"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

@@ -2,7 +2,7 @@
 date: "2021-09-22"
 title: "[React] immer를 사용하여 더 쉽게 불변성 유지하기"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

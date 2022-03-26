@@ -2,7 +2,7 @@
 date: "2021-09-05"
 title: "[React] ref: DOM에 이름 달기"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

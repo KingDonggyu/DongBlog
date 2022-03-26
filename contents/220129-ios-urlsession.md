@@ -2,7 +2,7 @@
 date: "2022-01-29"
 title: "[iOS] URLSession"
 category: "Mobile"
-categoryColor: "dimgray"
+categoryColor: "lightpink"
 tags: ["iOS"]
 thumbnail: "./images/iOS.png"
 ---

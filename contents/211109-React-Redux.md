@@ -2,7 +2,7 @@
 date: "2021-11-09"
 title: "[React] Redux"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React", "Redux", "Vanilla JS"]
 thumbnail: "./images/Redux.png"
 ---

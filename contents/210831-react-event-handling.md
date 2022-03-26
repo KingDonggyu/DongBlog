@@ -2,7 +2,7 @@
 date: "2021-08-31"
 title: "[React] 이벤트 핸들링"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

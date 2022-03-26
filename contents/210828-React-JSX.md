@@ -2,7 +2,7 @@
 date: "2021-08-28"
 title: "[React] JSX"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

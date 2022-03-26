@@ -2,7 +2,7 @@
 date: "2021-09-21"
 title: "[React] 컴포넌트 성능 최적화"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

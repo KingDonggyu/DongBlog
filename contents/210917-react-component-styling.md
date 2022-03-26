@@ -2,7 +2,7 @@
 date: "2021-09-17"
 title: "[React] 컴포넌트 스타일링"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React", "CSS"]
 thumbnail: "./images/React.png"
 ---

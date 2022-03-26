@@ -2,7 +2,7 @@
 date: "2021-10-06"
 title: "[React] React Router로 SPA 개발하기 (2)"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---

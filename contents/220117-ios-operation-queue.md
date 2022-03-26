@@ -2,7 +2,7 @@
 date: "2022-01-17"
 title: "[iOS] Operation Queue"
 category: "Mobile"
-categoryColor: "dimgray"
+categoryColor: "lightpink"
 tags: ["iOS"]
 thumbnail: "./images/iOS.png"
 ---

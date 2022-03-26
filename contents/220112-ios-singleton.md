@@ -2,7 +2,7 @@
 date: "2022-01-12"
 title: "[iOS] Singleton"
 category: "Mobile"
-categoryColor: "dimgray"
+categoryColor: "lightpink"
 tags: ["iOS"]
 thumbnail: "./images/iOS.png"
 ---

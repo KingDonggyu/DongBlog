@@ -2,7 +2,7 @@
 date: "2021-11-05"
 title: "[React] Context API"
 category: "Web"
-categoryColor: "indianred"
+categoryColor: "mediumpurple"
 tags: ["React"]
 thumbnail: "./images/React.png"
 ---
