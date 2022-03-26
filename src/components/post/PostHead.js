@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 import Img from "gatsby-image";
-import { FaArrowCircleLeft } from "react-icons/fa";
+import { AiFillHome } from "react-icons/ai";
 
 import PostHeadInfo from "./PostHeadInfo";
 
@@ -32,11 +33,12 @@ const Wrapper = styled.div`
   }
 `;
 
-const BackBtn = styled.span`
+const BackBtn = styled(Link)`
   margin: 20px;
+  color: #495057;
   cursor: pointer;
   &:hover {
-    color: #4c4c4c;
+    color: black;
   }
 `;
 
@@ -64,11 +66,10 @@ const PostHead = ({
     childImageSharp: { fluid },
   },
 }) => {
-  const goBackPage = () => window.history.back();
   return (
     <Background>
-      <BackBtn onClick={goBackPage}>
-        <FaArrowCircleLeft size="40" />
+      <BackBtn to={"/"}>
+        <AiFillHome size="40" />
       </BackBtn>
       <PostHeadInfo
         date={date}
