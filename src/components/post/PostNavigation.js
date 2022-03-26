@@ -26,7 +26,7 @@ const Wrapper = styled.div`
 `;
 
 const ItemWrapper = styled(Link)`
-  width: 40%;
+  width: 45%;
   height: 100%;
   background-color: #f8f9fa;
   border-radius: 4px;
@@ -60,6 +60,7 @@ const TextWrapper = styled.div`
   justify-content: space-evenly;
   height: 100%;
   margin-left: 20px;
+  overflow: auto;
 
   ${({ isNext }) => (isNext ? `margin-right: 20px;` : `margin-left: 20px;`)}
 `;

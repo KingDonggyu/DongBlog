@@ -80,7 +80,6 @@ export const queryPostList = graphql`
             category
             categoryColor
             tags
-            }
           }
         }
       }
