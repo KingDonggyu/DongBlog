@@ -30,7 +30,7 @@ const MarkdownRenderer = styled.div`
   }
 
   h3 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 
   * + h1 {
@@ -62,7 +62,7 @@ const MarkdownRenderer = styled.div`
   }
 
   h3 {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   // Adjust Quotation Element Style
