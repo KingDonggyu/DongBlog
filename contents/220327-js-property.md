@@ -1,5 +1,5 @@
 ---
-date: "2022-03-27T15:30"
+date: "2022-03-27T13:30"
 title: "[JavaScript] 객체 프로퍼티"
 category: "Language"
 categoryColor: "#25e5bd"
