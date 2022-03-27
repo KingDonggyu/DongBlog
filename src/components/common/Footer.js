@@ -18,7 +18,7 @@ const FooterWrapper = styled.footer`
 const Footer = () => {
   return (
     <FooterWrapper>
-      Copyright © 2022 Kim DongGyu. All rights reserved.
+      Copyright © 2022 김동규. All rights reserved.
     </FooterWrapper>
   );
 };

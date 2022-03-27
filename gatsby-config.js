@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `동 블로그`,
-    description: `KingDonggyu의 기술 블로그 - Language, Web, Algorithm, Data Science`,
-    author: `KingDonggyu`,
+    description: `동규의 기술 지식 창고`,
+    author: `김동규`,
     siteUrl: `https://dongblog.netlify.app/`,
   },
   plugins: [
