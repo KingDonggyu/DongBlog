@@ -11,6 +11,11 @@ const Wrapper = styled.div`
   padding: 20px 0;
   margin: 0px 10px 30px 10px;
   background: white;
+  @media (max-width: 1100px) {
+    height: fit-content;
+    padding-right: 50px;
+    margin: 10px 20px;
+  }
 `;
 
 const CategoryItem = styled(Link)`

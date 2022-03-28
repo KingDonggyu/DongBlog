@@ -11,6 +11,11 @@ const Wrapper = styled.div`
   padding: 20px 20px;
   margin: 0px 10px;
   background: white;
+  @media (max-width: 1100px) {
+    height: fit-content;
+    width: 270px;
+    margin: 10px 20px;
+  }
 `;
 
 const TagItem = styled(Link)`
@@ -22,6 +27,7 @@ const TagItem = styled(Link)`
   font-weight: 300;
   color: #868e96;
   cursor: pointer;
+  height: fit-content;
   ${({ active }) =>
     active && `
     color: black;

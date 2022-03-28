@@ -7,12 +7,19 @@ import ProfileImage from "./ProfileImage";
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border-radius: 15px;
   box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);;
   padding: 30px 0;
   margin: 0 10px 30px 10px;
   background: white;
+  @media (max-width: 1100px) {
+    height: fit-content;
+    padding: 40px;
+    margin: 10px 20px;
+    margin-left: auto;
+  }
 `;
 
 const HeaderWrapper = styled.div`

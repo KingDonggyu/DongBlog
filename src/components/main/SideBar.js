@@ -18,6 +18,8 @@ const Background = styled.div`
     position: static;
     width: 100%;
     height: 480px;
+    border-right: none;
+    border-bottom: 1px solid #d2d2d7;
   }
 `;
 
@@ -30,14 +32,16 @@ const Wrapper = styled.div`
   padding: 20px;
   overflow-y: auto;
   @media (max-width: 1100px) {
-    width: 90%;
-    border: 5px solid lightgray;
-    border-radius: 40px;
+    display: -webkit-inline-box;;
+    padding-bottom: 0;
   }
 `;
 
 const Label = styled.h3`
   margin: 10px 0px 10px 20px;
+  @media (max-width: 1100px) {
+    display: none;
+  }
 `
 
 const SideBar = ({ posts, selectedTag, selectedCategory, profileImage }) => {
