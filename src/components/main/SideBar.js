@@ -17,7 +17,7 @@ const Background = styled.div`
   @media (max-width: 1100px) {
     position: static;
     width: 100%;
-    height: 480px;
+    height: auto;
     border-right: none;
   }
 `;
