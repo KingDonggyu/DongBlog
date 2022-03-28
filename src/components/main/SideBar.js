@@ -31,6 +31,7 @@ const Wrapper = styled.div`
   padding: 20px;
   overflow-y: auto;
   @media (max-width: 1100px) {
+    overflow-y: none;
     display: -webkit-inline-box;
     padding-bottom: 0;
     height: 300px;
