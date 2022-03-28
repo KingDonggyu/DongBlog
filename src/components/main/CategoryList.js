@@ -12,8 +12,10 @@ const Wrapper = styled.div`
   margin: 0px 10px 30px 10px;
   background: white;
   @media (max-width: 1100px) {
-    height: fit-content;
-    padding-right: 50px;
+    width: 350px;
+    flex-wrap: wrap;
+    box-sizing: content-box;
+    padding-right: 10px;
     margin: 10px 20px;
   }
 `;

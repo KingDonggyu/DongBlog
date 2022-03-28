@@ -19,7 +19,6 @@ const Background = styled.div`
     width: 100%;
     height: 480px;
     border-right: none;
-    border-bottom: 1px solid #d2d2d7;
   }
 `;
 
@@ -32,8 +31,9 @@ const Wrapper = styled.div`
   padding: 20px;
   overflow-y: auto;
   @media (max-width: 1100px) {
-    display: -webkit-inline-box;;
+    display: -webkit-inline-box;
     padding-bottom: 0;
+    height: 300px;
   }
 `;
 
