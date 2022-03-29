@@ -12,7 +12,7 @@ const Wrapper = styled.div`
   margin: 0px 10px;
   background: white;
   @media (max-width: 1100px) {
-    width: 350px;
+    width: 380px;
     box-sizing: content-box;
     margin: 10px 20px;
   }

@@ -15,9 +15,9 @@ const Wrapper = styled.div`
   margin: 0 10px 30px 10px;
   background: white;
   @media (max-width: 1100px) {
-    width: 350px;
+    width: 270px;
     padding: 40px;
-    margin: 10px 20px;
+    margin: 10px 20px 10px 5px;
   }
 `;
 
