@@ -1,6 +1,6 @@
 ---
 date: "2022-03-30T15:40"
-title: "[JavaScript] static / private, protected"
+title: "[JavaScript] static과 private, protected"
 category: "Language"
 categoryColor: "#25e5bd"
 tags: ["JS"]
