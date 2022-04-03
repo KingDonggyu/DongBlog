@@ -1,6 +1,6 @@
 ---
 date: "2022-03-31T11:50"
-title: "[JavaScript] 믹스인"
+title: "[JavaScript] Mixin"
 category: "Language"
 categoryColor: "#25e5bd"
 tags: ["JS"]
