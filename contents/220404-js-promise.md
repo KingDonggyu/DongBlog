@@ -131,7 +131,9 @@ let promise = new Promise(function (resolve, reject) {
 
 그리고 소비함수는 `.then`, `.catch`, `.finally` 메서드를 사용해 등록된다.
 
-### then
+<br />
+
+- ### then
 
 `.then`은 프로미스에서 가장 중요하고 기본이 되는 메서드이다. 문법은 다음과 같다.
 
@@ -171,7 +173,7 @@ promise.then(alert); // 1초 뒤 "done!" 출력
 
 <br />
 
-### catch
+- ### catch
 
 에러가 발생한 경우만 다루고 싶다면 `.then(null, errorHandlingFunction)`같이 `null`을 첫 번째 인수로 전달하면 된다.
 
@@ -179,7 +181,7 @@ promise.then(alert); // 1초 뒤 "done!" 출력
 
 <br />
 
-### finally
+- ### finally
 
 `try {...} catch {...}`에 `finally` 절이 있는 것처럼, 프로미스에도 `finally`가 있다.
 
@@ -248,6 +250,7 @@ promise.then(script => alert('또다른 핸들러...'));
 
 프라미스를 사용하면 흐름이 자연스럽고 유연한 코드를 작성할 수 있다.
 
+<br />
 <br />
 
 # 프로미스 체이닝
