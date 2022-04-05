@@ -1,6 +1,6 @@
 ---
 date: '2022-04-04T15:32'
-title: '[JavaScript] 프로미스'
+title: '[JavaScript] 프로미스(1)'
 category: 'Language'
 categoryColor: '#25e5bd'
 tags: ['JS']
@@ -100,7 +100,7 @@ let promise = new Promise(function (resolve, reject) {
 
 이처럼 일이 성공적으로 처리되었을 때의 프로미스는 **'fulfilled promise(약속이 이행된 프로미스)'** 라고 불린다.
 
-또한, 이행(resolved) 혹은 거부(rejected) 상태의 프로미스는 **‘처리된(settled)’ 프로미스** 라고 부르며, 반대되는 프라미스로 **'대기(pending)'상태의 프로미스** 가 있다.
+또한, 이행(resolved) 혹은 거부(rejected) 상태의 프로미스는 **‘처리된(settled)’ 프로미스** 라고 부르며, 반대되는 프로미스로 **'대기(pending)'상태의 프로미스** 가 있다.
 
 <br />
 
@@ -108,7 +108,7 @@ let promise = new Promise(function (resolve, reject) {
 
 executor는 `resolve`나 `reject` 중 하나를 반드시 호출해야 하며, 이때 변경된 상태는 더 이상 변하지 않는다.
 
-따라서, 아래와 같이 이미 처리가 끝난 프라미스에 `resolve`와 `reject`를 호출하면 무시된다.
+따라서, 아래와 같이 이미 처리가 끝난 프로미스에 `resolve`와 `reject`를 호출하면 무시된다.
 
 ```js
 let promise = new Promise(function (resolve, reject) {
@@ -193,7 +193,7 @@ promise.then(alert); // 1초 뒤 "done!" 출력
 new Promise((resolve, reject) => {
   /* 시간이 걸리는 어떤 일을 수행하고, 그 후 resolve, reject를 호출함 */
 })
-  // 성공·실패 여부와 상관없이 프라미스가 처리되면 실행됨
+  // 성공·실패 여부와 상관없이 프로미스가 처리되면 실행됨
   .finally(() => 로딩 인디케이터 중지)
   .then(
       result => alert(result), 
@@ -205,7 +205,7 @@ new Promise((resolve, reject) => {
 
 그런데 `finally`는 `.then(f, f)`과 완전히 같진 않다. 차이점은 다음과 같다.
 
-- `finally` 핸들러엔 인수가 없다. 그렇기에 `finally`에선 프라미스가 이행되었는지, 거부되었는지 알 수 없다.
+- `finally` 핸들러엔 인수가 없다. 그렇기에 `finally`에선 프로미스가 이행되었는지, 거부되었는지 알 수 없다.
 
   `finally`에선 절차를 마무리하는 ‘보편적’ 동작을 수행하기 때문에 **성공·실패 여부를 몰라도 된다.**
 
@@ -213,7 +213,7 @@ new Promise((resolve, reject) => {
 
 - `.finally(f)`는 함수 `f`를 중복해서 쓸 필요가 없기 때문에 `.then(f, f)`보다 문법 측면에서 더 편리하다.
 
-> 프로미스가 대기 상태일 때, `.then/catch/finally` 핸들러는 프라미스가 처리되길 기다린다. 반면, 프로미스가 이미 처리상태라면 핸들러가 즉각 실행된다.
+> 프로미스가 대기 상태일 때, `.then/catch/finally` 핸들러는 프로미스가 처리되길 기다린다. 반면, 프로미스가 이미 처리상태라면 핸들러가 즉각 실행된다.
 
 ## 예시
 
@@ -231,7 +231,7 @@ function loadScript(src) {
 }
 ```
 
-콜백 함수 대신, 스크립트 로딩이 완전히 끝났을 때 이행되는 프라미스 객체를 만들고, 이를 반환한다. 
+콜백 함수 대신, 스크립트 로딩이 완전히 끝났을 때 이행되는 프로미스 객체를 만들고, 이를 반환한다. 
 
 사용법은 다음과 같다.
 
@@ -248,7 +248,7 @@ promise.then(script => alert('또다른 핸들러...'));
 
 이처럼 프로미스에 원하는 만큼 `.then`을 호출할 수 있다.
 
-프라미스를 사용하면 흐름이 자연스럽고 유연한 코드를 작성할 수 있다.
+프로미스를 사용하면 흐름이 자연스럽고 유연한 코드를 작성할 수 있다.
 
 <br />
 <br />
@@ -267,7 +267,7 @@ promise.then(script => alert('또다른 핸들러...'));
 
 프로미스를 사용하면 여러 가지 해결책을 만들 수 있다.
 
-이번 포스트에선 **프라미스 체이닝(promise chaining)** 을 이용한 비동기 처리에 대해 다루도록 하겠다.
+이번 포스트에선 **프로미스 체이닝(promise chaining)** 을 이용한 비동기 처리에 대해 다루도록 하겠다.
 
 프로미스 체이닝은 아래와 같이 생겼다.
 
@@ -288,7 +288,7 @@ new Promise(function(resolve, reject) {
 
 위 예시는 아래와 같은 순서로 실행된다.
 
-1. 1초 후 최초 프라미스가 이행된다. 
+1. 1초 후 최초 프로미스가 이행된다. 
 
 2. 이후 첫번째 `.then` 핸들러가 호출된다. 
 
@@ -330,13 +330,13 @@ new Promise(function(resolve, reject) {
 
 첫 번째 `.then`은 `1`을 출력하고 `new Promise(…)`를 반환한다.
 
-1초 후 이 프라미스가 이행되고 그 결과(`resolve`의 인수인 `result * 2`)는 두 번째 `.then`으로 전달된다. 
+1초 후 이 프로미스가 이행되고 그 결과(`resolve`의 인수인 `result * 2`)는 두 번째 `.then`으로 전달된다. 
 
 두 번째 핸들러는 `2`를 출력하고 동일한 과정이 반복된다.
 
 따라서, 얼럿 창 사이에 1초의 딜레이가 생긴다.
 
-이렇게 핸들러 안에서 프라미스를 반환하는 것도 비동기 작업 체이닝을 가능하게 해준다.
+이렇게 핸들러 안에서 프로미스를 반환하는 것도 비동기 작업 체이닝을 가능하게 해준다.
 
 <br />
 
@@ -432,7 +432,7 @@ let promise = fetch(url);
 
 응답이 완전히 종료되고, 응답 전체를 읽으려면 메서드 `response.text()`를 호출해야 한다. 
 
-`response.text()`는 원격 서버에서 전송한 텍스트 전체가 다운로드되면, 이 텍스트를 `result` 값으로 갖는 이행된 프라미스를 반환한다.
+`response.text()`는 원격 서버에서 전송한 텍스트 전체가 다운로드되면, 이 텍스트를 `result` 값으로 갖는 이행된 프로미스를 반환한다.
 
 <br />
 
@@ -443,7 +443,7 @@ fetch('/article/promise-chaining/user.json')
   // 원격 서버가 응답하면 .then 아래 코드가 실행된다.
   .then(function(response) {
     // response.text()는 응답 텍스트 전체가 다운로드되면
-    // 응답 텍스트를 새로운 이행 프라미스를 만들고, 이를 반환한다.
+    // 응답 텍스트를 새로운 이행 프로미스를 만들고, 이를 반환한다.
     return response.text();
   })
   .then(function(text) {
@@ -500,7 +500,7 @@ fetch('/article/promise-chaining/user.json')
 
 <br />
 
-체인을 확장할 수 있도록 만들려면 아바타가 사라질 때 이행 프라미스를 반환해줘야 한다.
+체인을 확장할 수 있도록 만들려면 아바타가 사라질 때 이행 프로미스를 반환해줘야 한다.
 
 아래와 같이!
 
@@ -530,7 +530,7 @@ fetch('/article/promise-chaining/user.json')
 
 <br />
 
-이처럼 **비동기 동작은 항상 프라미스를 반환하도록 하는 것이 좋다.** 
+이처럼 **비동기 동작은 항상 프로미스를 반환하도록 하는 것이 좋다.** 
 
 지금은 체인을 확장할 계획이 없더라도 이렇게 구현해 놓으면 **나중에 체인 확장이 필요한 경우 손쉽게 체인을 확장할 수 있다.**
 
