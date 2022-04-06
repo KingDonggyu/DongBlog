@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `동 블로그`,
-    description: `동규의 기술 지식 창고. Algorithm, Language, Web, Mobile, etc.`,
+    title: `동규의 개발 지식창고`,
+    description: `동규의 개발 지식창고. Algorithm, Language, Web, Mobile, etc.`,
     author: `김동규`,
     siteUrl: `https://dongblog.netlify.app/`,
   },
@@ -16,8 +16,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "동 블로그 by KingDonggyu",
-        short_name: "동 블로그",
+        name: "동규의 개발 지식창고 by KingDonggyu",
+        short_name: "동규의 개발 지식창고",
         start_url: "/",
         display: "standalone",
         icon: "static/icon.png",
