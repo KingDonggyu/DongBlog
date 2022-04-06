@@ -1,3 +1,3 @@
-## 개인 기술 블로그
+## 개발 지식창고
 
 https://dongblog.netlify.app/
