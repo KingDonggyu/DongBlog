@@ -72,7 +72,7 @@ script execution finished          v
 
 <br />
 
-그렇다면! 위 예시에서 '프라미스 성공!'을 먼저, '코드 종료’를 나중에 출력되게 하려면 어떻게 해야 할까?
+그렇다면! 위 예시에서 '프로미스 성공!'을 먼저, '코드 종료’를 나중에 출력되게 하려면 어떻게 해야 할까?
 
 실행 순서가 중요한 경우엔 이런 요구사항이 충족되도록 코드를 작성해야 한다.
 
@@ -80,7 +80,7 @@ script execution finished          v
 
 ```js
 Promise.resolve()
-  .then(() => alert("프라미스 성공!"))
+  .then(() => alert("프로미스 성공!"))
   .then(() => alert("코드 종료"));
 ```
 
@@ -96,7 +96,7 @@ Promise.resolve()
 
 이제 자바스크립트 엔진이 어떻게 처리되지 못한 거부(unhandled rejection)를 찾는지 정확히 알 수 있다!
 
-❗️ **’처리되지 못한 거부’는 마이크로태스크 큐 끝에서 프라미스 에러가 처리되지 못할 때 발생한다.**
+❗️ **’처리되지 못한 거부’는 마이크로태스크 큐 끝에서 프로미스 에러가 처리되지 못할 때 발생한다.**
 
 <br />
 
@@ -123,11 +123,11 @@ setTimeout(() => promise.catch(err => alert('잡았다!')), 1000);
 window.addEventListener('unhandledrejection', event => alert(event.reason));
 ```
 
-예시를 실행하면 `프라미스 실패!` 가 먼저, `잡았다!` 가 나중에 출력되는 걸 확인할 수 있다.
+예시를 실행하면 `프로미스 실패!` 가 먼저, `잡았다!` 가 나중에 출력되는 걸 확인할 수 있다.
 
 `unhandledrejection`은 마이크로태스크 큐에 있는 작업 모두가 완료되었을 때 생성된다. 
 
-엔진은 프라미스들을 검사하고 이 중 하나라도 ‘거부(rejected)’ 상태이면 `unhandledrejection` 핸들러를 트리거 한다. 
+엔진은 프로미스들을 검사하고 이 중 하나라도 ‘거부(rejected)’ 상태이면 `unhandledrejection` 핸들러를 트리거 한다. 
 
 이로써 에러를 잡았는데도 `unhandledrejection` 핸들러가 실행되는 것이다.
 
@@ -135,7 +135,7 @@ window.addEventListener('unhandledrejection', event => alert(event.reason));
 
 위 예시를 실행하면 `setTimeout`을 사용해 추가한 `.catch` 역시 트리거 된다. 
 
-다만 `.catch`는 `unhandledrejection`이 발생한 이후에 트리거 되므로 `프라미스 실패!` 가 출력된다.
+다만 `.catch`는 `unhandledrejection`이 발생한 이후에 트리거 되므로 `프로미스 실패!` 가 출력된다.
 
 <br />
 <br />
