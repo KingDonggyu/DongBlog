@@ -14,7 +14,7 @@ const MarkdownRenderer = styled.div`
   // Markdown Style
   line-height: 1.9;
   font-size: 16px;
-  color: #000000;
+  color: #333333;
   font-family: 'Nanum Gothic';
 
   // Apply Padding Attribute to All Elements
