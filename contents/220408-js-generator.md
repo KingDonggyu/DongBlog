@@ -1,0 +1,615 @@
+---
+date: '2022-04-08T15:00'
+title: '[JavaScript] 제너레이터와 비동기 이터레이션'
+category: 'Language'
+categoryColor: '#25e5bd'
+tags: ['JS']
+---
+
+# 제너레이터
+
+<hr />
+
+일반 함수는 하나의 값(혹은 0개의 값)만을 반환한다.
+
+하지만 **제너레이터(generator)를 사용하면 여러 개의 값을 필요에 따라 하나씩 반환(yield)할 수 있다!**
+
+제너레이터와 이터러블 객체를 함께 사용하면 손쉽게 데이터 스트림을 만들 수 있다.
+
+<br />
+
+## 제너레이터 함수
+
+제너레이터를 만들려면 '제너레이터 함수’라 불리는 특별한 문법 구조, `function*`이 필요하다.
+
+```js
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+```
+
+제너레이터 함수는 일반 함수와 동작 방식이 다르다.
+
+제너레이터 함수를 호출하면 코드가 실행되지 않고, 대신 실행을 처리하는 특별 객체, **'제너레이터 객체’가 반환된다.**
+
+예시를 보자.
+
+```js
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let generator = generateSequence();
+alert(generator); // [object Generator]
+```
+
+'제너레이터 함수'는 '제너레이터 객체'를 생성한다.
+
+함수 본문 코드는 아직 실행되지 않았다.
+
+<br />
+
+`next()`는 제너레이터의 주요 메서드이다. (혹시 파이썬의 그 `next`..?)
+
+`next()`를 호출하면 가장 가까운 `yield <value>`문을 만날 때까지 실행이 지속된다.
+
+`value`를 생략할 수도 있는데, 이 경우엔 `undefined`가 된다. 
+
+이후, `yield <value>`문을 만나면 실행이 멈추고 산출하고자 하는 값인 `value`가 바깥 코드에 반환된다. 
+
+<br />
+
+`next()`는 항상 아래 두 프로퍼티를 가진 객체를 반환한다.
+
+- `value`: 산출 값
+
+- `done`: 함수 코드 실행이 끝났으면 `true`, 아니라면 `false`
+
+아직은 이해가 잘 안된다. 예시를 보자.
+
+```js
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let generator = generateSequence();
+
+let one = generator.next();
+
+alert(JSON.stringify(one)); // {value: 1, done: false}
+```
+
+현재로서는 첫 번째 값만 받았으므로 함수 실행은 두 번째 줄에서 멈췄다.
+
+`generator.next()`를 다시 호출해보자.
+
+```js
+...
+
+let two = generator.next();
+
+alert(JSON.stringify(two)); // {value: 2, done: false}
+```
+
+`generator.next()`를 또 호출하면 실행은 `return`문에 다다르고 함수가 종료된다.
+
+```js
+...
+
+let three = generator.next();
+
+alert(JSON.stringify(three)); // {value: 3, done: true}
+```
+
+이제 제너레이터가 종료되었다. 마지막 결과인 `value:3`과 `done:true`를 통해 이를 확인할 수 있다.
+
+제너레이터가 종료되었기 때문에 지금 상태에선 `generator.next()`를 호출해도 아무 소용이 없다. 
+
+`generator.next()`를 여러번 호출해도 객체 `{done: true}`가 반환될 뿐이다.
+
+<br />
+
+## 제너레이터와 이터러블
+
+`next()` 메서드를 보면 짐작되듯이, **제너레이터는 이터러블이다.**
+
+따라서 **`for..of` 반복문을 사용해 값을 얻을 수 있다!**
+
+```js
+unction* generateSequence() {
+  yield 1;
+  yield 2;
+  return 3;
+}
+
+let generator = generateSequence();
+
+for(let value of generator) {
+  alert(value); // 1, 2
+}
+```
+
+그런데 주의할 점이 있다. 위 예시를 실행하면 `1`과 `2`만 출력되고 `3`은 출력되지 않는다..
+
+이유는 `for..of` 이터레이션이` done: true`일 때 마지막 `value`를 무시하기 때문이다. 
+
+그러므로 `for..of`를 사용했을 때 모든 값이 출력되길 원한다면 `yield`로 값을 반환해야 한다.
+
+<br />
+
+제너레이터는 이터러블 객체이므로 제너레이터에도 전개 문법(`...`) 같은 관련 기능을 사용할 수 있다.
+
+```js
+function* generateSequence() {
+  yield 1;
+  yield 2;
+  yield 3;
+}
+
+let sequence = [0, ...generateSequence()];
+
+alert(sequence); // 0, 1, 2, 3
+```
+
+위 예시에서 `...generateSequence()`는 반복 가능한 제너레이터 객체를 배열 요소로 바꿔준다.
+
+<br />
+
+## 이터러블 대신 제너레이터 사용하기
+
+`Symbol.iterator` 대신 제너레이터 함수를 사용하면, 제너레이터 함수로 반복이 가능하다.
+
+```js
+let range = {
+  from: 1,
+  to: 5,
+
+  *[Symbol.iterator]() { // [Symbol.iterator]: function*()를 짧게 줄임
+    for(let value = this.from; value <= this.to; value++) {
+      yield value;
+    }
+  }
+};
+
+alert( [...range] ); // 1, 2, 3, 4, 5
+```
+
+`range[Symbol.iterator]()`는 제너레이터를 반환하고, 제너레이터 메서드는 `for..of`가 동작하는데 필요한 아래 사항들을 충족시키므로 예시가 잘 동작한다.
+
+- `.next()` 메서드가 있다.
+
+- 반환 값의 형태는 `{value: ..., done: true/false}`이어야 한다.
+
+<br />
+
+이처럼 제너레이터를 사용해 구현한 예시는 이터러블을 사용해 구현한 기존 예시보다 훨씬 간결하다. 그리고 동일한 기능을 제공한다.
+
+<br />
+
+## 제너레이터 컴포지션
+
+**제너레이터 컴포지션(generator composition)은 제너레이터 안에 제너레이터를 '임베딩(embedding, composing)'할 수 있게 해주는 제너레이터의 특별 기능이다.**
+
+뭔 소리지..?
+
+자, 차근차근 알아보자.
+
+<br />
+
+먼저, 연속된 숫자를 생성하는 제너레이터 함수를 만들어보겠다.
+
+```js
+function* generateSequence(start, end) {
+  for (let i = start; i <= end; i++) yield i;
+}
+```
+
+그리고 이 함수를 기반으로 좀 더 복잡한 값을 연속해서 생성하는 함수를 만들어보자. 값 생성 규칙은 다음과 같다.
+
+- 처음엔 숫자 0부터 9까지를 생성한다(문자 코드 48부터 57까지),
+
+- 이어서 알파벳 대문자 A부터 Z까지를 생성한다(문자 코드 65부터 90까지).
+
+- 이어서 알파벳 소문자 a부터 z까지를 생성한다(문자 코드 97부터 122까지).
+
+이런 규칙을 충족하는 연속 값은 비밀번호를 만들 때 응용할 수 있다(물론 특수 문자도 추가 할 수 있다).
+
+<br />
+
+일반 함수로는 여러 개의 함수를 만들고 그 호출 결과를 어딘가에 저장한 후 다시 그 결과들을 조합해야 원하는 기능을 구현할 수 있다.
+
+하지만 **제너레이터의 특수 문법 `yield*`를 사용하면 제너레이터를 다른 제너레이터에 ‘끼워 넣을 수’ 있다!**
+
+컴포지션을 적용한 제너레이터는 다음과 같다.
+
+```js
+function* generateSequence(start, end) {
+  for (let i = start; i <= end; i++) yield i;
+}
+
+function* generatePasswordCodes() {
+  // 0..9
+  yield* generateSequence(48, 57);
+  // A..Z
+  yield* generateSequence(65, 90);
+  // a..z
+  yield* generateSequence(97, 122);
+
+}
+
+let str = '';
+
+for(let code of generatePasswordCodes()) {
+  str += String.fromCharCode(code);
+}
+
+alert(str); // 0..9A..Za..z
+```
+
+**`yield*` 지시자는 실행을 다른 제너레이터에 위임한다(delegate).**
+
+여기서 '위임’은 `yield* gen`이 제너레이터 `gen`을 대상으로 반복을 수행하고, 산출 값들을 바깥으로 전달한다는 것을 의미한다. 
+
+마치 외부 제너레이터에 의해 값이 산출된 것처럼 말이다.
+
+<br />
+
+이처럼, **제너레이터 컴포지션을 사용하면 한 제너레이터의 흐름을 자연스럽게 다른 제너레이터에 삽입할 수 있다.** 
+
+또한 **제너레이터 컴포지션을 사용하면 중간 결과 저장 용도의 추가 메모리가 필요하지 않다!**
+
+<br />
+
+## 'yield’를 사용해 제너레이터 안·밖으로 정보 교환하기
+
+지금까지 배운 제너레이터는 값을 생성해주는 특수 문법을 가진 이터러블 객체와 유사했다. 
+
+그런데 사실 제너레이터는 더 강력하고 유연한 기능을 제공한다.
+
+**`yield`가 양방향 길과 같은 역할을 하기 때문이다.**
+
+**`yield`는 결과를 바깥으로 전달할 뿐만 아니라 값을 제너레이터 안으로 전달하기까지 한다.**
+
+값을 안, 밖으로 전달하려면 `generator.next(arg)`를 호출해야 한다. 이때 인수 `arg`는 `yield`의 결과가 된다.
+
+```js
+function* gen() {
+  let ask1 = yield "2 + 2 = ?";
+
+  alert(ask1); // 4
+
+  let ask2 = yield "3 * 3 = ?"
+
+  alert(ask2); // 9
+}
+
+let generator = gen();
+
+alert( generator.next().value ); // "2 + 2 = ?"
+
+alert( generator.next(4).value ); // "3 * 3 = ?"
+
+alert( generator.next(9).done ); // true
+```
+
+1. 제너레이터 객체가 만들어지고 첫 번째 `.next()`가 호출되면, 실행이 시작되고 첫 번째 `yield`에 다다른다.
+
+2. 산출 값은 바깥 코드로 반환된다.
+
+3. 두 번째 `.next(4)`는 첫 번째 `yield`의 결과가 될 `4`를 제너레이터 안으로 전달한다. 그리고 다시 실행이 이어진다.
+
+4. 실행 흐름이 두 번째 `yield`에 다다르고, 산출 값(`"3 * 3 = ?"`)이 제너레이터 호출 결과가 된다.
+
+5. 세 번째 `next(9)`는 두 번째 `yield`의 결과가 될 `9`를 제너레이터 안으로 전달한다. 그리고 다시 실행이 이어지는데, `done: true`이므로 제너레이터 함수는 종료된다.
+
+<br />
+
+## generator.throw
+
+여러 가지 예시를 통해 살펴보았듯이 외부 코드는 `yield`의 결과가 될 값을 제너레이터 안에 전달하기도 한다.
+
+그런데 외부 코드가 에러를 만들거나 던질 수도 있다. 이는 자연스러운 현상이다.
+
+**에러를 `yield` 안으로 전달하려면 `generator.throw(err)`를 호출해야 한다.** 
+
+**`generator.throw(err)`를 호출하게 되면 `err`는 `yield`가 있는 줄로 던져진다.**
+
+```js
+function* gen() {
+  try {
+    let result = yield "2 + 2 = ?"; // (1)
+    alert("위에서 에러가 던져졌기 때문에 실행 흐름은 여기까지 다다르지 못한다.");
+  } catch(e) {
+    alert(e); // 에러 출력
+  }
+}
+
+let generator = gen();
+
+let question = generator.next().value;
+
+generator.throw(new Error("데이터베이스에서 답을 찾지 못했다.")); // (2)
+```
+
+`(2)`에서 제너레이터 안으로 던진 에러는 `yield`와 함께 라인 `(1)`에서 예외를 만든다. 
+
+예외는 `try..catch`에서 잡히고, 관련 정보가 얼럿창에 출력된다.
+
+제너레이터 안에서 예외를 처리하지 않았다면 예외는 여타 예외와 마찬가지로 제너레이터 호출 코드(외부 코드)로 떨어져 나온다.
+
+물론 `generator.throw`에서 `try..catch`로 에러를 잡아도 된다.
+
+하지만, 두 곳 모두에서 에러를 잡지 못하면 스크립트가 죽겠지..?
+
+<br />
+
+# async 이터레이터와 제너레이터
+
+<hr />
+
+**비동기 이터레이터(asynchronous iterator)를 사용하면 비동기적으로 들어오는 데이터를 필요에 따라 처리할 수 있다.**
+
+네트워크를 통해 데이터가 여러 번에 걸쳐 들어오는 상황을 처리할 수 있게 되는 것이다!
+
+비동기 이터레이터에 더하여 비동기 제너레이터(asynchronous generator)를 사용하면 이런 데이터를 좀 더 편리하게 처리할 수 있다.
+
+먼저 간단한 예시를 살펴보며 문법을 익힌 후, 실무에서 벌어질 법한 사례를 가지고 `async` 이터레이터와 제너레이터가 어떻게 사용되는지 알아보겠다.
+
+<br />
+
+## async 이터레이터
+
+비동기 이터레이터는 일반 이터레이터와 유사하며, 약간의 문법적인 차이가 있다.
+
+이터러블 객체를 비동기적으로 만들려면 어떤 작업이 필요할까?
+
+1. `Symbol.iterator` 대신, `Symbol.asyncIterator`를 사용해야 한다.
+
+2. `next()`는 프로미스를 반환해야 한다.
+
+3. 비동기 이터러블 객체를 대상으로 하는 반복 작업은 `for await (let item of iterable)` 반복문을 사용해 처리해야 한다.
+
+```js
+let range = {
+  from: 1,
+  to: 5,
+
+  [Symbol.asyncIterator]() { 
+    return {
+      current: this.from,
+      last: this.to,
+
+      async next() { 
+        await new Promise(resolve => setTimeout(resolve, 1000)); 
+
+        if (this.current <= this.last) {
+          return { done: false, value: this.current++ };
+        } else {
+          return { done: true };
+        }
+      }
+    };
+  }
+};
+
+(async () => {
+  for await (let value of range) { 
+    alert(value); // 1,2,3,4,5
+  }
+})()
+```
+
+위 예시에서 볼 수 있듯이, `async` 이터레이터는 일반 이터레이터와 구조가 유사하다. 
+
+하지만 아래와 같은 차이가 있다.
+
+1. 객체를 비동기적으로 반복 가능하도록 하려면, `Symbol.asyncIterator`메서드가 반드시 구현되어 있어야 한다.
+
+2. `Symbol.asyncIterator`는 프라미스를 반환하는 메서드인 `next()`가 구현된 객체를 반환해야 한다.
+
+3. `next()`는 `async` 메서드일 필요는 없다. 프로미스를 반환하는 메서드라면 일반 메서드도 괜찮다. 다만, `async`를 사용하면 `await`도 사용할 수 있기 때문에, 여기선 편의상 `async`메서드를 사용해 일 초의 딜레이가 생기도록 했다.
+
+4. 반복 작업을 하려면 `for` 뒤에 `await`를 붙인 `for await(let value of range)`를 사용하면 된다. `for await(let value of range)`가 실행될 때 `range[Symbol.asyncIterator]()`가 일회 호출되는데, 그 이후엔 각 값을 대상으로 `next()`가 호출된다.
+
+<br />
+
+## async 제너레이터
+
+앞서 배운 바와 같이 자바스크립트에선 제너레이터를 사용할 수 있는데, 제너레이터는 이터러블 객체이다.
+
+일반 제너레이터에선 `await`를 사용할 수 없다. 그리고 모든 값은 동기적으로 생산된다. 
+
+`for..of` 어디에서도 딜레이를 줄 만한 곳이 없다.. 이처럼 **일반 제너레이터는 동기적 문법이다.**
+
+<br />
+
+그런데 제너레이터 본문에서 `await`를 사용해야만 하는 상황이 발생하면 어떻게 해야 할까? 
+
+네트워크 요청을 해야 하는 상황이 발생하면..?
+
+물론 가능하다. 아래 예시와 같이 `async`를 제너레이터 함수 앞에 붙여주면 된다.
+
+```js
+async function* generateSequence(start, end) {
+  for (let i = start; i <= end; i++) {
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    yield i;
+  }
+
+}
+
+(async () => {
+  let generator = generateSequence(1, 5);
+  for await (let value of generator) {
+    alert(value); // 1, 2, 3, 4, 5
+  }
+})();
+```
+
+이제 `for await...of`로 반복이 가능한 `async` 제너레이터를 사용할 수 있게 되었다!
+
+`async` 키워드를 붙이기만 하면 제너레이터 안에서 프라미스와 기타 `async` 함수를 기반으로 동작하는 `await`를 사용할 수 있다.
+
+`async` 제너레이터의 `generator.next()` 메서드는 비동기적이 되고, 프로미스를 반환한다는 점은 일반 제너레이터와 `async` 제너레이터의 또 다른 차이이다.
+
+<br />
+
+## async 이터러블
+
+이미 배웠듯이, 반복 가능한 객체를 만들려면 객체에 `Symbol.iterator`를 추가해야 한다.
+
+```js
+let range = {
+  from: 1,
+  to: 5,
+  [Symbol.iterator]() {
+    return <range를 반복가능하게 만드는 next가 구현된 객체>
+  }
+}
+```
+
+**그런데 `Symbol.iterator`는 위 예시와 같이 `next`가 구현된 일반 객체를 반환하는 것 보다, 제너레이터를 반환하도록 구현하는 경우가 더 많다!**
+
+아~까 위에서 본 예시를 다시 보자.
+
+```js
+let range = {
+  from: 1,
+  to: 5,
+
+  *[Symbol.iterator]() { 
+    for(let value = this.from; value <= this.to; value++) {
+      yield value;
+    }
+  }
+};
+
+for(let value of range) {
+  alert(value); // 1, 2, 3, 4, 5
+}
+```
+
+위 예시에서 커스텀 객체 `range`는 반복 가능하고, 제너레이터 `*[Symbol.iterator]`엔 값을 나열해주는 로직이 구현되어 있다.
+
+지금 상태에서 제너레이터에 비동기 동작을 추가하려면, `Symbol.iterator`를 `async Symbol.asyncIterator`로 바꿔야 한다.
+
+```js
+let range = {
+  from: 1,
+  to: 5,
+
+  async *[Symbol.asyncIterator]() { 
+    for(let value = this.from; value <= this.to; value++) {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      yield value;
+    }
+  }
+};
+
+(async () => {
+  for await (let value of range) {
+    alert(value); // 1, 2, 3, 4, 5
+  }
+})();
+```
+
+별거 없쥬?
+
+<br />
+
+## 실제 사례
+
+실무에서 접할법한 유스 케이스를 살펴보자.
+
+상당히 많은 온라인 서비스가 페이지네이션(pagination)을 구현해 데이터를 전송한다. 
+
+사용자 목록이 필요해서 서버에 요청을 보내면, 서버는 일정 숫자(예를 들어 100명의 사용자) 단위로 사용자를 끊어 정보를 '한 페이지’로 구성한 후, 다음 페이지를 볼 수 있는 URL과 함께 응답한다.
+
+이런 패턴은 사용자 목록 전송뿐만 아니라, 다양한 서비스에서 찾아볼 수 있다. GitHub에서 커밋 이력을 볼 때도 페이지네이션이 사용된다.
+
+- 클라이언트는 `https://api.github.com/repos/<repo>/commits` 형태의 URL로 요청을 보낸다.
+
+- GitHub에선 커밋 30개의 정보가 담긴 JSON과 함께, 다음 페이지에 대한 정보를 `Link` 헤더에 담아 응답한다.
+
+- 더 많은 커밋 정보가 필요하면 헤더에 담긴 링크를 사용해 다음 요청을 보내며, 원하는 정보를 얻을 때까지 이런 과정을 반복한다.
+
+<br />
+
+실제 GitHub API는 복잡하지만, 커밋 정보가 담긴 이터러블 객체를 만들어서 아래와 같이 객체를 대상으로 반복 작업을 할 수 있게 해주는 간단한 API를 만들어 보자.
+
+```js
+async function* fetchCommits(repo) {
+  let url = `https://api.github.com/repos/${repo}/commits`;
+
+  while (url) {
+    const response = await fetch(url, { // (1)
+      headers: {'User-Agent': 'Our script'}, // GitHub는 모든 요청에 user-agent헤더를 강제 합니다.
+    });
+
+    const body = await response.json(); // (2) 응답은 JSON 형태로 옵니다(커밋이 담긴 배열).
+
+    // (3) 헤더에 담긴 다음 페이지를 나타내는 URL을 추출합니다.
+    let nextPage = response.headers.get('Link').match(/<(.*?)>; rel="next"/);
+    nextPage = nextPage?.[1];
+
+    url = nextPage;
+
+    for(let commit of body) { // (4) 페이지가 끝날 때까지 커밋을 하나씩 반환(yield)합니다.
+      yield commit;
+    }
+  }
+}
+```
+
+1. `fetch`를 사용하면 인증 정보나 헤더 등을 함께 실어 요청할 수 있다. GitHub에서 강제하는 `User-Agent`를 헤더에 실어 보낸다.
+
+2. `fetch` 전용 메서드인 `response.json()`을 사용해 요청 결과를 `JSON`으로 파싱한다.
+
+3. 응답의 `Link` 헤더에서 다음 페이지의 URL을 얻는다. 헤더에서 `https://api.github.com/repositories/93253246/commits?page=2`형태의 URL만 추출하기 위해 정규표현식을 사용한다.
+
+4. 커밋을 하나씩 반환하는데, 전체 다 반환되면 다음 `while(url)` 반복문이 트리거 되어 서버에 다시 요청을 보낸다.
+
+<br />
+
+사용법은 다음과 같다.
+
+```js
+(async () => {
+  let count = 0;
+  for await (const commit of fetchCommits('javascript-tutorial/en.javascript.info')) {
+    console.log(commit.author.login);
+    if (++count == 100) { // 100번째 커밋에서 멈춥니다.
+      break;
+    }
+  }
+})();
+```
+
+페이지네이션과 관련된 내부 메커니즘은 바깥에서 볼 수 없고, 단순히 `async` 제너레이터를 사용해 원하는 커밋을 반환받기만 하면 된다!
+
+<br />
+
+정리하자면,
+
+일반적인 이터레이터와 제너레이터는 데이터를 가져오는 데 시간이 걸리지 않을 때에 적합하다.
+
+그런데 약간의 지연이 있어서 데이터가 비동기적으로 들어오는 경우 `async` 이터레이터와 `async` 제너레이터, `for..of`대신 `for await..of`를 사용하게 된다!
+
+<br />
+<br />
+
+이번 개념은 처음엔 쉽다가 점점 갈수록 어려워지는 느낌이었다..
+
+제너레이터에 대해서 처음 알게 되었는데, 꽤 매력적인 녀석이다 😆
+
+<br />
+
+## ※ Source
+
+🖥 ko.javascript.info
