@@ -62,7 +62,7 @@ const Introduction = ({ profileImage }) => {
         </IconWrapper>
       </HeaderWrapper>
       <Title>KIM DONGGYU</Title>
-      <SubTitle>그럼에도 불구하고 🔥</SubTitle>
+      <SubTitle>기록은 기억을 지배한다 🔥</SubTitle>
     </Wrapper>
   );
 };
