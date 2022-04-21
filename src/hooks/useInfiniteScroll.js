@@ -1,14 +1,16 @@
-import { useState, useEffect, useRef, useMemo } from "react";
+import { useState, useEffect, useRef, useMemo } from 'react';
 
 const NUMBER_OF_ITEMS_PER_PAGE = 10;
 
 const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
+  intersectionObserverPolyfill();
+
   const containerRef = useRef(null);
   const [count, setCount] = useState(1);
 
   const postListData = useMemo(
     () =>
-      selectedCategory !== "All"
+      selectedCategory !== 'All'
         ? posts.filter(
             ({
               node: {
@@ -21,19 +23,17 @@ const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
               node: {
                 frontmatter: { tags },
               },
-            }) => (selectedTag !== "All" ? tags.includes(selectedTag) : true)
+            }) => (selectedTag !== 'All' ? tags.includes(selectedTag) : true)
           ),
     [selectedCategory, selectedTag]
   );
 
-  const observer = new IntersectionObserver(
-    (entries, observer) => {
-      if (!entries[0].isIntersecting) return;
+  const observer = new IntersectionObserver((entries, observer) => {
+    if (!entries[0].isIntersecting) return;
 
-      setCount(value => value + 1);
-      observer.disconnect();
-    },
-  );
+    setCount((value) => value + 1);
+    observer.disconnect();
+  });
 
   // 카테고리나 태그 선택이 변경된 경우 count 값 1로 변경
   useEffect(() => setCount(1), [selectedCategory, selectedTag]);
@@ -57,6 +57,11 @@ const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
     containerRef,
     postList: postListData.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE),
   };
+};
+
+const intersectionObserverPolyfill = async () => {
+  if (typeof window.IntersectionObserver !== 'undefined') return;
+  await import('intersection-observer');
 };
 
 export default useInfiniteScroll;
