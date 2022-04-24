@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
-import 'intersection-observer';
+import 'intersection-observer'; // polyfill
 
 const NUMBER_OF_ITEMS_PER_PAGE = 10;
 
 const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
-  // await intersectionObserverPolyfill()
-
   const containerRef = useRef(null);
   const [count, setCount] = useState(1);
 
@@ -59,12 +57,5 @@ const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
     postList: postListData.slice(0, count * NUMBER_OF_ITEMS_PER_PAGE),
   };
 };
-
-// const intersectionObserverPolyfill = async () => {
-//   console.log(typeof window.IntersectionObserver);
-//   if (typeof window.IntersectionObserver !== 'undefined') return true;
-//   console.log('test');
-//   await import('intersection-observer');
-// };
 
 export default useInfiniteScroll;
