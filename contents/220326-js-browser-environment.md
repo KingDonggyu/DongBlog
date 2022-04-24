@@ -1,9 +1,9 @@
 ---
 date: "2022-03-26T17:00"
-title: "[Browser] 브라우저 환경"
-category: "Web"
-categoryColor: "mediumpurple"
-tags: ["Browser", "JS"]
+title: "[JavaScript] 브라우저 환경"
+category: "Language"
+categoryColor: "#25e5bd"
+tags: ["JS"]
 ---
 
 여태껏 호스트 환경에 종속되지 않는 코어 자바스크립트만을 다루었다.

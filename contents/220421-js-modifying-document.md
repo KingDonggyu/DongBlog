@@ -1,9 +1,9 @@
 ---
 date: '2022-04-21T17:40'
-title: '[Browser] DOM 조작하기'
-category: 'Web'
-categoryColor: 'mediumpurple'
-tags: ['Browser', 'JS']
+title: '[JavaScript] DOM 조작하기'
+category: 'Language'
+categoryColor: '#25e5bd'
+tags: ['JS']
 ---
 
 생동감 있는 웹페이지를 만들기 위한 핵심은 바로! **DOM 조작**에 있다.
