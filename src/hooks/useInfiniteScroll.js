@@ -3,7 +3,7 @@ import 'intersection-observer';
 
 const NUMBER_OF_ITEMS_PER_PAGE = 10;
 
-const useInfiniteScroll = async (posts, selectedTag, selectedCategory) => {
+const useInfiniteScroll = (posts, selectedTag, selectedCategory) => {
   // await intersectionObserverPolyfill()
 
   const containerRef = useRef(null);
